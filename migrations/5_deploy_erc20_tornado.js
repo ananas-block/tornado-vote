@@ -16,6 +16,7 @@ module.exports = function(deployer, network, accounts) {
     if(token === '') {
       const tokenInstance = await deployer.deploy(ERC20Mock)
       token = tokenInstance.address
+      //console.log("ERC 20 toke address ", token)
     }
     const tornado = await deployer.deploy(
       ERC20Tornado,

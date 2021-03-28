@@ -46,8 +46,10 @@ async function printETHBalance({ address, name }) {
 async function printERC20Balance({ address, name, tokenAddress }) {
   const erc20ContractJson = require('./build/contracts/ERC20Mock.json')
   erc20 = tokenAddress ? new web3.eth.Contract(erc20ContractJson.abi, tokenAddress) : erc20
-  console.log(`${name} Token Balance is`, web3.utils.fromWei(await erc20.methods.balanceOf(address).call()))
+  console.log(`${name} Token Balance is`, await erc20.methods.balanceOf(address).call())//web3.utils.fromWei(await erc20.methods.balanceOf(address).call()))
+  console.log(`${name} Token Decimals is`, await erc20.methods.decimals().call())//web3.utils.fromWei(await erc20.methods.balanceOf(address).call()))
 }
+
 
 /**
  * Create deposit object from secret and nullifier
@@ -68,6 +70,7 @@ function createDeposit({ nullifier, secret }) {
  * @param amount Deposit amount
  */
 async function deposit({ currency, amount }) {
+
   const deposit = createDeposit({ nullifier: rbigint(31), secret: rbigint(31) })
   const note = toHex(deposit.preimage, 62)
   const noteString = `tornado-${currency}-${amount}-${netId}-${note}`
@@ -83,22 +86,28 @@ async function deposit({ currency, amount }) {
   } else { // a token
     await printERC20Balance({ address: tornado._address, name: 'Tornado' })
     await printERC20Balance({ address: senderAccount, name: 'Sender account' })
-    const decimals = isLocalRPC ? 18 : config.deployments[`netId${netId}`][currency].decimals
+    const decimals = await erc20.methods.decimals().call();//isLocalRPC ? 18 : config.deployments[`netId${netId}`][currency].decimals
     const tokenAmount = isLocalRPC ? TOKEN_AMOUNT : fromDecimals({ amount, decimals })
+    console.log(decimals);
+
+    //const tokenAmount = amount;
+    /*
     if (isLocalRPC) {
       console.log('Minting some test tokens to deposit')
       await erc20.methods.mint(senderAccount, tokenAmount).send({ from: senderAccount, gas: 2e6 })
-    }
+    }*/
 
     const allowance = await erc20.methods.allowance(senderAccount, tornado._address).call({ from: senderAccount })
-    console.log('Current allowance is', fromWei(allowance))
-    if (toBN(allowance).lt(toBN(tokenAmount))) {
-      console.log('Approving tokens for deposit')
-      await erc20.methods.approve(tornado._address, tokenAmount).send({ from: senderAccount, gas: 1e6 })
-    }
-
+    console.log('Current allowance is', allowance)
+    console.log(tokenAmount)
+    //if (toBN(allowance).lt(toBN(tokenAmount))) {
+      console.log('Approving tokens for deposit', tokenAmount)
+      var x = await erc20.methods.approve(tornado._address, tokenAmount).send({ from: senderAccount, gas: 1e6 })
+    //}
+    console.log("approval : ",x)
     console.log('Submitting deposit transaction')
-    await tornado.methods.deposit(toHex(deposit.commitment)).send({ from: senderAccount, gas: 2e6 })
+    var res = await tornado.methods.deposit(toHex(deposit.commitment)).send({ from: senderAccount, gas: 2e6 })
+    console.log(res);
     await printERC20Balance({ address: tornado._address, name: 'Tornado' })
     await printERC20Balance({ address: senderAccount, name: 'Sender account' })
   }
@@ -199,18 +208,29 @@ async function withdraw({ deposit, currency, amount, recipient, relayerURL, refu
       throw new Error('ENS name resolving is not supported. Please provide DNS name of the relayer. See instuctions in README.md')
     }
     const relayerStatus = await axios.get(relayerURL + '/status')
-    const { relayerAddress, netId, gasPrices, ethPrices, relayerServiceFee } = relayerStatus.data
+    console.log(relayerStatus)
+    var { relayerAddress, netId, gasPrices, ethPrices, tornadoServiceFee } = relayerStatus.data
+    //20000000000
     assert(netId === await web3.eth.net.getId() || netId === '*', 'This relay is for different network')
-    console.log('Relay address: ', relayerAddress)
+    relayerAddress = '0'
+    gasPrices = fromWei('20000000000')
+    //tornadoServiceFee = toWei('0.1') * 0.05
+    console.log('Relay url ',  relayerAddress, netId, gasPrices, ethPrices, tornadoServiceFee)
+    //console.log('Relay address: ', relayerAddress)
 
     const decimals = isLocalRPC ? 18 : config.deployments[`netId${netId}`][currency].decimals
-    const fee = calculateFee({ gasPrices, currency, amount, refund, ethPrices, relayerServiceFee, decimals })
+    const fee = calculateFee({ gasPrices, currency, amount, refund, ethPrices, tornadoServiceFee, decimals })
+
+    console.log('Relay url ', relayerAddress)
+
     if (fee.gt(fromDecimals({ amount, decimals }))) {
       throw new Error('Too high refund')
     }
-    const { proof, args } = await generateProof({ deposit, recipient, relayerAddress, fee, refund })
 
-    console.log('Sending withdraw transaction through relay')
+    const { proof, args } = await generateProof({ deposit, recipient, relayerAddress, fee, refund })
+    console.log(proof);
+    console.log(args);
+    console.log('Sending withdraw transaction through relay',  tornado._address)
     try {
       const relay = await axios.post(relayerURL + '/relay', { contract: tornado._address, proof, args })
       if (netId === 1 || netId === 42) {
@@ -344,14 +364,20 @@ function getCurrentNetworkName() {
 
 }
 
-function calculateFee({ gasPrices, currency, amount, refund, ethPrices, relayerServiceFee, decimals }) {
-  const decimalsPoint = Math.floor(relayerServiceFee) === Number(relayerServiceFee) ?
+function calculateFee({ gasPrices, currency, amount, refund, ethPrices, tornadoServiceFee, decimals }) {
+  console.log({ gasPrices, currency, amount, refund, ethPrices, tornadoServiceFee, decimals })
+  console.log(tornadoServiceFee.toString().split('.')[1].length)
+  const decimalsPoint = Math.floor(tornadoServiceFee) === Number(tornadoServiceFee) ?
     0 :
-    relayerServiceFee.toString().split('.')[1].length
+    tornadoServiceFee.toString().split('.')[1].length
   const roundDecimal = 10 ** decimalsPoint
+
   const total = toBN(fromDecimals({ amount, decimals }))
-  const feePercent = total.mul(toBN(relayerServiceFee * roundDecimal)).div(toBN(roundDecimal * 100))
-  const expense = toBN(toWei(gasPrices.fast.toString(), 'gwei')).mul(toBN(5e5))
+  const feePercent = total.mul(toBN(tornadoServiceFee * roundDecimal)).div(toBN(roundDecimal * 100))
+
+  //console.log(gasPrices)
+  const expense = toBN(toWei(gasPrices.toString(), 'gwei')).mul(toBN(5e5))
+
   let desiredFee
   switch (currency) {
   case 'eth': {
@@ -493,16 +519,19 @@ async function init({ rpc, noteNetId, currency = 'dai', amount = '100' }) {
     MERKLE_TREE_HEIGHT = process.env.MERKLE_TREE_HEIGHT || 20
     ETH_AMOUNT = process.env.ETH_AMOUNT
     TOKEN_AMOUNT = process.env.TOKEN_AMOUNT
-    PRIVATE_KEY = process.env.PRIVATE_KEY
+    PRIVATE_KEY = process.env.PRIVATE_KEY2
     if (PRIVATE_KEY) {
+      //console.log("PRivate KEy: ",PRIVATE_KEY)
+
       const account = web3.eth.accounts.privateKeyToAccount('0x' + PRIVATE_KEY)
       web3.eth.accounts.wallet.add('0x' + PRIVATE_KEY)
       web3.eth.defaultAccount = account.address
       senderAccount = account.address
+      //console.log(account)
     } else {
       console.log('Warning! PRIVATE_KEY not found. Please provide PRIVATE_KEY in .env file if you deposit')
     }
-    erc20ContractJson = require('./build/contracts/ERC20Mock.json')
+    erc20ContractJson = require('./build/contracts/ERC20.json')
     erc20tornadoJson = require('./build/contracts/ERC20Tornado.json')
   }
   // groth16 initialises a lot of Promises that will never be resolved, that's why we need to use process.exit to terminate the CLI
@@ -515,8 +544,12 @@ async function init({ rpc, noteNetId, currency = 'dai', amount = '100' }) {
 
   if (isLocalRPC) {
     tornadoAddress = currency === 'eth' ? contractJson.networks[netId].address : erc20tornadoJson.networks[netId].address
-    tokenAddress = currency !== 'eth' ? erc20ContractJson.networks[netId].address : null
-    senderAccount = (await web3.eth.getAccounts())[0]
+    tokenAddress = process.env.ERC20_TOKEN //currency !== 'eth' ? erc20ContractJson.networks[netId].address : null
+    //-------------------Here Account change ---------------------
+    senderAccount = (await web3.eth.getAccounts())[1]
+    console.log("Sender address ", senderAccount);
+    console.log("tornadoAddress", tornadoAddress);
+    console.log("VOte token address is ",tokenAddress);
   } else {
     try {
       tornadoAddress = config.deployments[`netId${netId}`][currency].instanceAddress[amount]
