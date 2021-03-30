@@ -34,7 +34,7 @@ contract Tornado is MerkleTreeWithHistory, ReentrancyGuard {
   }
 
   event Deposit(bytes32 indexed commitment, uint32 leafIndex, uint256 timestamp);
-  event Withdrawal(address to, bytes32 nullifierHash, address indexed relayer, uint256 fee);
+  //event Commit(bytes hash, bytes hashs);
 
   /**
     @dev The constructor
@@ -69,8 +69,11 @@ contract Tornado is MerkleTreeWithHistory, ReentrancyGuard {
     emit Deposit(_commitment, insertedIndex, block.timestamp);
   }
 
+  //function vote(address destinat)
+
   /** @dev this function is defined in a child contract */
   function _processDeposit() internal;
+
 
   /**
     @dev Withdraw a deposit from the contract. `proof` is a zkSNARK proof data, and input is an array of circuit public inputs
@@ -80,19 +83,40 @@ contract Tornado is MerkleTreeWithHistory, ReentrancyGuard {
       - the recipient of funds
       - optional fee that goes to the transaction sender (usually a relay)
   */
-  function withdraw(bytes calldata _proof, bytes32 _root, bytes32 _nullifierHash, address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) external payable nonReentrant {
+  //commits the hash of a vote
+  //mapping(bytes => bool) private _commits;
+
+  function commit(bytes calldata _proof, bytes32 _root, bytes32 _nullifierHash, bytes20  _hash,/*bytes calldata _randomness,*/ address payable _relayer, uint256 _fee, uint256 _refund) external payable nonReentrant {
+
     require(_fee <= denomination, "Fee exceeds transfer value");
     require(!nullifierHashes[_nullifierHash], "The note has been already spent");
     require(isKnownRoot(_root), "Cannot find your merkle root"); // Make sure to use a recent one
-    require(verifier.verifyProof(_proof, [uint256(_root), uint256(_nullifierHash), uint256(_recipient), uint256(_relayer), _fee, _refund]), "Invalid withdraw proof");
-
+    require(verifier.verifyProof(_proof, [uint256(_root), uint256(_nullifierHash), uint256(address(_hash)), uint256(_relayer), _fee, _refund]), "Invalid withdraw proof");
     nullifierHashes[_nullifierHash] = true;
-    _processWithdraw(_recipient, _relayer, _fee, _refund);
-    emit Withdrawal(_recipient, _nullifierHash, _relayer, _fee);
+    _processCommit(_hash, _relayer, _fee, _refund);
+    /*
+    _commits[_hash] = true;
+    bytes32 x = keccak256(_randomness);
+    bytes memory hashs = new bytes(20);
+    for(uint i = 0; i < 20; i++){
+      hashs[i] = x[i];
+    }
+    if(  _commits[hashs] == true){
+      emit Commit(_hash, hashs);
+    }*/
   }
 
   /** @dev this function is defined in a child contract */
-  function _processWithdraw(address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) internal;
+  function _processCommit(bytes20 _hash, address payable _relayer, uint256 _fee, uint256 _refund) internal;
+
+  //casts the vote
+  function vote(address payable _recipient, bytes calldata _randomness, address payable _relayer, uint256 _fee, uint256 _refund) external payable nonReentrant {
+
+    _processVote(_recipient,_randomness, _relayer, _fee, _refund);
+  }
+
+  function _processVote(address payable _recipient, bytes memory _randomness, address payable _relayer, uint256 _fee, uint256 _refund) internal;
+
 
   /** @dev whether a note is already spent */
   function isSpent(bytes32 _nullifierHash) public view returns(bool) {

@@ -13,8 +13,15 @@ pragma solidity 0.5.17;
 
 import "./Tornado.sol";
 
+interface VoteToken {
+  function getCommit(bytes calldata _randomness) external returns(bool);
+  function setCommit(bytes calldata _hash) external;
+}
+
 contract ERC20Tornado is Tornado {
   address public token;
+
+
 
   constructor(
     IVerifier _verifier,
@@ -30,11 +37,14 @@ contract ERC20Tornado is Tornado {
     require(msg.value == 0, "ETH value is supposed to be 0 for ERC20 instance");
     _safeErc20TransferFrom(msg.sender, address(this), denomination);
   }
-
-  function _processWithdraw(address payable _recipient, address payable _relayer, uint256 _fee, uint256 _refund) internal {
+  function _processCommit(bytes20 _hash, address payable _relayer, uint256 _fee, uint256 _refund) internal {
     require(msg.value == _refund, "Incorrect refund amount received by the contract");
-
-    _safeErc20Transfer(_recipient, denomination - _fee);
+    bytes memory bytesArray = new bytes(20);
+           for (uint256 i; i < 20; i++) {
+               bytesArray[i] = _hash[i];
+           }
+    VoteToken(token).setCommit(bytesArray);
+    /*
     if (_fee > 0) {
       _safeErc20Transfer(_relayer, _fee);
     }
@@ -45,7 +55,27 @@ contract ERC20Tornado is Tornado {
         // let's return _refund back to the relayer
         _relayer.transfer(_refund);
       }
+    }*/
+  }
+  function _processVote(address payable _recipient, bytes memory _randomness, address payable _relayer, uint256 _fee, uint256 _refund) internal {
+    require(msg.value == _refund, "Incorrect refund amount received by the contract");
+    //(bool success, bytes memory data) = token.call(abi.encodeWithSelector(0xa9059cbb /* transfer */, _to, _amount));
+    VoteToken(token).getCommit(_randomness);
+    /*
+    require(s == true, "Hash not found"); // Potential attack vector this should be checked before transfer in VoteToken contract
+
+    //_safeErc20Transfer(_recipient, denomination);
+    if (_fee > 0) {
+      _safeErc20Transfer(_relayer, _fee);
     }
+
+    if (_refund > 0) {
+      (bool success, ) = _recipient.call.value(_refund)("");
+      if (!success) {
+        // let's return _refund back to the relayer
+        _relayer.transfer(_refund);
+      }
+    }*/
   }
 
   function _safeErc20TransferFrom(address _from, address _to, uint256 _amount) internal {

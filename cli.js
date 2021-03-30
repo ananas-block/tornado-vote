@@ -17,6 +17,7 @@ const websnarkUtils = require('websnark/src/utils')
 const { toWei, fromWei, toBN, BN } = require('web3-utils')
 const config = require('./config')
 const program = require('commander')
+const voteerc = require('../VoteErc20/script.js')
 
 let web3, tornado, circuit, proving_key, groth16, erc20, senderAccount, netId
 let MERKLE_TREE_HEIGHT, ETH_AMOUNT, TOKEN_AMOUNT, PRIVATE_KEY
@@ -47,14 +48,14 @@ async function printERC20Balance({ address, name, tokenAddress }) {
   const erc20ContractJson = require('./build/contracts/ERC20Mock.json')
   erc20 = tokenAddress ? new web3.eth.Contract(erc20ContractJson.abi, tokenAddress) : erc20
   console.log(`${name} Token Balance is`, await erc20.methods.balanceOf(address).call())//web3.utils.fromWei(await erc20.methods.balanceOf(address).call()))
-  console.log(`${name} Token Decimals is`, await erc20.methods.decimals().call())//web3.utils.fromWei(await erc20.methods.balanceOf(address).call()))
+  //console.log(`${name} Token Decimals is`, await erc20.methods.decimals().call())//web3.utils.fromWei(await erc20.methods.balanceOf(address).call()))
 }
 
 
 /**
  * Create deposit object from secret and nullifier
  */
-function createDeposit({ nullifier, secret }) {
+function createDeposit({ nullifier, secret}) {
   const deposit = { nullifier, secret }
   deposit.preimage = Buffer.concat([deposit.nullifier.leInt2Buff(31), deposit.secret.leInt2Buff(31)])
   deposit.commitment = pedersenHash(deposit.preimage)
@@ -71,10 +72,14 @@ function createDeposit({ nullifier, secret }) {
  */
 async function deposit({ currency, amount }) {
 
-  const deposit = createDeposit({ nullifier: rbigint(31), secret: rbigint(31) })
+  const deposit = createDeposit({ nullifier: rbigint(31), secret: rbigint(31)})
   const note = toHex(deposit.preimage, 62)
   const noteString = `tornado-${currency}-${amount}-${netId}-${note}`
+
   console.log(`Your note: ${noteString}`)
+  //console.log("Your randomness is :", randomness);
+  //console.log("Your Commitment is :", commit);
+  /*
   if (currency === 'eth') {
     await printETHBalance({ address: tornado._address, name: 'Tornado' })
     await printETHBalance({ address: senderAccount, name: 'Sender account' })
@@ -83,12 +88,12 @@ async function deposit({ currency, amount }) {
     await tornado.methods.deposit(toHex(deposit.commitment)).send({ value, from: senderAccount, gas: 2e6 })
     await printETHBalance({ address: tornado._address, name: 'Tornado' })
     await printETHBalance({ address: senderAccount, name: 'Sender account' })
-  } else { // a token
+  } else { // a token*/
     await printERC20Balance({ address: tornado._address, name: 'Tornado' })
     await printERC20Balance({ address: senderAccount, name: 'Sender account' })
     const decimals = await erc20.methods.decimals().call();//isLocalRPC ? 18 : config.deployments[`netId${netId}`][currency].decimals
     const tokenAmount = isLocalRPC ? TOKEN_AMOUNT : fromDecimals({ amount, decimals })
-    console.log(decimals);
+    //console.log(decimals);
 
     //const tokenAmount = amount;
     /*
@@ -99,18 +104,18 @@ async function deposit({ currency, amount }) {
 
     const allowance = await erc20.methods.allowance(senderAccount, tornado._address).call({ from: senderAccount })
     console.log('Current allowance is', allowance)
-    console.log(tokenAmount)
+    //console.log(tokenAmount)
     //if (toBN(allowance).lt(toBN(tokenAmount))) {
       console.log('Approving tokens for deposit', tokenAmount)
       var x = await erc20.methods.approve(tornado._address, tokenAmount).send({ from: senderAccount, gas: 1e6 })
     //}
-    console.log("approval : ",x)
+    //console.log("approval : ",x)
     console.log('Submitting deposit transaction')
     var res = await tornado.methods.deposit(toHex(deposit.commitment)).send({ from: senderAccount, gas: 2e6 })
-    console.log(res);
+    //console.log(res);
     await printERC20Balance({ address: tornado._address, name: 'Tornado' })
     await printERC20Balance({ address: senderAccount, name: 'Sender account' })
-  }
+  //}
 
   return noteString
 }
@@ -157,7 +162,7 @@ async function generateMerkleProof(deposit) {
 async function generateProof({ deposit, recipient, relayerAddress = 0, fee = 0, refund = 0 }) {
   // Compute merkle proof of our commitment
   const { root, path_elements, path_index } = await generateMerkleProof(deposit)
-
+  console.log(recipient)
   // Prepare circuit input
   const input = {
     // Public snark inputs
@@ -174,10 +179,12 @@ async function generateProof({ deposit, recipient, relayerAddress = 0, fee = 0, 
     pathElements: path_elements,
     pathIndices: path_index,
   }
+  console.log("----------------------------------")
 
   console.log('Generating SNARK proof')
   console.time('Proof time')
   const proofData = await websnarkUtils.genWitnessAndProve(groth16, input, circuit, proving_key)
+
   const { proof } = websnarkUtils.toSolidityInput(proofData)
   console.timeEnd('Proof time')
 
@@ -195,14 +202,15 @@ async function generateProof({ deposit, recipient, relayerAddress = 0, fee = 0, 
 
 /**
  * Do an ETH withdrawal
- * @param noteString Note to withdraw
+ * @param noteString Note to commit
  * @param recipient Recipient address
  */
-async function withdraw({ deposit, currency, amount, recipient, relayerURL, refund = '0' }) {
+async function commit({ deposit,vote, currency, amount, relayerURL, refund = '0' }) {
   if (currency === 'eth' && refund !== '0') {
     throw new Error('The ETH purchase is supposted to be 0 for ETH withdrawals')
   }
   refund = toWei(refund)
+  /*
   if (relayerURL) {
     if (relayerURL.endsWith('.eth')) {
       throw new Error('ENS name resolving is not supported. Please provide DNS name of the relayer. See instuctions in README.md')
@@ -230,7 +238,7 @@ async function withdraw({ deposit, currency, amount, recipient, relayerURL, refu
     const { proof, args } = await generateProof({ deposit, recipient, relayerAddress, fee, refund })
     console.log(proof);
     console.log(args);
-    console.log('Sending withdraw transaction through relay',  tornado._address)
+    console.log('Sending commit transaction through relay',  tornado._address)
     try {
       const relay = await axios.post(relayerURL + '/relay', { contract: tornado._address, proof, args })
       if (netId === 1 || netId === 42) {
@@ -248,11 +256,58 @@ async function withdraw({ deposit, currency, amount, recipient, relayerURL, refu
         console.error(e.message)
       }
     }
-  } else { // using private key
-    const { proof, args } = await generateProof({ deposit, recipient, refund })
+  } else { // using private key */
+    let vote_commitment_secret = rbigint(31)
+    var vote_choice = new Uint8Array(1);
+    if(vote == 'yes'){
+      vote_choice[0] = 1;
+    }
+    else if (vote == 'no'){
+      vote_choice[0] = 0;
+    }
+    else {
+      vote_choice[0] = 2;
+      console.log("You are committing to an invalid vote");
+    }
+    //console.log("Your vote is: ", vote_choice[0]);
+    var inst_arr = Buffer.from(vote_choice.buffer);
+    //console.log("vote buffer is ", inst_arr);
+    //Concatinating the vote and random number
+    const buf_t = Buffer.concat([vote_commitment_secret.leInt2Buff(31),inst_arr], 32 );
+    //console.log("vote buffer is ", buf_t[31]);
+    console.log("Your vote_commitment_secret is : ", web3.utils.bytesToHex(buf_t))
 
-    console.log('Submitting withdraw transaction')
-    await tornado.methods.withdraw(proof, ...args).send({ from: senderAccount, value: refund.toString(), gas: 1e6 })
+    //let hash2 = Web3.utils.sha3(web3.utils.hexToBytes(buf_t))
+    let vote_commitment_hash = Web3.utils.sha3(buf_t)
+    var buf = Buffer.from(web3.utils.hexToBytes(vote_commitment_hash))
+    //console.log("Hash2 ", hash2)
+    //console.log("Sha3 hash ", vote_commitment_hash)
+    //console.log("Sha3 hash buffer ", buf);
+
+    let slice = buf.slice(0, 20)
+    vote_commitment_hash = web3.utils.bytesToHex(slice)// hash slicefirst20 converttou160 encodeashex
+
+    //console.log("First 20 bytes Sha3 hash buffer ", toHex(vote_commitment_hash,20));
+    //console.log(toHex(vote_commitment_hash,20))
+    //console.log("----------------------------------")
+    recipient = vote_commitment_hash;//vote_commitment_hash;
+    const { proof, args } = await generateProof({ deposit, recipient, refund })
+  /*Test whether I can change the hash, I can t
+    let vote_commitment_secret2 = rbigint(20)
+    buf = Buffer.from(vote_commitment_secret2.leInt2Buff(20))
+
+    args[2] = toHex(buf, 20)
+    console.log(args[2]);
+    */
+    console.log('Submitting commit transaction from ', senderAccount);
+
+    //console.log(args);
+    //console.log("Sha3 hash buffer ", Buffer.from(buf.slice(0, 20)));
+    //console.log("args hash buffer ", Buffer.from(bigInt(args[2]).leInt2Buff(20)));
+    //args[2] = Buffer.from(bigInt(args[2]).leInt2Buff(20))
+    //args.splice(3,0, buf_t);
+    console.log(args);
+    let x = await tornado.methods.commit(proof, ...args).send({ from: senderAccount, value: refund.toString(), gas: 1e6 })
       .on('transactionHash', function (txHash) {
         if (netId === 1 || netId === 42) {
           console.log(`View transaction on etherscan https://${getCurrentNetworkName()}etherscan.io/tx/${txHash}`)
@@ -262,8 +317,14 @@ async function withdraw({ deposit, currency, amount, recipient, relayerURL, refu
       }).on('error', function (e) {
         console.error('on transactionHash error', e.message)
       })
-  }
+  //}
+  //console.log(x.events.Commit.returnValues)
   console.log('Done')
+  return web3.utils.bytesToHex(buf_t);
+  //console.log(Buffer.from(x.events.Commit.returnValues[0]))
+  //console.log(Buffer.from(x.events.Commit.returnValues[1]))
+
+
 }
 
 function fromDecimals({ amount, decimals }) {
@@ -503,7 +564,7 @@ async function init({ rpc, noteNetId, currency = 'dai', amount = '100' }) {
     // Initialize using injected web3 (Metamask)
     // To assemble web version run `npm run browserify`
     web3 = new Web3(window.web3.currentProvider, null, { transactionConfirmationBlocks: 1 })
-    contractJson = await (await fetch('build/contracts/ETHTornado.json')).json()
+    //contractJson = await (await fetch('build/contracts/ETHTornado.json')).json()
     circuit = await (await fetch('build/circuits/withdraw.json')).json()
     proving_key = await (await fetch('build/circuits/withdraw_proving_key.bin')).arrayBuffer()
     MERKLE_TREE_HEIGHT = 20
@@ -513,7 +574,7 @@ async function init({ rpc, noteNetId, currency = 'dai', amount = '100' }) {
   } else {
     // Initialize from local node
     web3 = new Web3(rpc, null, { transactionConfirmationBlocks: 1 })
-    contractJson = require('./build/contracts/ETHTornado.json')
+    //contractJson = require('./build/contracts/ETHTornado.json')
     circuit = require('./build/circuits/withdraw.json')
     proving_key = fs.readFileSync('build/circuits/withdraw_proving_key.bin').buffer
     MERKLE_TREE_HEIGHT = process.env.MERKLE_TREE_HEIGHT || 20
@@ -543,13 +604,20 @@ async function init({ rpc, noteNetId, currency = 'dai', amount = '100' }) {
   isLocalRPC = netId > 42
 
   if (isLocalRPC) {
-    tornadoAddress = currency === 'eth' ? contractJson.networks[netId].address : erc20tornadoJson.networks[netId].address
+    tornadoAddress = erc20tornadoJson.networks[netId].address
     tokenAddress = process.env.ERC20_TOKEN //currency !== 'eth' ? erc20ContractJson.networks[netId].address : null
     //-------------------Here Account change ---------------------
-    senderAccount = (await web3.eth.getAccounts())[1]
+    senderAccount = (await web3.eth.getAccounts())[0]
     console.log("Sender address ", senderAccount);
     console.log("tornadoAddress", tornadoAddress);
     console.log("VOte token address is ",tokenAddress);
+    //registering the tornado contract address if not already happened
+    try{
+      await voteerc.setMixcontractAddress(process.env.ERC20_TOKEN, tornadoAddress, senderAccount);
+    } catch(e){
+      console.log(e);
+    }
+
   } else {
     try {
       tornadoAddress = config.deployments[`netId${netId}`][currency].instanceAddress[amount]
@@ -562,8 +630,38 @@ async function init({ rpc, noteNetId, currency = 'dai', amount = '100' }) {
       process.exit(1)
     }
   }
-  tornado = new web3.eth.Contract(contractJson.abi, tornadoAddress)
+  tornado = new web3.eth.Contract(erc20tornadoJson.abi, tornadoAddress)
+  //console.log(tornado);
   erc20 = currency !== 'eth' ? new web3.eth.Contract(erc20ContractJson.abi, tokenAddress) : {}
+}
+
+async function vote({ vote_commitment_secret, relayerAddress = 0, fee = 0, refund = 0 }){
+
+  //console.log("Your vote_commitment_secret is : ", vote_commitment_secret)
+
+  let hash_secret = Buffer.from(web3.utils.hexToBytes(vote_commitment_secret))
+  //let buf = Buffer.from(toHex(vote_commitment_secret))
+//  function _processVote(address payable _recipient, bytes20 _randomness, address payable _relayer, uint256 _fee, uint256 _refund) internal
+const args = [
+  toHex(bigInt('0xB4F5663773fB2842d1A74B2da0b5ec95f2ac125A',"hex"),20),
+  hash_secret,
+  toHex(bigInt(relayerAddress), 20),
+  toHex(bigInt(fee)),
+  toHex(bigInt(refund))
+]
+console.log("Casting vote", senderAccount);
+// _processVote(address payable _recipient, bytes20 _randomness, address payable _relayer, uint256 _fee, uint256 _refund)
+  await tornado.methods.vote(...args).send({ from: senderAccount, value: refund.toString(), gas: 1e6 })
+    .on('transactionHash', function (txHash) {
+      if (netId === 1 || netId === 42) {
+        console.log(`View transaction on etherscan https://${getCurrentNetworkName()}etherscan.io/tx/${txHash}`)
+      } else {
+        console.log(`The transaction hash is ${txHash}`)
+      }
+    }).on('error', function (e) {
+      console.error('on transactionHash error', e.message)
+    })
+
 }
 
 async function main() {
@@ -584,7 +682,7 @@ async function main() {
   } else {
     program
       .option('-r, --rpc <URL>', 'The RPC, CLI should interact with', 'http://localhost:8545')
-      .option('-R, --relayer <URL>', 'Withdraw via relayer')
+      .option('-R, --relayer <URL>', 'Interact via relayer')
     program
       .command('deposit <currency> <amount>')
       .description('Submit a deposit of specified currency and amount from default eth account and return the resulting note. The currency is one of (ETH|DAI|cDAI|USDC|cUSDC|USDT). The amount depends on currency, see config.js file or visit https://tornado.cash.')
@@ -594,12 +692,12 @@ async function main() {
         await deposit({ currency, amount })
       })
     program
-      .command('withdraw <note> <recipient> [ETH_purchase]')
-      .description('Withdraw a note to a recipient account using relayer or specified private key. You can exchange some of your deposit`s tokens to ETH during the withdrawal by specifing ETH_purchase (e.g. 0.01) to pay for gas in future transactions. Also see the --relayer option.')
-      .action(async (noteString, recipient, refund) => {
+      .command('commit <note> <recipient> <vote> [ETH_purchase]')
+      .description('commit a note to a recipient account using relayer or specified private key. You can exchange some of your deposit`s tokens to ETH during the withdrawal by specifing ETH_purchase (e.g. 0.01) to pay for gas in future transactions. Also see the --relayer option.')
+      .action(async (noteString, vote, recipient, refund) => {
         const { currency, amount, netId, deposit } = parseNote(noteString)
         await init({ rpc: program.rpc, noteNetId: netId, currency, amount })
-        await withdraw({ deposit, currency, amount, recipient, refund, relayerURL: program.relayer })
+        await commit({ deposit, vote, currency, amount, recipient, refund, relayerURL: program.relayer })
       })
     program
       .command('balance <address> [token_address]')
@@ -612,43 +710,87 @@ async function main() {
         }
       })
     program
-      .command('compliance <note>')
-      .description('Shows the deposit and withdrawal of the provided note. This might be necessary to show the origin of assets held in your withdrawal address.')
-      .action(async (noteString) => {
+      .command('vote <note> <vote_commitment_secret> [ETH_purchase] ')
+      .description("casts the vote included in the ")
+      .action(async(noteString, vote_commitment_secret, refund) => {
         const { currency, amount, netId, deposit } = parseNote(noteString)
         await init({ rpc: program.rpc, noteNetId: netId, currency, amount })
-        const depositInfo = await loadDepositData({ deposit })
-        const depositDate = new Date(depositInfo.timestamp * 1000)
-        console.log('\n=============Deposit=================')
-        console.log('Deposit     :', amount, currency)
-        console.log('Date        :', depositDate.toLocaleDateString(), depositDate.toLocaleTimeString())
-        console.log('From        :', `https://${getCurrentNetworkName()}etherscan.io/address/${depositInfo.from}`)
-        console.log('Transaction :', `https://${getCurrentNetworkName()}etherscan.io/tx/${depositInfo.txHash}`)
-        console.log('Commitment  :', depositInfo.commitment)
-        if (deposit.isSpent) {
-          console.log('The note was not spent')
-        }
-
-        const withdrawInfo = await loadWithdrawalData({ amount, currency, deposit })
-        const withdrawalDate = new Date(withdrawInfo.timestamp * 1000)
-        console.log('\n=============Withdrawal==============')
-        console.log('Withdrawal  :', withdrawInfo.amount, currency)
-        console.log('Relayer Fee :', withdrawInfo.fee, currency)
-        console.log('Date        :', withdrawalDate.toLocaleDateString(), withdrawalDate.toLocaleTimeString())
-        console.log('To          :', `https://${getCurrentNetworkName()}etherscan.io/address/${withdrawInfo.to}`)
-        console.log('Transaction :', `https://${getCurrentNetworkName()}etherscan.io/tx/${withdrawInfo.txHash}`)
-        console.log('Nullifier   :', withdrawInfo.nullifier)
+        await vote({ vote_commitment_secret, currency, amount, refund, relayerURL: program.relayer })
       })
+
+
     program
       .command('test')
       .description('Perform an automated test. It deposits and withdraws one ETH and one ERC20 note. Uses ganache.')
       .action(async () => {
-        console.log('Start performing ETH deposit-withdraw test')
-        let currency = 'eth'
-        let amount = '0.1'
+
+        //Erc20 is deployed
+        //Tornado is deployed
+        console.log('Start Test Scenario with 5 Voters')
+        var currency = 'vote'
+        var  amount = '1';
+        var netId = '1337';
         await init({ rpc: program.rpc, currency, amount })
-        let noteString = await deposit({ currency, amount })
-        let parsedNote = parseNote(noteString)
+        let noteArray = new Array(5);
+        let commitArray = new Array(5);
+        console.log("------------ Starting Commit Round ----------------")
+
+        for(var i = 0; i < 5; i++){
+          senderAccount = (await web3.eth.getAccounts())[i]
+          console.log(senderAccount);
+          try{
+            noteArray[i] = await deposit({ currency, amount });
+          }catch(e){
+            console.log("Deposit failed nr ", i);
+            console.log(e)
+          }
+        }
+        console.log("Notes are: ", noteArray)
+
+
+        for(var i = 0; i < 5; i++){
+          senderAccount = (await web3.eth.getAccounts())[i]
+          console.log("Committing Account ", senderAccount)
+
+          let { currency, amount, netId, deposit } = parseNote(noteArray[i])
+          let vote = 'yes';
+          if(i > 2){
+            vote = 'no';
+          }
+          let refund = '0';
+          try{
+            commitArray[i] = await commit({ deposit, vote, currency, amount, refund, relayerURL: program.relayer })
+          } catch(e){
+            console.log("Commit failed nr ", i);
+            console.log(e)
+
+          }
+        }
+
+        console.log("Commit Secrets are: ", noteArray)
+
+        await voteerc.advanceBlocks(200, senderAccount);
+        console.log("------------ Advanced 200 Blocks ----------------")
+        console.log("------------ Starting Cast Round ----------------")
+        //tornado is registered
+        for(var i = 0; i < 5; i++){
+          senderAccount = (await web3.eth.getAccounts())[i]
+          console.log("Casting Account ", senderAccount)
+          let { currency, amount, netId, deposit } = parseNote(noteArray[i])
+          let vote_commitment_secret = commitArray[i];
+          console.log("Submitting secret", vote_commitment_secret);
+          let refund = 0;
+          await vote({ vote_commitment_secret, currency, amount, refund, relayerURL: program.relayer })
+        }
+        console.log("All votes are cast.")
+        console.log("The number of Yes votes are: ")
+        let address = (await web3.eth.getAccounts())[9]
+        let tokenAddress = process.env.ERC20_TOKEN
+        await printERC20Balance({ address, name: '', tokenAddress })
+        console.log("The number of No votes are: ")
+        address = (await web3.eth.getAccounts())[8]
+        await printERC20Balance({ address, name: '', tokenAddress })
+        /*
         await withdraw({ deposit: parsedNote.deposit, currency, amount, recipient: senderAccount, relayerURL: program.relayer })
 
         console.log('\nStart performing DAI deposit-withdraw test')
@@ -656,8 +798,9 @@ async function main() {
         amount = '100'
         await init({ rpc: program.rpc, currency, amount })
         noteString = await deposit({ currency, amount })
-        ; (parsedNote = parseNote(noteString))
+        (parsedNote = parseNote(noteString))
         await withdraw({ deposit: parsedNote.deposit, currency, amount, recipient: senderAccount, refund: '0.02', relayerURL: program.relayer })
+        */
       })
     try {
       await program.parseAsync(process.argv)
