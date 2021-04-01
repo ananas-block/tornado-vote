@@ -782,7 +782,7 @@ async function main() {
           let refund = 0;
           await vote({ vote_commitment_secret, currency, amount, refund, relayerURL: program.relayer })
         }
-        console.log("All votes are cast.")
+        console.log("\n------------ All votes are cast ----------------")
         console.log("The number of Yes votes are: ")
         let address = (await web3.eth.getAccounts())[9]
         let tokenAddress = process.env.ERC20_TOKEN
