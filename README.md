@@ -1,3 +1,28 @@
+
+# Tornado Vote (Private Voting based on tornado Cash)
+
+nvm use v11.15.0
+
+ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337
+
+npm test ./test/VoteToken.test.js
+
+npm run migrate:dev
+
+
+./cli.js deposit ETH 0.1 --rpc HTTP://127.0.0.1:8545
+
+./cli.js withdraw tornado-eth-0.1-1337-0xe8c968ba6ea1f4045797ff23c3a316a2a99fdca5833977624ed39a3736cf090d77f5be2aa442d3d0485eee4b3e4542a4031de8a40de73039e3ea6e8206bc 0xB9E73B55b1398217C7dB7d9C3c7f0f5F7Ca888e6 --rpc HTTP://127.0.0.1:8545 --relayer http://127.0.0.1:8000
+
+
+
+172.18.0.1
+
+Yes: 0xB4F5663773fB2842d1A74B2da0b5ec95f2ac125A
+No: 0x4333dD7Cc5349D6DAB1e9621E07319eda0d7c593
+
+
+
 # Tornado Cash Privacy Solution [![Build Status](https://travis-ci.org/tornadocash/tornado-core.svg?branch=master)](https://travis-ci.org/tornadocash/tornado-core)
 
 Tornado Cash is a non-custodial Ethereum and ERC20 privacy solution based on zkSNARKs. It improves transaction privacy by breaking the on-chain link between the recipient and destination addresses. It uses a smart contract that accepts ETH deposits that can be withdrawn by a different address. Whenever ETH is withdrawn by the new address, there is no way to link the withdrawal to the deposit, ensuring complete privacy.
