@@ -1,8 +1,10 @@
-pragma solidity ^0.5.17;
+pragma solidity ^0.5.10;
 
 import "@openzeppelin/contracts/GSN/Context.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
+import "./Libraries/VeriSolContracts.sol";
+
 //import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
@@ -294,6 +296,7 @@ contract VoteToken is  Context, IERC20 {
         _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
         _balances[recipient] = _balances[recipient].add(amount);
         emit Transfer(sender, recipient, amount);
+        VeriSol.Ensures(_totalSupply >= VeriSol.SumMapping(_balances));
     }
 
     /** @dev Creates `amount` tokens and assigns them to `account`, increasing
