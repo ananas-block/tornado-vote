@@ -43,7 +43,6 @@
     "eth-json-rpc-filters": "^4.1.1",
     "ganache-cli": "^6.7.0",
     "snarkjs": "git+https://github.com/tornadocash/snarkjs.git#869181cfaf7526fe8972073d31655493a04326d5",
-    "truffle": "^5.0.44",
     "truffle-flattener": "^1.4.2",
     "web3": "^1.2.2",
     "web3-utils": "^1.2.2",

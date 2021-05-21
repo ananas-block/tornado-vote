@@ -88,7 +88,7 @@ contract Tornado is MerkleTreeWithHistory, ReentrancyGuard {
 
   function commit(bytes calldata _proof, bytes32 _root, bytes32 _nullifierHash, bytes20  _hash,/*bytes calldata _randomness,*/ address payable _relayer, uint256 _fee, uint256 _refund) external payable nonReentrant {
 
-    require(_fee <= denomination, "Fee exceeds transfer value");
+    //require(_fee <= denomination, "Fee exceeds transfer value");
     require(!nullifierHashes[_nullifierHash], "The note has been already spent");
     require(isKnownRoot(_root), "Cannot find your merkle root"); // Make sure to use a recent one
     require(verifier.verifyProof(_proof, [uint256(_root), uint256(_nullifierHash), uint256(address(_hash)), uint256(_relayer), _fee, _refund]), "Invalid withdraw proof");

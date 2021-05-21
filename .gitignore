@@ -95,3 +95,10 @@ typings/
 
 ERC20Tornado_flat.sol
 ETHTornado_flat.sol
+
+/crytic-export/
+
+/Old/
+/contracts/mcore*
+
+package-lock.json

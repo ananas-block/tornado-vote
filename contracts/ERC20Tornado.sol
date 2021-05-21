@@ -15,12 +15,12 @@ import "./Tornado.sol";
 
 interface VoteToken {
   function getCommit(bytes calldata _randomness) external returns(bool);
-  function setCommit(bytes calldata _hash) external;
+  function setCommit(bytes20 _hash) external;
 }
 
 contract ERC20Tornado is Tornado {
   address public token;
-
+  uint256 public fee;
 
 
   constructor(
@@ -28,13 +28,15 @@ contract ERC20Tornado is Tornado {
     uint256 _denomination,
     uint32 _merkleTreeHeight,
     address _operator,
-    address _token
+    address _token,
+    uint256 _fee
   ) Tornado(_verifier, _denomination, _merkleTreeHeight, _operator) public {
     token = _token;
+    fee = _fee;
   }
 
   function _processDeposit() internal {
-    require(msg.value == 0, "ETH value is supposed to be 0 for ERC20 instance");
+    require(msg.value == (2*fee), "ETH value is supposed to be double the fee, because two transactions of the relayer are necessary");
     _safeErc20TransferFrom(msg.sender, address(this), denomination);
   }
   function _processCommit(bytes20 _hash, address payable _relayer, uint256 _fee, uint256 _refund) internal {
@@ -43,12 +45,12 @@ contract ERC20Tornado is Tornado {
            for (uint256 i; i < 20; i++) {
                bytesArray[i] = _hash[i];
            }
-    VoteToken(token).setCommit(bytesArray);
-    /*
-    if (_fee > 0) {
-      _safeErc20Transfer(_relayer, _fee);
+    VoteToken(token).setCommit(_hash);
+    //require(success, "Commit Failed");
+    if (fee > 0) {
+      _relayer.transfer(fee);
     }
-
+    /*
     if (_refund > 0) {
       (bool success, ) = _recipient.call.value(_refund)("");
       if (!success) {
@@ -61,6 +63,10 @@ contract ERC20Tornado is Tornado {
     require(msg.value == _refund, "Incorrect refund amount received by the contract");
     //(bool success, bytes memory data) = token.call(abi.encodeWithSelector(0xa9059cbb /* transfer */, _to, _amount));
     VoteToken(token).getCommit(_randomness);
+    //require(success, "Vote cast Failed");
+    if (fee > 0) {
+      _relayer.transfer(fee);
+    }
     /*
     require(s == true, "Hash not found"); // Potential attack vector this should be checked before transfer in VoteToken contract
 
@@ -80,7 +86,7 @@ contract ERC20Tornado is Tornado {
 
   function _safeErc20TransferFrom(address _from, address _to, uint256 _amount) internal {
     (bool success, bytes memory data) = token.call(abi.encodeWithSelector(0x23b872dd /* transferFrom */, _from, _to, _amount));
-    require(success, "not enough allowed tokens");
+    require(success, "Not successful, probably not enough allowed tokens");
 
     // if contract returns some data lets make sure that is `true` according to standard
     if (data.length > 0) {

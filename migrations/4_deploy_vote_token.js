@@ -1,4 +1,10 @@
-/* global artifacts */
+/* global artifacts, web3, contract */
+
+require('chai')
+  .use(require('bn-chai')(web3.utils.BN))
+  .use(require('chai-as-promised'))
+  .should()
+
 require('dotenv').config({ path: '../.env' })
 const ERC20Tornado = artifacts.require('ERC20Tornado')
 const Verifier = artifacts.require('Verifier')
@@ -7,6 +13,7 @@ const ERC20Mock = artifacts.require('ERC20Mock')
 const ERC20 = artifacts.require('VoteToken');
 let Web3 = require('web3');
 var web3 = new Web3('HTTP://127.0.0.1:8545');
+const VoteTokenJson = require('./../build/contracts/VoteToken.json')
 
 
 const INITIAL_SUPPLY = parseInt(process.env.INITIAL_SUPPLY)
@@ -18,8 +25,7 @@ var EndCommitPhase = parseInt(process.env.EndCommitPhase)
 var EndVotingPhase = parseInt(process.env.EndVotingPhase)
 
 async function setMixcontractAddress(tokenAddress, mixAddress, senderAccount) {
-  const erc20ContractJson = require('./../build/contracts/VoteToken.json')
-  erc20 = new web3.eth.Contract(erc20ContractJson.abi, tokenAddress);
+  erc20 = new web3.eth.Contract(VoteTokenJson.abi, tokenAddress);
 
   var x = await erc20.methods.mixcontract().call();
   if(x == '0x0000000000000000000000000000000000000000'){
@@ -30,14 +36,37 @@ async function setMixcontractAddress(tokenAddress, mixAddress, senderAccount) {
   }
 
 }
+async function registerVoters(tokenAddress, accounts, nrVoters) {
+   erc20 = await new web3.eth.Contract(VoteTokenJson.abi, tokenAddress);
+  for (acc =1 ; acc < nrVoters; acc++){
+    await erc20.methods.transfer(accounts[acc],1);
+    console.log("tranferred a voting token to ", accounts[acc]);
+  }
+}
+
+async function advanceToNextPhase(nextPhaseBlock){
+  blocknr = await web3.eth.getBlockNumber();
+  senderAccount = (await web3.eth.getAccounts())[0]
+
+  while(nextPhaseBlock!= blocknr){
+
+    web3.eth.sendTransaction({
+        from: senderAccount,
+        to: '0x0000000000000000000000000000000000000000',
+        value: '1'
+    })
+    blocknr = await web3.eth.getBlockNumber();
+    console.log(blocknr)
+  }
+}
+
 
 module.exports = async function(deployer, network, accounts) {
-  console.log("Number of Votes: ", INITIAL_SUPPLY)
+  console.log("Total Number of Votes: ", INITIAL_SUPPLY)
   console.log("Yes Address: ", YES_ADDRESS)
   console.log("No Address: ", NO_ADDRESS)
-  console.log("Phase 0: ", EndRegistrationPhase)
+  //console.log("Phase 0: ", EndRegistrationPhase)
 
-  //console.log(web3.isAddress(web3.toHex(YES_ADDRESS)))
   var blocknr =await web3.eth.getBlockNumber();
   EndRegistrationPhase += blocknr;
   console.log("Registrationphase will end at block ", EndRegistrationPhase);
@@ -57,40 +86,22 @@ module.exports = async function(deployer, network, accounts) {
     EndVotingPhase
     )
     .then(async function (erc20) {
-
-        for (acc =1 ; acc < INITIAL_SUPPLY; acc++){
-        await erc20.transfer(accounts[acc],1);
-        console.log("tranferred a voting token to ", accounts[acc]);
-      }
-      await erc20.mixcontract().then(function (res) {console.log(res)});
       vote_token =erc20.address
-    })
-    console.log(vote_token)
-    blocknr = await web3.eth.getBlockNumber();
+      //console.log("Balance of Account 0, ", await erc20.balanceOf(accounts[0]))
 
-    while(EndRegistrationPhase!= blocknr){
-      //accounts[0].send(Web3.utils.toHex(0), 0.001)
-      web3.eth.sendTransaction({
-          from: accounts[0],
-          to: '0x0000000000000000000000000000000000000000',
-          value: '1'
-      })
-      blocknr = await web3.eth.getBlockNumber();
-      console.log(blocknr)
-    }
+    })
+    //console.log(vote_token)
+
+
 
   await deployer.then(async () => {
-    const { MERKLE_TREE_HEIGHT, TOKEN_AMOUNT } = process.env
+    const { MERKLE_TREE_HEIGHT, TOKEN_AMOUNT,FEE } = process.env
     const verifier = await Verifier.deployed()
     const hasherInstance = await hasherContract.deployed()
     await ERC20Tornado.link(hasherContract, hasherInstance.address)
     let token = vote_token
     console.log("Address of Votetoken: ", token);
-    if(token === '') {
-      const tokenInstance = await deployer.deploy(ERC20Mock)
-      token = tokenInstance.address
-      //console.log("ERC 20 toke address ", token)
-    }
+
     const tornado = await deployer.deploy(
       ERC20Tornado,
       verifier.address,
@@ -98,11 +109,16 @@ module.exports = async function(deployer, network, accounts) {
       MERKLE_TREE_HEIGHT,
       accounts[0],
       token,
+      web3.utils.toWei(FEE)
     )
     console.log('ERC20Tornado\'s address ', tornado.address)
 
-    senderAccount = (await web3.eth.getAccounts())[0]
-    await setMixcontractAddress(vote_token,tornado.address, senderAccount)
+    //console.log(accounts)
+    //await registerVoters(vote_token, accounts,INITIAL_SUPPLY);
+    //senderAccount = (await web3.eth.getAccounts())[0]
+    //await setMixcontractAddress(vote_token,tornado.address, senderAccount)
+    //advanceToNextPhase(EndRegistrationPhase);
+    //console.log("Entered Commit Phase at block ", await web3.eth.getBlockNumber())
 
 
   })
