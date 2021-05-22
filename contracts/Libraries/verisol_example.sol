@@ -1,9 +1,9 @@
-pragma solidity ^0.5.17;
 
-import "@openzeppelin/contracts/GSN/Context.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@openzeppelin/contracts/math/SafeMath.sol";
-//import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+pragma solidity ^0.5.10;
+
+import "./IERC20.sol";
+import "./SafeMath.sol"; //import "../../math/SafeMath.sol";
+import "./VeriSolContracts.sol"; //change
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -29,7 +29,7 @@ import "@openzeppelin/contracts/math/SafeMath.sol";
  * functions have been added to mitigate the well-known issues around setting
  * allowances. See {IERC20-approve}.
  */
-contract VoteToken is  Context, IERC20 {
+contract ERC20 is IERC20 {
     using SafeMath for uint256;
 
     mapping (address => uint256) private _balances;
@@ -41,141 +41,6 @@ contract VoteToken is  Context, IERC20 {
     /**
      * @dev See {IERC20-totalSupply}.
      */
-
-    address public yes;
-    //address no votes are send to
-    address public no;
-    //address of smart contract mixing the votes for anonymity
-    address public mixcontract;
-    //in phase one the administrator distributes votetokens
-    uint public endphase1;
-    //in phase 2 the voters submit their vote commitment a hash
-    uint public endphase2;
-    //in phase 3 the voters cast their actual vote
-    uint public endblockelection;
-
-    address internal admin;
-
-    mapping(bytes20 => bool) private _commits;
-
-
-
-    //event Transfer(address sender, address recipient, uint256 amount)
-    constructor(
-      uint256 initialSupply,
-      address _yes,
-      address _no,
-      uint _endphase1,
-      uint _endphase2,
-      uint _endblockelection
-    ) public /*ERC20("Vote", "V")*/  {
-        yes = _yes;
-        no = _no;
-        mixcontract = address(0);
-        endphase1 = _endphase1;
-        endphase2 = _endphase2;
-        endblockelection = _endblockelection;
-        admin = _msgSender();
-        _mint(_msgSender(), initialSupply);
-    }
-    // A vote should not have decimals
-
-
-    function decimals() public view returns (uint8) {
-     return 0;
-    }
-
-    function setCommit(bytes20 _hash) external returns(bool){
-      require(_msgSender() == mixcontract,"Can only be filled by the anonymity Provider");
-      require(_commits[_hash] == false, "Commit already exists");
-      require(block.number < endphase2, "Commit Period ended");
-      require(block.number >= endphase1, "Commit Period has not started yet");
-      _commits[_hash] = true;
-      return true;
-    }
-
-    //casts the actual vote by submitting the _randomness
-    function getCommit(bytes calldata _randomness) external returns(bool){
-      require(_msgSender() == mixcontract);
-      require(block.number < endblockelection, "Vote Period ended");
-      require(block.number >= endphase2, "Vote Period has not started yet");
-      bytes32 x = keccak256(_randomness);
-
-      //das ist so weil bytes20 sich nach initilisierung nicht mehr ändern lässt und bytes32 keinen slice abgibt
-      bytes20 hashs = bytes20(x);
-
-
-
-      if(_commits[hashs] == true){
-        _commits[hashs] = false;
-        if(uint8(_randomness[31]) == uint8(1)){
-           transfer(yes,1);
-           return true;
-        }
-        else if(uint8(_randomness[31]) == uint8(0)){
-          transfer(no,1);
-          return true;
-        }
-        else {
-          revert('Invalid vote');
-        }
-     }
-     else {
-       revert('Hash does not match any known hash');
-    }
-  }
-
-
-  // sets the address for the contract providing anonymity
-  function setMixcontract(address _mixcontract) public returns (address) {
-    require(mixcontract == address(0), "Mixcontract already set");
-    require(msg.sender == admin);
-    mixcontract = _mixcontract;
-    return mixcontract;
-  }
-
- function _beforeTokenTransfer(address from, address to, uint256 amount) internal {
-   require(amount == 1,"Can only send one vote");
-   //super._beforeTokenTransfer(from, to, amount);
-   //require(msg.value == fee, "Fee ");
-   if(block.number < endphase1){
-     //require(mixcontract != address(0), "Mixcontract is not set yet");
-     require(balanceOf(to) == 0, "Recepient already has a VoteToken");
-     require(msg.sender == admin, "Only the administrator can distribute votes");
-     require(to != yes, "Cannot cast yes vote at this time");
-     require(to != no, "Cannot cast no vote at this time");
-     require(to != mixcontract, "Cannot submit tokens to the anonymity provider at this time");
-    }
-
-    else if(block.number < endphase2 && block.number >= endphase1 && mixcontract != address(0) ){
-      require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
-      require(to == mixcontract, "Can only send vote to anonymity provider");
-
-    }
-
-    else if(block.number < endblockelection && block.number >= endphase2 && mixcontract != address(0)){
-      require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
-      require(msg.sender == mixcontract, "Can only transfer votes from anonymity provider");
-      if(to == yes) {
-       }
-
-       else if(to == no){
-       }
-
-       else {
-         revert("Can only cast votes to yes or no addresses");
-        }
-      }
-
-      else  {
-        revert("Election Period Over");
-      }
-    }
-
-
-
-
-
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
@@ -196,7 +61,11 @@ contract VoteToken is  Context, IERC20 {
      * - the caller must have a balance of at least `amount`.
      */
     function transfer(address recipient, uint256 amount) public returns (bool) {
-        _transfer(_msgSender(), recipient, amount);
+        _transfer(msg.sender, recipient, amount);
+        assert (VeriSol.Old(_balances[msg.sender] + _balances[recipient]) == _balances[msg.sender] + _balances[recipient]);
+        assert (msg.sender == recipient ||  _balances[msg.sender] == VeriSol.Old(_balances[msg.sender] - amount));
+        assert (_balances[recipient] >= VeriSol.Old(_balances[recipient]));
+
         return true;
     }
 
@@ -214,8 +83,8 @@ contract VoteToken is  Context, IERC20 {
      *
      * - `spender` cannot be the zero address.
      */
-    function approve(address spender, uint256 amount) public returns (bool) {
-        _approve(_msgSender(), spender, amount);
+    function approve(address spender, uint256 value) public returns (bool) {
+        _approve(msg.sender, spender, value);
         return true;
     }
 
@@ -227,13 +96,13 @@ contract VoteToken is  Context, IERC20 {
      *
      * Requirements:
      * - `sender` and `recipient` cannot be the zero address.
-     * - `sender` must have a balance of at least `amount`.
-     * - the caller must have allowance for ``sender``'s tokens of at least
+     * - `sender` must have a balance of at least `value`.
+     * - the caller must have allowance for `sender`'s tokens of at least
      * `amount`.
      */
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
-        _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
+        _approve(sender, msg.sender, _allowances[sender][msg.sender].sub(amount));
         return true;
     }
 
@@ -250,7 +119,7 @@ contract VoteToken is  Context, IERC20 {
      * - `spender` cannot be the zero address.
      */
     function increaseAllowance(address spender, uint256 addedValue) public returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender].add(addedValue));
+        _approve(msg.sender, spender, _allowances[msg.sender][spender].add(addedValue));
         return true;
     }
 
@@ -269,7 +138,7 @@ contract VoteToken is  Context, IERC20 {
      * `subtractedValue`.
      */
     function decreaseAllowance(address spender, uint256 subtractedValue) public returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender].sub(subtractedValue, "ERC20: decreased allowance below zero"));
+        _approve(msg.sender, spender, _allowances[msg.sender][spender].sub(subtractedValue));
         return true;
     }
 
@@ -290,8 +159,8 @@ contract VoteToken is  Context, IERC20 {
     function _transfer(address sender, address recipient, uint256 amount) internal {
         require(sender != address(0), "ERC20: transfer from the zero address");
         require(recipient != address(0), "ERC20: transfer to the zero address");
-        _beforeTokenTransfer(msg.sender, recipient, amount);
-        _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
+
+        _balances[sender] = _balances[sender] - amount; // _balances[sender].sub(amount); // BUG
         _balances[recipient] = _balances[recipient].add(amount);
         emit Transfer(sender, recipient, amount);
     }
@@ -313,7 +182,7 @@ contract VoteToken is  Context, IERC20 {
         emit Transfer(address(0), account, amount);
     }
 
-    /**
+     /**
      * @dev Destroys `amount` tokens from `account`, reducing the
      * total supply.
      *
@@ -324,14 +193,13 @@ contract VoteToken is  Context, IERC20 {
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
      */
-     /*
-    function _burn(address account, uint256 amount) internal {
+    function _burn(address account, uint256 value) internal {
         require(account != address(0), "ERC20: burn from the zero address");
 
-        _balances[account] = _balances[account].sub(amount, "ERC20: burn amount exceeds balance");
-        _totalSupply = _totalSupply.sub(amount);
-        emit Transfer(account, address(0), amount);
-    }*/
+        _totalSupply = _totalSupply.sub(value);
+        _balances[account] = _balances[account].sub(value);
+        emit Transfer(account, address(0), value);
+    }
 
     /**
      * @dev Sets `amount` as the allowance of `spender` over the `owner`s tokens.
@@ -346,24 +214,28 @@ contract VoteToken is  Context, IERC20 {
      * - `owner` cannot be the zero address.
      * - `spender` cannot be the zero address.
      */
-    function _approve(address owner, address spender, uint256 amount) internal {
+    function _approve(address owner, address spender, uint256 value) internal {
         require(owner != address(0), "ERC20: approve from the zero address");
         require(spender != address(0), "ERC20: approve to the zero address");
 
-        _allowances[owner][spender] = amount;
-        emit Approval(owner, spender, amount);
+        _allowances[owner][spender] = value;
+        emit Approval(owner, spender, value);
     }
 
     /**
-     * @dev Destroys `amount` tokens from `account`.`amount` is then deducted
+     * @dev Destoys `amount` tokens from `account`.`amount` is then deducted
      * from the caller's allowance.
      *
      * See {_burn} and {_approve}.
      */
-     /*
     function _burnFrom(address account, uint256 amount) internal {
         _burn(account, amount);
-        _approve(account, _msgSender(), _allowances[account][_msgSender()].sub(amount, "ERC20: burn amount exceeds allowance"));
-    }*/
+        _approve(account, msg.sender, _allowances[account][msg.sender].sub(amount));
+    }
+
+     function contractInvariant() private view {
+         VeriSol.ContractInvariant(_totalSupply == VeriSol.SumMapping(_balances));
+     }
+
 
 }

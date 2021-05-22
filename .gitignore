@@ -102,3 +102,8 @@ ETHTornado_flat.sol
 /contracts/mcore*
 
 package-lock.json
+
+/contracts/*.txt
+/contracts/*.bpl
+/contracts/Libraries/*.bpl
+/contracts/Libraries/*.txt
