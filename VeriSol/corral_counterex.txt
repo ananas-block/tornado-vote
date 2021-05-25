@@ -1,0 +1,4 @@
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol(16,1): : VoteToken::Constructor (this = address!1, msg.sender = address!3, msg.value = 36, initialSupply = 7979, _yes = address!4, _no = address!5, _endphase1 = 626, _endphase2 = 627, _endblockelection = 891)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(221,1): : VoteToken::transfer (this = address!1, msg.sender = address!3, msg.value = 42, recipient = address!6, amount = 1)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(257,1): : VoteToken::transferFrom (this = address!1, msg.sender = address!3, msg.value = 43, sender = address!6, recipient = address!7, amount = 1)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(326,1): : ASSERTION FAILS!

@@ -46,13 +46,13 @@ contract VoteToken is  Context, IERC20 {
     /**
      * @dev See {IERC20-totalSupply}.
      */
-
+     //address yes votes are send to
     address public yes;
     //address no votes are send to
     address public no;
     //address of smart contract mixing the votes for anonymity
     address public mixcontract;
-    //in phase one the administrator distributes votetokens
+    //in phase 1 the administrator distributes votetokens
     uint public endphase1;
     //in phase 2 the voters submit their vote commitment a hash
     uint public endphase2;
@@ -60,6 +60,9 @@ contract VoteToken is  Context, IERC20 {
     uint public endblockelection;
 
     address internal admin;
+
+    uint private times_mixcontract_changed = 0;
+    uint private deploy_block = 0;
 
     mapping(bytes32 => bool) private _commits;
 
@@ -74,9 +77,12 @@ contract VoteToken is  Context, IERC20 {
       uint _endphase2,
       uint _endblockelection
     ) public /*ERC20("Vote", "V")*/  {
-      require(block.number < _endphase1);
-      require(_endphase1 < _endphase2);
-      require(_endphase2 < _endblockelection);
+      deploy_block = block.number;
+      require(block.number < _endphase1);// added
+      require(_endphase1 < _endphase2);// added
+      require(_endphase2 < _endblockelection);// added
+      require(_yes != _no);
+      require(admin != _yes && admin != _no);
         yes = _yes;
         no = _no;
         mixcontract = address(0);
@@ -85,8 +91,8 @@ contract VoteToken is  Context, IERC20 {
         endblockelection = _endblockelection;
         admin = _msgSender();
         _mint(_msgSender(), initialSupply);
+        deploy_block = block.number;
     }
-    // A vote should not have decimals
 
 
     function decimals() public view returns (uint8) {
@@ -131,26 +137,29 @@ contract VoteToken is  Context, IERC20 {
      else {
        revert('Hash does not match any known hash');
     }
-    //cannot use a hash twice 
-    assert(_commits[hashs] == false);
+    //cannot use a hash twice
+    assert(_commits[hashs] == false); // can be formally verified
   }
 
 
   // sets the address for the contract providing anonymity
   function setMixcontract(address _mixcontract) public returns (address) {
     require(mixcontract == address(0), "Mixcontract already set");
+    require(_mixcontract != address(0));// added
+    require(_mixcontract != msg.sender); //added
     require(msg.sender == admin);
+
     mixcontract = _mixcontract;
+    times_mixcontract_changed += 1;
+    // mixcontract address can only be changed once
+    assert(times_mixcontract_changed <= 1);
     return mixcontract;
   }
 
- function _beforeTokenTransfer(address from, address to, uint256 amount) internal {
+ function _beforeTokenTransfer(address from, address to, uint256 amount, uint block_nr) internal {
    require(amount == 1,"Can only send one vote");
 
-   //super._beforeTokenTransfer(from, to, amount);
-   //require(msg.value == fee, "Fee ");
-   if(block.number < endphase1){
-     //require(mixcontract != address(0), "Mixcontract is not set yet");
+   if(block_nr < endphase1){
      require(balanceOf(to) == 0, "Recepient already has a VoteToken");
      require(msg.sender == admin, "Only the administrator can distribute votes");
      require(to != yes, "Cannot cast yes vote at this time");
@@ -158,15 +167,17 @@ contract VoteToken is  Context, IERC20 {
      require(to != mixcontract, "Cannot submit tokens to the anonymity provider at this time");
     }
 
-    else if(block.number < endphase2 && block.number >= endphase1 && mixcontract != address(0) ){
+    else if(block_nr < endphase2 && block_nr >= endphase1 && mixcontract != address(0) ){
       require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
       require(to == mixcontract, "Can only send vote to anonymity provider");
 
     }
 
-    else if(block.number < endblockelection && block.number >= endphase2 && mixcontract != address(0)){
+    else if(block_nr < endblockelection && block_nr >= endphase2 && mixcontract != address(0)){
       require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
       require(msg.sender == mixcontract, "Can only transfer votes from anonymity provider");
+      require((to == yes) || (to == no), "Can only cast votes to yes or no addresses");
+      /*
       if(to == yes) {
        }
 
@@ -175,7 +186,7 @@ contract VoteToken is  Context, IERC20 {
 
        else {
          revert("Can only cast votes to yes or no addresses");
-        }
+       }*/
       }
 
       else  {
@@ -224,11 +235,11 @@ contract VoteToken is  Context, IERC20 {
      * Requirements:
      *
      * - `spender` cannot be the zero address.
-
+     */
     function approve(address spender, uint256 amount) public returns (bool) {
         _approve(_msgSender(), spender, amount);
         return true;
-    }*/
+    }
 
     /**
      * @dev See {IERC20-transferFrom}.
@@ -241,12 +252,12 @@ contract VoteToken is  Context, IERC20 {
      * - `sender` must have a balance of at least `amount`.
      * - the caller must have allowance for ``sender``'s tokens of at least
      * `amount`.
-
+     */
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
         _approve(sender, _msgSender(), sub(_allowances[sender][_msgSender()], amount, "ERC20: transfer amount exceeds allowance"));
         return true;
-    }*/
+    }
 
     /**
      * @dev Atomically increases the allowance granted to `spender` by the caller.
@@ -303,59 +314,34 @@ contract VoteToken is  Context, IERC20 {
         require(recipient != address(0), "ERC20: transfer to the zero address");
         require(_balances[sender] >= amount);
         require(sender != recipient);
+        uint block_nr = block.number;
 
-        _beforeTokenTransfer(msg.sender, recipient, amount);
-        uint256 old = block.number;
+        _beforeTokenTransfer(msg.sender, recipient, amount, block_nr);
+        //uint256 old = block.number;
         _balances[sender] = sub(_balances[sender], amount, "ERC20: transfer amount exceeds balance");
         _balances[recipient] = add(_balances[recipient],amount);
 
         emit Transfer(sender, recipient, amount);
-        //require( block.number >= endphase1);
-        //require(block.number < endphase2);
-        // only works when one puts the require outside the if in _beforeTokenTransfer
-        //VeriSol.Ensures(amount == 1);
-        assert (VeriSol.Old(_balances[msg.sender] + _balances[recipient]) == _balances[msg.sender] + _balances[recipient]);
-        assert (msg.sender == recipient ||  _balances[msg.sender] == VeriSol.Old(_balances[msg.sender] - amount));
-        assert (_balances[recipient] >= VeriSol.Old(_balances[recipient]));
-        //VeriSol.Requires(VeriSol.Old(_balances[sender]) == (_balances[sender] - 1));
 
+        assert (_balances[recipient] == VeriSol.Old(_balances[recipient] + 1) || recipient == msg.sender);//added
+
+        if (block_nr < endphase1){
+          assert(msg.sender == admin);
+        }
+        else if (block_nr < endphase2 && block_nr >= endphase1) {
+          assert(_balances[admin] <= 1);
+          assert(recipient == mixcontract);
+        }
+        else if(block_nr < endblockelection && block_nr >= endphase2) {
+          assert(msg.sender == mixcontract);
+        }
 
     }
 
     function contractInvariant_General() private view {
-         //VeriSol.ContractInvariant(_totalSupply == VeriSol.SumMapping(_balances));
+         VeriSol.ContractInvariant(_totalSupply == VeriSol.SumMapping(_balances));
      }
 
-     function contractInvariant_RegistrationPhase() private view {
-       require   (block.number < endphase1);
-       //VeriSol.ContractInvariant(msg.sender == admin);
-     }
-
-     function contractInvariant_CommitPhase() private view {
-       require   (block.number < endphase2);
-       require   (block.number >= endphase1);
-
-       //VeriSol.ContractInvariant(msg.sender == admin);
-
-       //in phase 2 the voters submit their vote commitment a hash
-       //uint public endphase2;
-       //in phase 3 the voters cast their actual vote
-       //uint public endblockelection;
-     }
-
-     function contractInvariant_VotingPhase() private view {
-       require   (block.number >= endphase2);
-       require   (block.number < endblockelection);
-       //require( mixcontract != address(0));
-       //VeriSol.ContractInvariant(msg.sender == mixcontract);
-
-       //VeriSol.Ensures(msg.sender == mixcontract);
-
-       //in phase 2 the voters submit their vote commitment a hash
-       //uint public endphase2;
-       //in phase 3 the voters cast their actual vote
-       //uint public endblockelection;
-     }
 
     /** @dev Creates `amount` tokens and assigns them to `account`, increasing
      * the total supply.

@@ -1,0 +1,31 @@
+Single threaded program detected
+Verifying program while tracking: {assertsPassed}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, endphase2_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, endphase2_VoteToken, M_int_bool, _commits_VoteToken}
+Program has no bugs
+Reached recursion bound of 10
+
+Boogie verification time: 112.66 s
+Time spent reading-writing programs: 2.44 s
+
+Time spent checking a program (9): 111.77 s
+Time spent checking a path (24): 4.28 s
+
+Number of procedures inlined: 367
+Number of variables tracked: 14
+Total Time: 116.8056185 s
+Total User CPU time: 116.74 s

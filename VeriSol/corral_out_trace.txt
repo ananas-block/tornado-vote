@@ -1,0 +1,394 @@
+s
+#
+1 40 3 1 c
+1 40 6 113 Context_Context_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|16|
+1 50 3 1 c
+1 50 6 98 IERC20_IERC20|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/IERC20.sol|7|
+1 51 3 1 c
+1 51 6 98 IERC20_IERC20|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/IERC20.sol|7|
+1 51 4 29 CALL IERC20_IERC20_NoBaseCtor
+1 55 3 1 c
+1 55 6 98 IERC20_IERC20|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/IERC20.sol|7|
+1 55 4 37 RETURN from IERC20_IERC20_NoBaseCtor 
+1 118 3 1 c
+1 118 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|79|
+1 119 3 1 c
+1 119 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|80|
+1 124 3 1 c
+1 124 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|80|
+1 124 4 18 deploy_block = 921
+1 125 3 1 c
+1 125 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|81|
+1 130 3 1 c
+1 130 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|82|
+1 134 3 1 c
+1 134 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|83|
+1 138 3 1 c
+1 138 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|84|
+1 140 3 1 c
+1 140 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|85|
+1 142 3 1 c
+1 142 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|86|
+1 144 3 1 c
+1 144 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|86|
+1 144 4 17 yes = T@Ref!val!4
+1 145 3 1 c
+1 145 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|87|
+1 147 3 1 c
+1 147 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|87|
+1 147 4 16 no = T@Ref!val!5
+1 148 3 1 c
+1 148 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|88|
+1 151 3 1 c
+1 151 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|88|
+1 151 4 25 mixcontract = T@Ref!val!2
+1 152 3 1 c
+1 152 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|89|
+1 156 3 1 c
+1 156 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|89|
+1 156 4 15 endphase1 = 626
+1 157 3 1 c
+1 157 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|90|
+1 161 3 1 c
+1 161 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|90|
+1 161 4 15 endphase2 = 627
+1 162 3 1 c
+1 162 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|91|
+1 166 3 1 c
+1 166 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|91|
+1 166 4 22 endblockelection = 891
+1 167 3 1 c
+1 167 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|92|
+1 170 3 1 c
+1 170 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|92|
+1 170 4 23 CALL _msgSender_Context
+1 177 3 1 c
+1 177 6 222 _msgSender_Context|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|19|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|92|
+1 178 3 1 c
+1 178 6 222 _msgSender_Context|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|92|
+1 180 3 1 c
+1 180 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|92|
+1 180 4 31 RETURN from _msgSender_Context 
+1 181 3 1 c
+1 181 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 183 3 1 c
+1 183 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 183 4 19 admin = T@Ref!val!3
+1 184 3 1 c
+1 184 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|93|
+1 187 3 1 c
+1 187 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|93|
+1 187 4 23 CALL _msgSender_Context
+1 194 3 1 c
+1 194 6 222 _msgSender_Context|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|19|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|93|
+1 195 3 1 c
+1 195 6 222 _msgSender_Context|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|93|
+1 197 3 1 c
+1 197 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|93|
+1 197 4 31 RETURN from _msgSender_Context 
+1 198 3 1 c
+1 198 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 200 3 1 c
+1 200 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 200 4 20 CALL _mint_VoteToken
+1 209 3 1 c
+1 209 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|358|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 213 3 1 c
+1 213 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 217 3 1 c
+1 217 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 217 4 18 CALL add_VoteToken
+1 226 3 1 c
+1 226 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 233 3 1 c
+1 233 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 233 4 8 c = 7979
+1 234 3 1 c
+1 234 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|429|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 238 3 1 c
+1 238 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|431|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 241 3 1 c
+1 241 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 241 4 26 RETURN from add_VoteToken 
+1 242 3 1 c
+1 242 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 244 3 1 c
+1 244 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|360|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 244 4 19 _totalSupply = 7979
+1 245 3 1 c
+1 245 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 249 3 1 c
+1 249 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 249 4 18 CALL add_VoteToken
+1 258 3 1 c
+1 258 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 265 3 1 c
+1 265 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 265 4 8 c = 7979
+1 266 3 1 c
+1 266 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|429|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 270 3 1 c
+1 270 6 321 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|431|_mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 273 3 1 c
+1 273 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 273 4 26 RETURN from add_VoteToken 
+1 274 3 1 c
+1 274 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 276 3 1 c
+1 276 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|361|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 276 4 25 _balances[account] = 7979
+1 277 3 1 c
+1 277 6 220 _mint_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|362|VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 279 3 1 c
+1 279 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|
+1 279 4 28 RETURN from _mint_VoteToken 
+1 280 3 1 c
+1 280 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 285 3 1 c
+1 285 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 285 4 18 deploy_block = 725
+1 288 3 1 c
+1 288 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 292 3 1 c
+1 292 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 292 4 27 CALL CorralChoice_VoteToken
+1 350 3 1 c
+1 350 6 214 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|221|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 354 3 1 c
+1 354 6 214 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|221|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 354 4 23 CALL _msgSender_Context
+1 361 3 1 c
+1 361 6 319 _msgSender_Context|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|19|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|221|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 362 3 1 c
+1 362 6 319 _msgSender_Context|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|221|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 364 3 1 c
+1 364 6 214 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|221|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 364 4 31 RETURN from _msgSender_Context 
+1 365 3 1 c
+1 365 6 213 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 367 3 1 c
+1 367 6 213 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 367 4 24 CALL _transfer_VoteToken
+1 377 3 1 c
+1 377 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|313|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 381 3 1 c
+1 381 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|314|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 384 3 1 c
+1 384 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|315|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 388 3 1 c
+1 388 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|316|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 390 3 1 c
+1 390 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|317|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 395 3 1 c
+1 395 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|317|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 395 4 14 block_nr = 429
+1 396 3 1 c
+1 396 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 399 3 1 c
+1 399 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 399 4 35 CALL _beforeTokenTransfer_VoteToken
+1 410 3 1 c
+1 410 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|160|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 414 3 1 c
+1 414 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|162|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 419 3 1 c
+1 419 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 424 3 1 c
+1 424 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 424 4 24 CALL balanceOf_VoteToken
+1 432 3 1 c
+1 432 6 545 balanceOf_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|209|_beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 436 3 1 c
+1 436 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 436 4 32 RETURN from balanceOf_VoteToken 
+1 437 3 1 c
+1 437 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|209|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 440 3 1 c
+1 440 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|164|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 442 3 1 c
+1 442 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|165|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 444 3 1 c
+1 444 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|166|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 446 3 1 c
+1 446 6 438 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|167|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 448 3 1 c
+1 448 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 448 4 43 RETURN from _beforeTokenTransfer_VoteToken 
+1 449 3 1 c
+1 449 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 453 3 1 c
+1 453 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 453 4 18 CALL sub_VoteToken
+1 463 3 1 c
+1 463 6 421 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|459|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 468 3 1 c
+1 468 6 421 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|460|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 474 3 1 c
+1 474 6 421 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|460|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 474 4 8 c = 7978
+1 475 3 1 c
+1 475 6 421 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|462|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 478 3 1 c
+1 478 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 478 4 26 RETURN from sub_VoteToken 
+1 479 3 1 c
+1 479 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 481 3 1 c
+1 481 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 481 4 24 _balances[sender] = 7978
+1 482 3 1 c
+1 482 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 486 3 1 c
+1 486 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 486 4 18 CALL add_VoteToken
+1 495 3 1 c
+1 495 6 421 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 502 3 1 c
+1 502 6 421 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 502 4 5 c = 1
+1 503 3 1 c
+1 503 6 421 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|429|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 507 3 1 c
+1 507 6 421 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|431|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 510 3 1 c
+1 510 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 510 4 26 RETURN from add_VoteToken 
+1 511 3 1 c
+1 511 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 513 3 1 c
+1 513 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 513 4 24 _balances[recipient] = 1
+1 514 3 1 c
+1 514 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|324|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 516 3 1 c
+1 516 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|326|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 525 3 1 c
+1 525 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|328|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 530 3 1 c
+1 530 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|330|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 535 3 1 c
+1 535 6 320 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|331|transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 538 3 1 c
+1 538 6 213 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol|20|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 538 4 32 RETURN from _transfer_VoteToken 
+1 539 3 1 c
+1 539 6 214 transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|222|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 542 3 1 c
+1 542 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 542 4 35 RETURN from CorralChoice_VoteToken 
+1 543 3 1 c
+1 543 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 547 3 1 c
+1 547 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 547 4 27 CALL CorralChoice_VoteToken
+1 612 3 1 c
+1 612 6 218 transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 615 3 1 c
+1 615 6 218 transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 615 4 24 CALL _transfer_VoteToken
+1 625 3 1 c
+1 625 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|313|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 629 3 1 c
+1 629 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|314|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 632 3 1 c
+1 632 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|315|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 636 3 1 c
+1 636 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|316|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 638 3 1 c
+1 638 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|317|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 643 3 1 c
+1 643 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|317|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 643 4 14 block_nr = 258
+1 644 3 1 c
+1 644 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 647 3 1 c
+1 647 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 647 4 35 CALL _beforeTokenTransfer_VoteToken
+1 658 3 1 c
+1 658 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|160|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 662 3 1 c
+1 662 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|162|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 667 3 1 c
+1 667 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 672 3 1 c
+1 672 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 672 4 24 CALL balanceOf_VoteToken
+1 680 3 1 c
+1 680 6 550 balanceOf_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|209|_beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 684 3 1 c
+1 684 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|163|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 684 4 32 RETURN from balanceOf_VoteToken 
+1 685 3 1 c
+1 685 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|209|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 688 3 1 c
+1 688 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|164|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 690 3 1 c
+1 690 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|165|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 692 3 1 c
+1 692 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|166|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 694 3 1 c
+1 694 6 443 _beforeTokenTransfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|167|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 696 3 1 c
+1 696 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|319|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 696 4 43 RETURN from _beforeTokenTransfer_VoteToken 
+1 697 3 1 c
+1 697 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 701 3 1 c
+1 701 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 701 4 18 CALL sub_VoteToken
+1 711 3 1 c
+1 711 6 426 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|459|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 716 3 1 c
+1 716 6 426 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|460|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 722 3 1 c
+1 722 6 426 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|460|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 722 4 5 c = 0
+1 723 3 1 c
+1 723 6 426 sub_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|462|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 726 3 1 c
+1 726 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 726 4 26 RETURN from sub_VoteToken 
+1 727 3 1 c
+1 727 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 729 3 1 c
+1 729 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|321|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 729 4 21 _balances[sender] = 0
+1 730 3 1 c
+1 730 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 734 3 1 c
+1 734 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 734 4 18 CALL add_VoteToken
+1 743 3 1 c
+1 743 6 426 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 750 3 1 c
+1 750 6 426 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|428|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 750 4 5 c = 1
+1 751 3 1 c
+1 751 6 426 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|429|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 755 3 1 c
+1 755 6 426 add_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|431|_transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 758 3 1 c
+1 758 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 758 4 26 RETURN from add_VoteToken 
+1 759 3 1 c
+1 759 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 761 3 1 c
+1 761 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|322|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 761 4 24 _balances[recipient] = 1
+1 762 3 1 c
+1 762 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|324|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 764 3 1 c
+1 764 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|326|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 772 3 1 c
+1 772 6 325 _transfer_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|326|transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 772 4 247 ASSERTION FAILS assert old(M_Ref_int[_balances_VoteToken[this]][msgsender_MSG] + M_Ref_int[_balances_VoteToken[this]][recipient_s737]) == M_Ref_int[_balances_VoteToken[this]][msgsender_MSG] + M_Ref_int[_balances_VoteToken[this]][recipient_s737];
+ 
+1 773 3 1 c
+1 773 6 218 transferFrom_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|257|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 773 4 32 RETURN from _transfer_VoteToken 
+1 775 3 1 c
+1 775 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 775 4 35 RETURN from CorralChoice_VoteToken 
+1 776 3 1 c
+1 776 6 108 CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
+1 776 4 4 Done
