@@ -1,27 +1,70 @@
 
 # Tornado Vote (Private Voting based on tornado Cash)
 
-nvm use v11.15.0
+This repo contains a private vote protocol, developed for my Masterthesis, which is an extension of the privacy protocol **[tornado cash](https://github.com/tornadocash/tornado-core)** and an ERC20 token of the **[Open Zeppelin Library v2.4](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/release-v2.4.0)**.
 
-ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337
+Tornado Cash is a noncustodial mixer which takes in tokens and a commitment, a hash. These commitments are added to a merkle tree. Using a zeroknowledge proof a relayer can withdraw funds to a new address therefore unlinking the original address and the new address achieving certain anonymity.
 
-npm test ./test/VoteToken.test.js
+The voting protcol uses the anonymity of tornado cash to transfer extended ERC20 Vote Tokens to addresses specified at deployment which represent choices for example yes or no. 
 
-npm run migrate:dev
 
+**The Voting protocol is composed of three phases:**
+
+**Registration Phase**: The adminstrator deploys the smart contracts and sets the parameters (initialSupply, address yes,address no,block endphase1,block endphase2,block endblockelection, address tornado_contract) and distributes the tokens to eligible voters. After distribution the administrator must retain one or zero vote tokens.
+
+**Commitment Phase**: Transfer token to anonymity provider and retain note. Subsequently, the voter uses the note to submit the first 20 bytes of a sha3 hash H(32 bytes randomness || 1 byte Vote) via a relayer to the anonymity provider which saves the hash in the vote token. This hash is a commitment for the vote to be cast next round to ensure fairness.
+
+![image](docs/Vote-Commit-Phase.png)
+
+
+**Voting Phase**: The voter submits the inputs for the prior hash commitment in clear text over a relayer to the anonymity provider. The anonymity provider calls the vote token and with the given inputs which checks for the existence of a the first 20 bytes of a sha3 hash corresponding to the inputs. If a corresponding hash is found, it is deleted, and a vote is transferred to the choice given in the last byte of the input for the hash commitment.
+
+![image](docs/Vote-Vote-Phase.png)
+
+
+**Protocol Properties:**
+- self tallying
+- vote privacy
+- publicly verifiable with ethereum blockexplorer
+- fairness
+- no single point of failure after registration phase
+
+## Security
+
+Both the original tornado cash protocol and openzeppeling ERC20 token implementation have been audited and are deployed on the Ethereum mainnet today. Of the tornado cash code the withdraw function has been renamed commit and additional input and a function call to 
+Since, the code has been modified, in particular the ERC20 token, a new security analyis was conducted using the tools, **[Slither]()**, **[Mythril]()** and **[VeriSol](https://github.com/microsoft/verisol)**. With VerSol a number of safety properties have been formally verified, for details check the **[VeriSol directory](https://github.com/ananas-block/tornado-vote/tree/master/VeriSol)**.
+**Nevertheless, this is still experimental software use at your own risk!**
+
+## Deploy
+
+### Test
+`nvm use v11.15.0`
+
+ `npm run build`
+
+`ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337`
+
+`npm test ./test/VoteToken.test.js`
+
+### Deploy locally
+`nvm use v11.15.0`
+
+`npm run build`
+
+`ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337`
+
+ Edit .env file for election configuration
+
+`npm run migrate:dev`
+
+  
 
 ./cli.js deposit ETH 0.1 --rpc HTTP://127.0.0.1:8545
 
 ./cli.js withdraw tornado-eth-0.1-1337-0xe8c968ba6ea1f4045797ff23c3a316a2a99fdca5833977624ed39a3736cf090d77f5be2aa442d3d0485eee4b3e4542a4031de8a40de73039e3ea6e8206bc 0xB9E73B55b1398217C7dB7d9C3c7f0f5F7Ca888e6 --rpc HTTP://127.0.0.1:8545 --relayer http://127.0.0.1:8000
 
-
-
-172.18.0.1
-
-Yes: 0xB4F5663773fB2842d1A74B2da0b5ec95f2ac125A
-No: 0x4333dD7Cc5349D6DAB1e9621E07319eda0d7c593
-
-
+### Deploy on testnet
+todo
 
 # Tornado Cash Privacy Solution [![Build Status](https://travis-ci.org/tornadocash/tornado-core.svg?branch=master)](https://travis-ci.org/tornadocash/tornado-core)
 
