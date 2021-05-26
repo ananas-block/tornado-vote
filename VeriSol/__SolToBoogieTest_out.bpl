@@ -3,6 +3,7 @@ type ContractName;
 const unique null: Ref;
 const unique Context: ContractName;
 const unique IERC20: ContractName;
+const unique SafeMath: ContractName;
 const unique VeriSol: ContractName;
 const unique VoteToken: ContractName;
 function ConstantToRef(x: int) returns (ret: Ref);
@@ -122,11 +123,182 @@ call IERC20_IERC20_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG);
 }
 
 procedure {:public} {:inline 1} totalSupply_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int) returns (__ret_0_: int);
-procedure {:public} {:inline 1} balanceOf_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s988: Ref) returns (__ret_0_: int);
-procedure {:public} {:inline 1} transfer_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, recipient_s997: Ref, amount_s997: int) returns (__ret_0_: bool);
-procedure {:public} {:inline 1} allowance_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s1006: Ref, spender_s1006: Ref) returns (__ret_0_: int);
-procedure {:public} {:inline 1} approve_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, spender_s1015: Ref, amount_s1015: int) returns (__ret_0_: bool);
-procedure {:public} {:inline 1} transferFrom_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s1026: Ref, recipient_s1026: Ref, amount_s1026: int) returns (__ret_0_: bool);
+procedure {:public} {:inline 1} balanceOf_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s877: Ref) returns (__ret_0_: int);
+procedure {:public} {:inline 1} transfer_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, recipient_s886: Ref, amount_s886: int) returns (__ret_0_: bool);
+procedure {:public} {:inline 1} allowance_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s895: Ref, spender_s895: Ref) returns (__ret_0_: int);
+procedure {:public} {:inline 1} approve_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, spender_s904: Ref, amount_s904: int) returns (__ret_0_: bool);
+procedure {:public} {:inline 1} transferFrom_IERC20(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s915: Ref, recipient_s915: Ref, amount_s915: int) returns (__ret_0_: bool);
+procedure {:inline 1} SafeMath_SafeMath_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int);
+implementation SafeMath_SafeMath_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int)
+{
+// start of initialization
+assume ((msgsender_MSG) != (null));
+Balance[this] := 0;
+// end of initialization
+}
+
+procedure {:inline 1} SafeMath_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int);
+implementation SafeMath_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int)
+{
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 16} (true);
+call SafeMath_SafeMath_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG);
+}
+
+procedure {:inline 1} add_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s959: int, b_s959: int) returns (__ret_0_: int);
+implementation add_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s959: int, b_s959: int) returns (__ret_0_: int)
+{
+var c_s958: int;
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s959);
+call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s959);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 26} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 27} (true);
+assume ((c_s958) >= (0));
+assume ((a_s959) >= (0));
+assume ((b_s959) >= (0));
+assume (((a_s959) + (b_s959)) >= (0));
+c_s958 := (a_s959) + (b_s959);
+call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s958);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 28} (true);
+assume ((c_s958) >= (0));
+assume ((a_s959) >= (0));
+assume ((c_s958) >= (a_s959));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 30} (true);
+assume ((c_s958) >= (0));
+__ret_0_ := c_s958;
+return;
+}
+
+procedure {:inline 1} sub_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s986: int, b_s986: int, errorMessage_s986: int) returns (__ret_0_: int);
+implementation sub_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s986: int, b_s986: int, errorMessage_s986: int) returns (__ret_0_: int)
+{
+var c_s985: int;
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s986);
+call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s986);
+call  {:cexpr "errorMessage"} boogie_si_record_sol2Bpl_int(errorMessage_s986);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 57} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 58} (true);
+assume ((b_s986) >= (0));
+assume ((a_s986) >= (0));
+assume ((b_s986) <= (a_s986));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 59} (true);
+assume ((c_s985) >= (0));
+assume ((a_s986) >= (0));
+assume ((b_s986) >= (0));
+assume (((a_s986) - (b_s986)) >= (0));
+c_s985 := (a_s986) - (b_s986);
+call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s985);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 61} (true);
+assume ((c_s985) >= (0));
+__ret_0_ := c_s985;
+return;
+}
+
+procedure {:inline 1} mul_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s1020: int, b_s1020: int) returns (__ret_0_: int);
+implementation mul_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s1020: int, b_s1020: int) returns (__ret_0_: int)
+{
+var c_s1019: int;
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s1020);
+call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s1020);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 73} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 77} (true);
+assume ((a_s1020) >= (0));
+if ((a_s1020) == (0)) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 77} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 78} (true);
+__ret_0_ := 0;
+return;
+}
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 81} (true);
+assume ((c_s1019) >= (0));
+assume ((a_s1020) >= (0));
+assume ((b_s1020) >= (0));
+assume (((a_s1020) * (b_s1020)) >= (0));
+c_s1019 := (a_s1020) * (b_s1020);
+call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s1019);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 82} (true);
+assume ((c_s1019) >= (0));
+assume ((a_s1020) >= (0));
+assume (((c_s1019) div (a_s1020)) >= (0));
+assume ((b_s1020) >= (0));
+assume (((c_s1019) div (a_s1020)) == (b_s1020));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 84} (true);
+assume ((c_s1019) >= (0));
+__ret_0_ := c_s1019;
+return;
+}
+
+procedure {:inline 1} div_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s1047: int, b_s1047: int, errorMessage_s1047: int) returns (__ret_0_: int);
+implementation div_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s1047: int, b_s1047: int, errorMessage_s1047: int) returns (__ret_0_: int)
+{
+var c_s1046: int;
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s1047);
+call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s1047);
+call  {:cexpr "errorMessage"} boogie_si_record_sol2Bpl_int(errorMessage_s1047);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 115} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 117} (true);
+assume ((b_s1047) >= (0));
+assume ((b_s1047) > (0));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 118} (true);
+assume ((c_s1046) >= (0));
+assume ((a_s1047) >= (0));
+assume ((b_s1047) >= (0));
+assume (((a_s1047) div (b_s1047)) >= (0));
+c_s1046 := (a_s1047) div (b_s1047);
+call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s1046);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 121} (true);
+assume ((c_s1046) >= (0));
+__ret_0_ := c_s1046;
+return;
+}
+
+procedure {:inline 1} mod_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s1070: int, b_s1070: int, errorMessage_s1070: int) returns (__ret_0_: int);
+implementation mod_SafeMath(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s1070: int, b_s1070: int, errorMessage_s1070: int) returns (__ret_0_: int)
+{
+call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
+call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
+call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
+call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
+call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s1070);
+call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s1070);
+call  {:cexpr "errorMessage"} boogie_si_record_sol2Bpl_int(errorMessage_s1070);
+call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 152} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 153} (true);
+assume ((b_s1070) >= (0));
+assume ((b_s1070) != (0));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/SafeMath.sol"} {:sourceLine 154} (true);
+assume ((a_s1070) >= (0));
+assume ((b_s1070) >= (0));
+assume (((a_s1070) mod (b_s1070)) >= (0));
+__ret_0_ := (a_s1070) mod (b_s1070);
+return;
+}
+
 var _balances_VoteToken: [Ref]Ref;
 var _allowances_VoteToken: [Ref]Ref;
 var _totalSupply_VoteToken: [Ref]int;
@@ -140,29 +312,30 @@ var admin_VoteToken: [Ref]Ref;
 var times_mixcontract_changed_VoteToken: [Ref]int;
 var deploy_block_VoteToken: [Ref]int;
 var _commits_VoteToken: [Ref]Ref;
-procedure {:inline 1} VoteToken_VoteToken_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s142: int, _yes_s142: Ref, _no_s142: Ref, _endphase1_s142: int, _endphase2_s142: int, _endblockelection_s142: int);
-implementation VoteToken_VoteToken_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s142: int, _yes_s142: Ref, _no_s142: Ref, _endphase1_s142: int, _endphase2_s142: int, _endblockelection_s142: int)
+procedure {:inline 1} VoteToken_VoteToken_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s147: int, _yes_s147: Ref, _no_s147: Ref, _endphase1_s147: int, _endphase2_s147: int, _endblockelection_s147: int);
+implementation VoteToken_VoteToken_NoBaseCtor(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s147: int, _yes_s147: Ref, _no_s147: Ref, _endphase1_s147: int, _endphase2_s147: int, _endblockelection_s147: int)
 {
 var __var_1: int;
-var __var_2: int;
+var __var_2: Ref;
 var __var_3: Ref;
 var __var_4: Ref;
 var __var_5: Ref;
-var __var_6: int;
-var __var_7: Ref;
+var __var_6: Ref;
+var __var_7: int;
 var __var_8: Ref;
 var __var_9: Ref;
+var __var_10: Ref;
 // start of initialization
 assume ((msgsender_MSG) != (null));
 Balance[this] := 0;
 // Make array/mapping vars distinct for _balances
-call __var_7 := FreshRefGenerator();
-_balances_VoteToken[this] := __var_7;
+call __var_8 := FreshRefGenerator();
+_balances_VoteToken[this] := __var_8;
 // Initialize Integer mapping _balances
 assume (forall  __i__0_0:Ref ::  ((M_Ref_int[_balances_VoteToken[this]][__i__0_0]) == (0)));
 // Make array/mapping vars distinct for _allowances
-call __var_8 := FreshRefGenerator();
-_allowances_VoteToken[this] := __var_8;
+call __var_9 := FreshRefGenerator();
+_allowances_VoteToken[this] := __var_9;
 // Initialize length of 1-level nested array in _allowances
 assume (forall  __i__0_0:Ref ::  ((Length[M_Ref_Ref[_allowances_VoteToken[this]][__i__0_0]]) == (0)));
 assume (forall  __i__0_0:Ref ::  (!(Alloc[M_Ref_Ref[_allowances_VoteToken[this]][__i__0_0]])));
@@ -180,8 +353,8 @@ admin_VoteToken[this] := null;
 times_mixcontract_changed_VoteToken[this] := 0;
 deploy_block_VoteToken[this] := 0;
 // Make array/mapping vars distinct for _commits
-call __var_9 := FreshRefGenerator();
-_commits_VoteToken[this] := __var_9;
+call __var_10 := FreshRefGenerator();
+_commits_VoteToken[this] := __var_10;
 // Initialize Boolean mapping _commits
 assume (forall  __i__0_0:int ::  (!(M_int_bool[_commits_VoteToken[this]][__i__0_0])));
 // end of initialization
@@ -189,115 +362,124 @@ call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "initialSupply"} boogie_si_record_sol2Bpl_int(initialSupply_s142);
-call  {:cexpr "_yes"} boogie_si_record_sol2Bpl_ref(_yes_s142);
-call  {:cexpr "_no"} boogie_si_record_sol2Bpl_ref(_no_s142);
-call  {:cexpr "_endphase1"} boogie_si_record_sol2Bpl_int(_endphase1_s142);
-call  {:cexpr "_endphase2"} boogie_si_record_sol2Bpl_int(_endphase2_s142);
-call  {:cexpr "_endblockelection"} boogie_si_record_sol2Bpl_int(_endblockelection_s142);
+call  {:cexpr "initialSupply"} boogie_si_record_sol2Bpl_int(initialSupply_s147);
+call  {:cexpr "_yes"} boogie_si_record_sol2Bpl_ref(_yes_s147);
+call  {:cexpr "_no"} boogie_si_record_sol2Bpl_ref(_no_s147);
+call  {:cexpr "_endphase1"} boogie_si_record_sol2Bpl_int(_endphase1_s147);
+call  {:cexpr "_endphase2"} boogie_si_record_sol2Bpl_int(_endphase2_s147);
+call  {:cexpr "_endblockelection"} boogie_si_record_sol2Bpl_int(_endblockelection_s147);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 79} (true);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 80} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 81} (true);
 assume ((deploy_block_VoteToken[this]) >= (0));
 // Non-deterministic value to model block.number
 havoc __var_1;
 assume ((__var_1) >= (0));
 deploy_block_VoteToken[this] := __var_1;
 call  {:cexpr "deploy_block"} boogie_si_record_sol2Bpl_int(deploy_block_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 81} (true);
-// Non-deterministic value to model block.number
-havoc __var_2;
-assume ((__var_2) >= (0));
-assume ((_endphase1_s142) >= (0));
-assume ((__var_2) < (_endphase1_s142));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 82} (true);
-assume ((_endphase1_s142) >= (0));
-assume ((_endphase2_s142) >= (0));
-assume ((_endphase1_s142) < (_endphase2_s142));
+assume ((deploy_block_VoteToken[this]) >= (0));
+assume ((_endphase1_s147) >= (0));
+assume ((deploy_block_VoteToken[this]) < (_endphase1_s147));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 83} (true);
-assume ((_endphase2_s142) >= (0));
-assume ((_endblockelection_s142) >= (0));
-assume ((_endphase2_s142) < (_endblockelection_s142));
+assume ((_endphase1_s147) >= (0));
+assume ((_endphase2_s147) >= (0));
+assume ((_endphase1_s147) < (_endphase2_s147));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 84} (true);
-assume ((_yes_s142) != (_no_s142));
+assume ((_endphase2_s147) >= (0));
+assume ((_endblockelection_s147) >= (0));
+assume ((_endphase2_s147) < (_endblockelection_s147));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 85} (true);
-assume (((admin_VoteToken[this]) != (_yes_s142)) && ((admin_VoteToken[this]) != (_no_s142)));
+assume ((_yes_s147) != (_no_s147));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 86} (true);
-yes_VoteToken[this] := _yes_s142;
-call  {:cexpr "yes"} boogie_si_record_sol2Bpl_ref(yes_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 87} (true);
-no_VoteToken[this] := _no_s142;
-call  {:cexpr "no"} boogie_si_record_sol2Bpl_ref(no_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 88} (true);
-__var_3 := null;
-mixcontract_VoteToken[this] := __var_3;
-call  {:cexpr "mixcontract"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 89} (true);
-assume ((endphase1_VoteToken[this]) >= (0));
-assume ((_endphase1_s142) >= (0));
-endphase1_VoteToken[this] := _endphase1_s142;
-call  {:cexpr "endphase1"} boogie_si_record_sol2Bpl_int(endphase1_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 90} (true);
-assume ((endphase2_VoteToken[this]) >= (0));
-assume ((_endphase2_s142) >= (0));
-endphase2_VoteToken[this] := _endphase2_s142;
-call  {:cexpr "endphase2"} boogie_si_record_sol2Bpl_int(endphase2_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 91} (true);
-assume ((endblockelection_VoteToken[this]) >= (0));
-assume ((_endblockelection_s142) >= (0));
-endblockelection_VoteToken[this] := _endblockelection_s142;
-call  {:cexpr "endblockelection"} boogie_si_record_sol2Bpl_int(endblockelection_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 92} (true);
 if ((DType[this]) == (VoteToken)) {
-call __var_4 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
+call __var_2 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-admin_VoteToken[this] := __var_4;
-call  {:cexpr "admin"} boogie_si_record_sol2Bpl_ref(admin_VoteToken[this]);
+if ((DType[this]) == (VoteToken)) {
+call __var_3 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
+} else {
+assume (false);
+}
+assume (((__var_2) != (_yes_s147)) && ((__var_3) != (_no_s147)));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 87} (true);
+yes_VoteToken[this] := _yes_s147;
+call  {:cexpr "yes"} boogie_si_record_sol2Bpl_ref(yes_VoteToken[this]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 88} (true);
+no_VoteToken[this] := _no_s147;
+call  {:cexpr "no"} boogie_si_record_sol2Bpl_ref(no_VoteToken[this]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 89} (true);
+__var_4 := null;
+mixcontract_VoteToken[this] := __var_4;
+call  {:cexpr "mixcontract"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 90} (true);
+assume ((endphase1_VoteToken[this]) >= (0));
+assume ((_endphase1_s147) >= (0));
+endphase1_VoteToken[this] := _endphase1_s147;
+call  {:cexpr "endphase1"} boogie_si_record_sol2Bpl_int(endphase1_VoteToken[this]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 91} (true);
+assume ((endphase2_VoteToken[this]) >= (0));
+assume ((_endphase2_s147) >= (0));
+endphase2_VoteToken[this] := _endphase2_s147;
+call  {:cexpr "endphase2"} boogie_si_record_sol2Bpl_int(endphase2_VoteToken[this]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 92} (true);
+assume ((endblockelection_VoteToken[this]) >= (0));
+assume ((_endblockelection_s147) >= (0));
+endblockelection_VoteToken[this] := _endblockelection_s147;
+call  {:cexpr "endblockelection"} boogie_si_record_sol2Bpl_int(endblockelection_VoteToken[this]);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 93} (true);
 if ((DType[this]) == (VoteToken)) {
 call __var_5 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-assume ((initialSupply_s142) >= (0));
-call _mint_VoteToken(this, msgsender_MSG, msgvalue_MSG, __var_5, initialSupply_s142);
+admin_VoteToken[this] := __var_5;
+call  {:cexpr "admin"} boogie_si_record_sol2Bpl_ref(admin_VoteToken[this]);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 94} (true);
+if ((DType[this]) == (VoteToken)) {
+call __var_6 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
+} else {
+assume (false);
+}
+assume ((initialSupply_s147) >= (0));
+call _mint_VoteToken(this, msgsender_MSG, msgvalue_MSG, __var_6, initialSupply_s147);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 95} (true);
 assume ((deploy_block_VoteToken[this]) >= (0));
 // Non-deterministic value to model block.number
-havoc __var_6;
-assume ((__var_6) >= (0));
-deploy_block_VoteToken[this] := __var_6;
+havoc __var_7;
+assume ((__var_7) >= (0));
+deploy_block_VoteToken[this] := __var_7;
 call  {:cexpr "deploy_block"} boogie_si_record_sol2Bpl_int(deploy_block_VoteToken[this]);
 }
 
-procedure {:constructor} {:public} {:inline 1} VoteToken_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s142: int, _yes_s142: Ref, _no_s142: Ref, _endphase1_s142: int, _endphase2_s142: int, _endblockelection_s142: int);
-implementation VoteToken_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s142: int, _yes_s142: Ref, _no_s142: Ref, _endphase1_s142: int, _endphase2_s142: int, _endblockelection_s142: int)
+procedure {:constructor} {:public} {:inline 1} VoteToken_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s147: int, _yes_s147: Ref, _no_s147: Ref, _endphase1_s147: int, _endphase2_s147: int, _endblockelection_s147: int);
+implementation VoteToken_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, initialSupply_s147: int, _yes_s147: Ref, _no_s147: Ref, _endphase1_s147: int, _endphase2_s147: int, _endblockelection_s147: int)
 {
 var __var_1: int;
-var __var_2: int;
+var __var_2: Ref;
 var __var_3: Ref;
 var __var_4: Ref;
 var __var_5: Ref;
-var __var_6: int;
-var __var_7: Ref;
+var __var_6: Ref;
+var __var_7: int;
 var __var_8: Ref;
 var __var_9: Ref;
+var __var_10: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "initialSupply"} boogie_si_record_sol2Bpl_int(initialSupply_s142);
-call  {:cexpr "_yes"} boogie_si_record_sol2Bpl_ref(_yes_s142);
-call  {:cexpr "_no"} boogie_si_record_sol2Bpl_ref(_no_s142);
-call  {:cexpr "_endphase1"} boogie_si_record_sol2Bpl_int(_endphase1_s142);
-call  {:cexpr "_endphase2"} boogie_si_record_sol2Bpl_int(_endphase2_s142);
-call  {:cexpr "_endblockelection"} boogie_si_record_sol2Bpl_int(_endblockelection_s142);
+call  {:cexpr "initialSupply"} boogie_si_record_sol2Bpl_int(initialSupply_s147);
+call  {:cexpr "_yes"} boogie_si_record_sol2Bpl_ref(_yes_s147);
+call  {:cexpr "_no"} boogie_si_record_sol2Bpl_ref(_no_s147);
+call  {:cexpr "_endphase1"} boogie_si_record_sol2Bpl_int(_endphase1_s147);
+call  {:cexpr "_endphase2"} boogie_si_record_sol2Bpl_int(_endphase2_s147);
+call  {:cexpr "_endblockelection"} boogie_si_record_sol2Bpl_int(_endblockelection_s147);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
 call Context_Context(this, msgsender_MSG, msgvalue_MSG);
 call IERC20_IERC20(this, msgsender_MSG, msgvalue_MSG);
-call VoteToken_VoteToken_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, initialSupply_s142, _yes_s142, _no_s142, _endphase1_s142, _endphase2_s142, _endblockelection_s142);
+call VoteToken_VoteToken_NoBaseCtor(this, msgsender_MSG, msgvalue_MSG, initialSupply_s147, _yes_s147, _no_s147, _endphase1_s147, _endphase2_s147, _endblockelection_s147);
 }
 
 procedure {:public} {:inline 1} decimals_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int) returns (__ret_0_: int);
@@ -308,215 +490,212 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 98} (true);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 99} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 100} (true);
 __ret_0_ := 0;
 return;
 }
 
-procedure {:public} {:inline 1} setCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _hash_s199: int) returns (__ret_0_: bool);
-implementation setCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _hash_s199: int) returns (__ret_0_: bool)
+procedure {:public} {:inline 1} setCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _hash_s204: int) returns (__ret_0_: bool);
+implementation setCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _hash_s204: int) returns (__ret_0_: bool)
 {
-var __var_10: Ref;
-var __var_11: int;
+var __var_11: Ref;
 var __var_12: int;
+var __var_13: int;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "_hash"} boogie_si_record_sol2Bpl_int(_hash_s199);
+call  {:cexpr "_hash"} boogie_si_record_sol2Bpl_int(_hash_s204);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 102} (true);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 103} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 104} (true);
 if ((DType[this]) == (VoteToken)) {
-call __var_10 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
+call __var_11 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-assume ((__var_10) == (mixcontract_VoteToken[this]));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 104} (true);
-assume ((M_int_bool[_commits_VoteToken[this]][_hash_s199]) == (false));
+assume ((__var_11) == (mixcontract_VoteToken[this]));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 105} (true);
-// Non-deterministic value to model block.number
-havoc __var_11;
-assume ((__var_11) >= (0));
-assume ((endphase2_VoteToken[this]) >= (0));
-assume ((__var_11) < (endphase2_VoteToken[this]));
+assume ((M_int_bool[_commits_VoteToken[this]][_hash_s204]) == (false));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 106} (true);
 // Non-deterministic value to model block.number
 havoc __var_12;
 assume ((__var_12) >= (0));
-assume ((endphase1_VoteToken[this]) >= (0));
-assume ((__var_12) >= (endphase1_VoteToken[this]));
+assume ((endphase2_VoteToken[this]) >= (0));
+assume ((__var_12) < (endphase2_VoteToken[this]));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 107} (true);
-M_int_bool[_commits_VoteToken[this]][_hash_s199] := true;
-call  {:cexpr "_commits[_hash]"} boogie_si_record_sol2Bpl_bool(M_int_bool[_commits_VoteToken[this]][_hash_s199]);
+// Non-deterministic value to model block.number
+havoc __var_13;
+assume ((__var_13) >= (0));
+assume ((endphase1_VoteToken[this]) >= (0));
+assume ((__var_13) >= (endphase1_VoteToken[this]));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 108} (true);
+M_int_bool[_commits_VoteToken[this]][_hash_s204] := true;
+call  {:cexpr "_commits[_hash]"} boogie_si_record_sol2Bpl_bool(M_int_bool[_commits_VoteToken[this]][_hash_s204]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 109} (true);
 __ret_0_ := true;
 return;
 }
 
-procedure {:public} {:inline 1} getCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _randomness_s258: int);
-implementation getCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _randomness_s258: int)
+procedure {:public} {:inline 1} getCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _randomness_s263: int);
+implementation getCommit_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _randomness_s263: int)
 {
-var __var_13: Ref;
-var __var_14: int;
+var __var_14: Ref;
 var __var_15: int;
-var hashs_s257: int;
+var __var_16: int;
+var hashs_s262: int;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "_randomness"} boogie_si_record_sol2Bpl_int(_randomness_s258);
+call  {:cexpr "_randomness"} boogie_si_record_sol2Bpl_int(_randomness_s263);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 113} (true);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 114} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 115} (true);
 if ((DType[this]) == (VoteToken)) {
-call __var_13 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
+call __var_14 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-assume ((__var_13) == (mixcontract_VoteToken[this]));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 115} (true);
-// Non-deterministic value to model block.number
-havoc __var_14;
-assume ((__var_14) >= (0));
-assume ((endblockelection_VoteToken[this]) >= (0));
-assume ((__var_14) < (endblockelection_VoteToken[this]));
+assume ((__var_14) == (mixcontract_VoteToken[this]));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 116} (true);
 // Non-deterministic value to model block.number
 havoc __var_15;
 assume ((__var_15) >= (0));
+assume ((endblockelection_VoteToken[this]) >= (0));
+assume ((__var_15) < (endblockelection_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 117} (true);
+// Non-deterministic value to model block.number
+havoc __var_16;
+assume ((__var_16) >= (0));
 assume ((endphase2_VoteToken[this]) >= (0));
-assume ((__var_15) >= (endphase2_VoteToken[this]));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 118} (true);
-hashs_s257 := _randomness_s258;
-call  {:cexpr "hashs"} boogie_si_record_sol2Bpl_int(hashs_s257);
+assume ((__var_16) >= (endphase2_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 120} (true);
+hashs_s262 := _randomness_s263;
+call  {:cexpr "hashs"} boogie_si_record_sol2Bpl_int(hashs_s262);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 122} (true);
-if ((M_int_bool[_commits_VoteToken[this]][hashs_s257]) == (true)) {
+if ((M_int_bool[_commits_VoteToken[this]][hashs_s262]) == (true)) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 122} (true);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 123} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 123} (true);
-M_int_bool[_commits_VoteToken[this]][hashs_s257] := false;
-call  {:cexpr "_commits[hashs]"} boogie_si_record_sol2Bpl_bool(M_int_bool[_commits_VoteToken[this]][hashs_s257]);
+M_int_bool[_commits_VoteToken[this]][hashs_s262] := false;
+call  {:cexpr "_commits[hashs]"} boogie_si_record_sol2Bpl_bool(M_int_bool[_commits_VoteToken[this]][hashs_s262]);
 } else {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 138} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 137} (true);
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 138} (true);
 assume (false);
 }
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 141} (true);
-assert ((M_int_bool[_commits_VoteToken[this]][hashs_s257]) == (false));
+assert ((M_int_bool[_commits_VoteToken[this]][hashs_s262]) == (false));
 }
 
-procedure {:public} {:inline 1} setMixcontract_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _mixcontract_s313: Ref) returns (__ret_0_: Ref);
-implementation setMixcontract_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _mixcontract_s313: Ref) returns (__ret_0_: Ref)
+procedure {:public} {:inline 1} setMixcontract_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _mixcontract_s312: Ref) returns (__ret_0_: Ref);
+implementation setMixcontract_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, _mixcontract_s312: Ref) returns (__ret_0_: Ref)
 {
-var __var_16: Ref;
 var __var_17: Ref;
+var __var_18: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "_mixcontract"} boogie_si_record_sol2Bpl_ref(_mixcontract_s313);
+call  {:cexpr "_mixcontract"} boogie_si_record_sol2Bpl_ref(_mixcontract_s312);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 147} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 147} (true);
-__var_16 := null;
-assume ((mixcontract_VoteToken[this]) == (null));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 148} (true);
-__var_17 := null;
-assume ((_mixcontract_s313) != (null));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 149} (true);
-assume ((_mixcontract_s313) != (msgsender_MSG));
+__var_17 := null;
+assume ((mixcontract_VoteToken[this]) == (null));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 150} (true);
-assume ((msgsender_MSG) == (admin_VoteToken[this]));
+__var_18 := null;
+assume ((_mixcontract_s312) != (null));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 151} (true);
+assume ((_mixcontract_s312) != (msgsender_MSG));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 152} (true);
-mixcontract_VoteToken[this] := _mixcontract_s313;
+assume ((msgsender_MSG) == (admin_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 154} (true);
+mixcontract_VoteToken[this] := _mixcontract_s312;
 call  {:cexpr "mixcontract"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 153} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 155} (true);
 assume ((times_mixcontract_changed_VoteToken[this]) >= (0));
 times_mixcontract_changed_VoteToken[this] := (times_mixcontract_changed_VoteToken[this]) + (1);
 call  {:cexpr "times_mixcontract_changed"} boogie_si_record_sol2Bpl_int(times_mixcontract_changed_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 155} (true);
-assume ((times_mixcontract_changed_VoteToken[this]) >= (0));
-assert ((times_mixcontract_changed_VoteToken[this]) <= (1));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 156} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 158} (true);
 __ret_0_ := mixcontract_VoteToken[this];
 return;
 }
 
-procedure {:inline 1} _beforeTokenTransfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, from_s456: Ref, to_s456: Ref, amount_s456: int, block_nr_s456: int);
-implementation _beforeTokenTransfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, from_s456: Ref, to_s456: Ref, amount_s456: int, block_nr_s456: int)
+procedure {:inline 1} _beforeTokenTransfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, from_s451: Ref, to_s451: Ref, amount_s451: int, block_nr_s451: int);
+implementation _beforeTokenTransfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, from_s451: Ref, to_s451: Ref, amount_s451: int, block_nr_s451: int)
 {
-var __var_18: int;
 var __var_19: Ref;
 var __var_20: int;
-var __var_21: Ref;
+var __var_21: int;
 var __var_22: int;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "from"} boogie_si_record_sol2Bpl_ref(from_s456);
-call  {:cexpr "to"} boogie_si_record_sol2Bpl_ref(to_s456);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s456);
-call  {:cexpr "block_nr"} boogie_si_record_sol2Bpl_int(block_nr_s456);
+call  {:cexpr "from"} boogie_si_record_sol2Bpl_ref(from_s451);
+call  {:cexpr "to"} boogie_si_record_sol2Bpl_ref(to_s451);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s451);
+call  {:cexpr "block_nr"} boogie_si_record_sol2Bpl_int(block_nr_s451);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 160} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 160} (true);
-assume ((amount_s456) >= (0));
-assume ((amount_s456) == (1));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 162} (true);
-assume ((block_nr_s456) >= (0));
-assume ((endphase1_VoteToken[this]) >= (0));
-if ((block_nr_s456) < (endphase1_VoteToken[this])) {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 163} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 163} (true);
-assume ((__var_18) >= (0));
-if ((DType[this]) == (VoteToken)) {
-call __var_18 := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, to_s456);
-} else {
-assume (false);
-}
-assume ((__var_18) >= (0));
-assume ((__var_18) == (0));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 164} (true);
-assume ((msgsender_MSG) == (admin_VoteToken[this]));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 165} (true);
-assume ((to_s456) != (yes_VoteToken[this]));
+assume ((amount_s451) >= (0));
+assume ((amount_s451) == (1));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 166} (true);
-assume ((to_s456) != (no_VoteToken[this]));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 167} (true);
-assume ((to_s456) != (mixcontract_VoteToken[this]));
-} else {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 170} (true);
-assume ((block_nr_s456) >= (0));
-assume ((endphase2_VoteToken[this]) >= (0));
-assume ((block_nr_s456) >= (0));
-assume ((endphase1_VoteToken[this]) >= (0));
 __var_19 := null;
-if ((((block_nr_s456) < (endphase2_VoteToken[this])) && ((block_nr_s456) >= (endphase1_VoteToken[this]))) && ((mixcontract_VoteToken[this]) != (null))) {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 171} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 171} (true);
+assume ((mixcontract_VoteToken[this]) != (null));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 167} (true);
+assume ((block_nr_s451) >= (0));
+assume ((endphase1_VoteToken[this]) >= (0));
+if ((block_nr_s451) < (endphase1_VoteToken[this])) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 167} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 168} (true);
 assume ((__var_20) >= (0));
 if ((DType[this]) == (VoteToken)) {
-call __var_20 := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, admin_VoteToken[this]);
+call __var_20 := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, to_s451);
 } else {
 assume (false);
 }
 assume ((__var_20) >= (0));
-assume ((__var_20) <= (1));
+assume ((__var_20) == (0));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 169} (true);
+assume ((msgsender_MSG) == (admin_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 170} (true);
+assume ((to_s451) != (yes_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 171} (true);
+assume ((to_s451) != (no_VoteToken[this]));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 172} (true);
-assume ((to_s456) == (mixcontract_VoteToken[this]));
+assume ((to_s451) != (mixcontract_VoteToken[this]));
 } else {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 176} (true);
-assume ((block_nr_s456) >= (0));
-assume ((endblockelection_VoteToken[this]) >= (0));
-assume ((block_nr_s456) >= (0));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 175} (true);
+assume ((block_nr_s451) >= (0));
 assume ((endphase2_VoteToken[this]) >= (0));
-__var_21 := null;
-if ((((block_nr_s456) < (endblockelection_VoteToken[this])) && ((block_nr_s456) >= (endphase2_VoteToken[this]))) && ((mixcontract_VoteToken[this]) != (null))) {
+assume ((block_nr_s451) >= (0));
+assume ((endphase1_VoteToken[this]) >= (0));
+if (((block_nr_s451) < (endphase2_VoteToken[this])) && ((block_nr_s451) >= (endphase1_VoteToken[this]))) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 175} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 176} (true);
+assume ((__var_21) >= (0));
+if ((DType[this]) == (VoteToken)) {
+call __var_21 := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, admin_VoteToken[this]);
+} else {
+assume (false);
+}
+assume ((__var_21) >= (0));
+assume ((__var_21) <= (1));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 177} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 177} (true);
+assume ((to_s451) == (mixcontract_VoteToken[this]));
+} else {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 181} (true);
+assume ((block_nr_s451) >= (0));
+assume ((endblockelection_VoteToken[this]) >= (0));
+assume ((block_nr_s451) >= (0));
+assume ((endphase2_VoteToken[this]) >= (0));
+if (((block_nr_s451) < (endblockelection_VoteToken[this])) && ((block_nr_s451) >= (endphase2_VoteToken[this]))) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 181} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 182} (true);
 assume ((__var_22) >= (0));
 if ((DType[this]) == (VoteToken)) {
 call __var_22 := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, admin_VoteToken[this]);
@@ -525,13 +704,13 @@ assume (false);
 }
 assume ((__var_22) >= (0));
 assume ((__var_22) <= (1));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 178} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 183} (true);
 assume ((msgsender_MSG) == (mixcontract_VoteToken[this]));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 179} (true);
-assume ((((to_s456) == (yes_VoteToken[this]))) || (((to_s456) == (no_VoteToken[this]))));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 184} (true);
+assume ((((to_s451) == (yes_VoteToken[this]))) || (((to_s451) == (no_VoteToken[this]))));
 } else {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 193} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 193} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 187} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 188} (true);
 assume (false);
 }
 }
@@ -546,98 +725,98 @@ call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 202} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 202} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 193} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 194} (true);
 assume ((_totalSupply_VoteToken[this]) >= (0));
 __ret_0_ := _totalSupply_VoteToken[this];
 return;
 }
 
-procedure {:public} {:inline 1} balanceOf_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s476: Ref) returns (__ret_0_: int);
-implementation balanceOf_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s476: Ref) returns (__ret_0_: int)
+procedure {:public} {:inline 1} balanceOf_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s471: Ref) returns (__ret_0_: int);
+implementation balanceOf_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s471: Ref) returns (__ret_0_: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "account"} boogie_si_record_sol2Bpl_ref(account_s476);
+call  {:cexpr "account"} boogie_si_record_sol2Bpl_ref(account_s471);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 209} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 209} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][account_s476]) >= (0));
-__ret_0_ := M_Ref_int[_balances_VoteToken[this]][account_s476];
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 200} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 201} (true);
+assume ((M_Ref_int[_balances_VoteToken[this]][account_s471]) >= (0));
+__ret_0_ := M_Ref_int[_balances_VoteToken[this]][account_s471];
 return;
 }
 
-procedure {:public} {:inline 1} transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, recipient_s495: Ref, amount_s495: int) returns (__ret_0_: bool);
-implementation transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, recipient_s495: Ref, amount_s495: int) returns (__ret_0_: bool)
+procedure {:public} {:inline 1} transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, recipient_s490: Ref, amount_s490: int) returns (__ret_0_: bool);
+implementation transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, recipient_s490: Ref, amount_s490: int) returns (__ret_0_: bool)
 {
 var __var_23: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "recipient"} boogie_si_record_sol2Bpl_ref(recipient_s495);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s495);
+call  {:cexpr "recipient"} boogie_si_record_sol2Bpl_ref(recipient_s490);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s490);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 221} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 221} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 212} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 213} (true);
 if ((DType[this]) == (VoteToken)) {
 call __var_23 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-assume ((amount_s495) >= (0));
-call _transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, __var_23, recipient_s495, amount_s495);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 222} (true);
+assume ((amount_s490) >= (0));
+call _transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, __var_23, recipient_s490, amount_s490);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 214} (true);
 __ret_0_ := true;
 return;
 }
 
-procedure {:public} {:inline 1} allowance_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s511: Ref, spender_s511: Ref) returns (__ret_0_: int);
-implementation allowance_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s511: Ref, spender_s511: Ref) returns (__ret_0_: int)
+procedure {:public} {:inline 1} allowance_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s506: Ref, spender_s506: Ref) returns (__ret_0_: int);
+implementation allowance_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s506: Ref, spender_s506: Ref) returns (__ret_0_: int)
 {
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "owner"} boogie_si_record_sol2Bpl_ref(owner_s511);
-call  {:cexpr "spender"} boogie_si_record_sol2Bpl_ref(spender_s511);
+call  {:cexpr "owner"} boogie_si_record_sol2Bpl_ref(owner_s506);
+call  {:cexpr "spender"} boogie_si_record_sol2Bpl_ref(spender_s506);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 229} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 229} (true);
-assume ((M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s511]][spender_s511]) >= (0));
-__ret_0_ := M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s511]][spender_s511];
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 220} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 221} (true);
+assume ((M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s506]][spender_s506]) >= (0));
+__ret_0_ := M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s506]][spender_s506];
 return;
 }
 
-procedure {:public} {:inline 1} approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, spender_s530: Ref, amount_s530: int) returns (__ret_0_: bool);
-implementation approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, spender_s530: Ref, amount_s530: int) returns (__ret_0_: bool)
+procedure {:public} {:inline 1} approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, spender_s525: Ref, amount_s525: int) returns (__ret_0_: bool);
+implementation approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, spender_s525: Ref, amount_s525: int) returns (__ret_0_: bool)
 {
 var __var_24: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "spender"} boogie_si_record_sol2Bpl_ref(spender_s530);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s530);
+call  {:cexpr "spender"} boogie_si_record_sol2Bpl_ref(spender_s525);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s525);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 240} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 240} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 231} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 232} (true);
 if ((DType[this]) == (VoteToken)) {
 call __var_24 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-assume ((amount_s530) >= (0));
-call _approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, __var_24, spender_s530, amount_s530);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 241} (true);
+assume ((amount_s525) >= (0));
+call _approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, __var_24, spender_s525, amount_s525);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 233} (true);
 __ret_0_ := true;
 return;
 }
 
-procedure {:public} {:inline 1} transferFrom_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s566: Ref, recipient_s566: Ref, amount_s566: int) returns (__ret_0_: bool);
-implementation transferFrom_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s566: Ref, recipient_s566: Ref, amount_s566: int) returns (__ret_0_: bool)
+procedure {:public} {:inline 1} transferFrom_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s561: Ref, recipient_s561: Ref, amount_s561: int) returns (__ret_0_: bool);
+implementation transferFrom_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s561: Ref, recipient_s561: Ref, amount_s561: int) returns (__ret_0_: bool)
 {
 var __var_25: Ref;
 var __var_26: int;
@@ -646,15 +825,15 @@ call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s566);
-call  {:cexpr "recipient"} boogie_si_record_sol2Bpl_ref(recipient_s566);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s566);
+call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s561);
+call  {:cexpr "recipient"} boogie_si_record_sol2Bpl_ref(recipient_s561);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s561);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 257} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 257} (true);
-assume ((amount_s566) >= (0));
-call _transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s566, recipient_s566, amount_s566);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 258} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 248} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 249} (true);
+assume ((amount_s561) >= (0));
+call _transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s561, recipient_s561, amount_s561);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 250} (true);
 if ((DType[this]) == (VoteToken)) {
 call __var_25 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
@@ -666,331 +845,196 @@ call __var_27 := _msgSender_Context(this, msgsender_MSG, msgvalue_MSG);
 } else {
 assume (false);
 }
-assume ((M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][sender_s566]][__var_27]) >= (0));
-assume ((amount_s566) >= (0));
-call __var_26 := sub_VoteToken(this, msgsender_MSG, msgvalue_MSG, M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][sender_s566]][__var_27], amount_s566, -1250947154);
+assume ((M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][sender_s561]][__var_27]) >= (0));
+assume ((amount_s561) >= (0));
+call __var_26 := sub_SafeMath(this, this, 0, M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][sender_s561]][__var_27], amount_s561, -1589274188);
 assume ((__var_26) >= (0));
-call _approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s566, __var_25, __var_26);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 259} (true);
+call _approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s561, __var_25, __var_26);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 251} (true);
 __ret_0_ := true;
 return;
 }
 
-procedure {:inline 1} _transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s721: Ref, recipient_s721: Ref, amount_s721: int);
-implementation _transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s721: Ref, recipient_s721: Ref, amount_s721: int)
+procedure {:inline 1} _transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s746: Ref, recipient_s746: Ref, amount_s746: int);
+implementation _transfer_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, sender_s746: Ref, recipient_s746: Ref, amount_s746: int)
 {
 var __var_28: Ref;
 var __var_29: Ref;
-var block_nr_s720: int;
+var block_nr_s745: int;
 var __var_30: int;
 var __var_31: int;
 var __var_32: int;
+var __var_33: int;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s721);
-call  {:cexpr "recipient"} boogie_si_record_sol2Bpl_ref(recipient_s721);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s721);
+call  {:cexpr "sender"} boogie_si_record_sol2Bpl_ref(sender_s746);
+call  {:cexpr "recipient"} boogie_si_record_sol2Bpl_ref(recipient_s746);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s746);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 313} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 313} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 304} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 305} (true);
 __var_28 := null;
-assume ((sender_s721) != (null));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 314} (true);
+assume ((sender_s746) != (null));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 306} (true);
 __var_29 := null;
-assume ((recipient_s721) != (null));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 315} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][sender_s721]) >= (0));
-assume ((amount_s721) >= (0));
-assume ((M_Ref_int[_balances_VoteToken[this]][sender_s721]) >= (amount_s721));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 316} (true);
-assume ((sender_s721) != (recipient_s721));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 317} (true);
-assume ((block_nr_s720) >= (0));
+assume ((recipient_s746) != (null));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 307} (true);
+assume ((M_Ref_int[_balances_VoteToken[this]][sender_s746]) >= (0));
+assume ((amount_s746) >= (0));
+assume ((M_Ref_int[_balances_VoteToken[this]][sender_s746]) >= (amount_s746));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 308} (true);
+assume ((sender_s746) != (recipient_s746));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 309} (true);
+assume ((block_nr_s745) >= (0));
 // Non-deterministic value to model block.number
 havoc __var_30;
 assume ((__var_30) >= (0));
-block_nr_s720 := __var_30;
-call  {:cexpr "block_nr"} boogie_si_record_sol2Bpl_int(block_nr_s720);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 319} (true);
-assume ((amount_s721) >= (0));
-assume ((block_nr_s720) >= (0));
-call _beforeTokenTransfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, msgsender_MSG, recipient_s721, amount_s721, block_nr_s720);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 321} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][sender_s721]) >= (0));
-assume ((M_Ref_int[_balances_VoteToken[this]][sender_s721]) >= (0));
-assume ((amount_s721) >= (0));
-call __var_31 := sub_VoteToken(this, msgsender_MSG, msgvalue_MSG, M_Ref_int[_balances_VoteToken[this]][sender_s721], amount_s721, 748904443);
-M_Ref_int[_balances_VoteToken[this]][sender_s721] := __var_31;
+block_nr_s745 := __var_30;
+call  {:cexpr "block_nr"} boogie_si_record_sol2Bpl_int(block_nr_s745);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 311} (true);
+assume ((amount_s746) >= (0));
+assume ((block_nr_s745) >= (0));
+call _beforeTokenTransfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, msgsender_MSG, recipient_s746, amount_s746, block_nr_s745);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 313} (true);
+assume ((M_Ref_int[_balances_VoteToken[this]][sender_s746]) >= (0));
+assume ((M_Ref_int[_balances_VoteToken[this]][sender_s746]) >= (0));
+assume ((amount_s746) >= (0));
+call __var_31 := sub_SafeMath(this, this, 0, M_Ref_int[_balances_VoteToken[this]][sender_s746], amount_s746, 1481402320);
+M_Ref_int[_balances_VoteToken[this]][sender_s746] := __var_31;
 assume ((__var_31) >= (0));
-call  {:cexpr "_balances[sender]"} boogie_si_record_sol2Bpl_int(M_Ref_int[_balances_VoteToken[this]][sender_s721]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 322} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) >= (0));
-assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) >= (0));
-assume ((amount_s721) >= (0));
-call __var_32 := add_VoteToken(this, msgsender_MSG, msgvalue_MSG, M_Ref_int[_balances_VoteToken[this]][recipient_s721], amount_s721);
-M_Ref_int[_balances_VoteToken[this]][recipient_s721] := __var_32;
+call  {:cexpr "_balances[sender]"} boogie_si_record_sol2Bpl_int(M_Ref_int[_balances_VoteToken[this]][sender_s746]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 314} (true);
+assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) >= (0));
+assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) >= (0));
+assume ((amount_s746) >= (0));
+call __var_32 := add_SafeMath(this, this, 0, M_Ref_int[_balances_VoteToken[this]][recipient_s746], amount_s746);
+M_Ref_int[_balances_VoteToken[this]][recipient_s746] := __var_32;
 assume ((__var_32) >= (0));
-call  {:cexpr "_balances[recipient]"} boogie_si_record_sol2Bpl_int(M_Ref_int[_balances_VoteToken[this]][recipient_s721]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 324} (true);
+call  {:cexpr "_balances[recipient]"} boogie_si_record_sol2Bpl_int(M_Ref_int[_balances_VoteToken[this]][recipient_s746]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 316} (true);
 assert {:EventEmitted "Transfer_VoteToken"} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 326} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) >= (0));
-assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) >= (0));
-assume (((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) + (1)) >= (0));
-assume ((old((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) + (1))) >= (0));
-assert (((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) == (old((M_Ref_int[_balances_VoteToken[this]][recipient_s721]) + (1)))) || ((recipient_s721) == (msgsender_MSG)));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 328} (true);
-assume ((block_nr_s720) >= (0));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 318} (true);
+assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) >= (0));
+assume ((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) >= (0));
+assume (((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) + (1)) >= (0));
+assume ((old((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) + (1))) >= (0));
+assert (((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) == (old((M_Ref_int[_balances_VoteToken[this]][recipient_s746]) + (1)))) || ((recipient_s746) == (msgsender_MSG)));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 320} (true);
+assume ((block_nr_s745) >= (0));
 assume ((endphase1_VoteToken[this]) >= (0));
-if ((block_nr_s720) < (endphase1_VoteToken[this])) {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 329} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 329} (true);
+if ((block_nr_s745) < (endphase1_VoteToken[this])) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 320} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 321} (true);
 assert ((msgsender_MSG) == (admin_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 322} (true);
+assume ((__var_33) >= (0));
+if ((DType[this]) == (VoteToken)) {
+call __var_33 := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, recipient_s746);
+} else {
+assume (false);
+}
+assume ((__var_33) >= (0));
+assert ((__var_33) == (1));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 323} (true);
+assert ((recipient_s746) != (yes_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 324} (true);
+assert ((recipient_s746) != (no_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 325} (true);
+assert ((recipient_s746) != (mixcontract_VoteToken[this]));
+} else {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 327} (true);
+assume ((block_nr_s745) >= (0));
+assume ((endphase2_VoteToken[this]) >= (0));
+assume ((block_nr_s745) >= (0));
+assume ((endphase1_VoteToken[this]) >= (0));
+if (((block_nr_s745) < (endphase2_VoteToken[this])) && ((block_nr_s745) >= (endphase1_VoteToken[this]))) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 327} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 329} (true);
+assert ((recipient_s746) == (mixcontract_VoteToken[this]));
 } else {
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 331} (true);
-assume ((block_nr_s720) >= (0));
-assume ((endphase2_VoteToken[this]) >= (0));
-assume ((block_nr_s720) >= (0));
-assume ((endphase1_VoteToken[this]) >= (0));
-if (((block_nr_s720) < (endphase2_VoteToken[this])) && ((block_nr_s720) >= (endphase1_VoteToken[this]))) {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 332} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 332} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][admin_VoteToken[this]]) >= (0));
-assert ((M_Ref_int[_balances_VoteToken[this]][admin_VoteToken[this]]) <= (1));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 333} (true);
-assert ((recipient_s721) == (mixcontract_VoteToken[this]));
-} else {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 335} (true);
-assume ((block_nr_s720) >= (0));
+assume ((block_nr_s745) >= (0));
 assume ((endblockelection_VoteToken[this]) >= (0));
-assume ((block_nr_s720) >= (0));
+assume ((block_nr_s745) >= (0));
 assume ((endphase2_VoteToken[this]) >= (0));
-if (((block_nr_s720) < (endblockelection_VoteToken[this])) && ((block_nr_s720) >= (endphase2_VoteToken[this]))) {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 336} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 336} (true);
+if (((block_nr_s745) < (endblockelection_VoteToken[this])) && ((block_nr_s745) >= (endphase2_VoteToken[this]))) {
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 331} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 333} (true);
 assert ((msgsender_MSG) == (mixcontract_VoteToken[this]));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 334} (true);
+assert ((((recipient_s746) == (yes_VoteToken[this]))) || (((recipient_s746) == (no_VoteToken[this]))));
 }
 }
 }
 }
 
 procedure {:inline 1} contractInvariant_General_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int);
-procedure {:inline 1} _mint_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s779: Ref, amount_s779: int);
-implementation _mint_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s779: Ref, amount_s779: int)
+procedure {:inline 1} _mint_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s804: Ref, amount_s804: int);
+implementation _mint_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, account_s804: Ref, amount_s804: int)
 {
-var __var_33: Ref;
-var __var_34: int;
+var __var_34: Ref;
 var __var_35: int;
+var __var_36: int;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "account"} boogie_si_record_sol2Bpl_ref(account_s779);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s779);
+call  {:cexpr "account"} boogie_si_record_sol2Bpl_ref(account_s804);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s804);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 353} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 354} (true);
+__var_34 := null;
+assume ((account_s804) != (null));
 assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 356} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 356} (true);
-__var_33 := null;
-assume ((account_s779) != (null));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 358} (true);
 assume ((_totalSupply_VoteToken[this]) >= (0));
 assume ((_totalSupply_VoteToken[this]) >= (0));
-assume ((amount_s779) >= (0));
-call __var_34 := add_VoteToken(this, msgsender_MSG, msgvalue_MSG, _totalSupply_VoteToken[this], amount_s779);
-_totalSupply_VoteToken[this] := __var_34;
-assume ((__var_34) >= (0));
-call  {:cexpr "_totalSupply"} boogie_si_record_sol2Bpl_int(_totalSupply_VoteToken[this]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 359} (true);
-assume ((M_Ref_int[_balances_VoteToken[this]][account_s779]) >= (0));
-assume ((M_Ref_int[_balances_VoteToken[this]][account_s779]) >= (0));
-assume ((amount_s779) >= (0));
-call __var_35 := add_VoteToken(this, msgsender_MSG, msgvalue_MSG, M_Ref_int[_balances_VoteToken[this]][account_s779], amount_s779);
-M_Ref_int[_balances_VoteToken[this]][account_s779] := __var_35;
+assume ((amount_s804) >= (0));
+call __var_35 := add_SafeMath(this, this, 0, _totalSupply_VoteToken[this], amount_s804);
+_totalSupply_VoteToken[this] := __var_35;
 assume ((__var_35) >= (0));
-call  {:cexpr "_balances[account]"} boogie_si_record_sol2Bpl_int(M_Ref_int[_balances_VoteToken[this]][account_s779]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 360} (true);
+call  {:cexpr "_totalSupply"} boogie_si_record_sol2Bpl_int(_totalSupply_VoteToken[this]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 357} (true);
+assume ((M_Ref_int[_balances_VoteToken[this]][account_s804]) >= (0));
+assume ((M_Ref_int[_balances_VoteToken[this]][account_s804]) >= (0));
+assume ((amount_s804) >= (0));
+call __var_36 := add_SafeMath(this, this, 0, M_Ref_int[_balances_VoteToken[this]][account_s804], amount_s804);
+M_Ref_int[_balances_VoteToken[this]][account_s804] := __var_36;
+assume ((__var_36) >= (0));
+call  {:cexpr "_balances[account]"} boogie_si_record_sol2Bpl_int(M_Ref_int[_balances_VoteToken[this]][account_s804]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 358} (true);
 assert {:EventEmitted "Transfer_VoteToken"} (true);
 }
 
-procedure {:inline 1} _approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s821: Ref, spender_s821: Ref, amount_s821: int);
-implementation _approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s821: Ref, spender_s821: Ref, amount_s821: int)
+procedure {:inline 1} _approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s846: Ref, spender_s846: Ref, amount_s846: int);
+implementation _approve_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, owner_s846: Ref, spender_s846: Ref, amount_s846: int)
 {
-var __var_36: Ref;
 var __var_37: Ref;
+var __var_38: Ref;
 call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
 call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
 call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
 call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "owner"} boogie_si_record_sol2Bpl_ref(owner_s821);
-call  {:cexpr "spender"} boogie_si_record_sol2Bpl_ref(spender_s821);
-call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s821);
+call  {:cexpr "owner"} boogie_si_record_sol2Bpl_ref(owner_s846);
+call  {:cexpr "spender"} boogie_si_record_sol2Bpl_ref(spender_s846);
+call  {:cexpr "amount"} boogie_si_record_sol2Bpl_int(amount_s846);
 call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 397} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 397} (true);
-__var_36 := null;
-assume ((owner_s821) != (null));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 398} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 394} (true);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 395} (true);
 __var_37 := null;
-assume ((spender_s821) != (null));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 400} (true);
-assume ((M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s821]][spender_s821]) >= (0));
-assume ((amount_s821) >= (0));
-M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s821]][spender_s821] := amount_s821;
-call  {:cexpr "_allowances[owner][spender]"} boogie_si_record_sol2Bpl_int(M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s821]][spender_s821]);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 401} (true);
+assume ((owner_s846) != (null));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 396} (true);
+__var_38 := null;
+assume ((spender_s846) != (null));
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 398} (true);
+assume ((M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s846]][spender_s846]) >= (0));
+assume ((amount_s846) >= (0));
+M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s846]][spender_s846] := amount_s846;
+call  {:cexpr "_allowances[owner][spender]"} boogie_si_record_sol2Bpl_int(M_Ref_int[M_Ref_Ref[_allowances_VoteToken[this]][owner_s846]][spender_s846]);
+assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 399} (true);
 assert {:EventEmitted "Approval_VoteToken"} (true);
-}
-
-procedure {:inline 1} add_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s846: int, b_s846: int) returns (__ret_0_: int);
-implementation add_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s846: int, b_s846: int) returns (__ret_0_: int)
-{
-var c_s845: int;
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s846);
-call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s846);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 426} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 426} (true);
-assume ((c_s845) >= (0));
-assume ((a_s846) >= (0));
-assume ((b_s846) >= (0));
-assume (((a_s846) + (b_s846)) >= (0));
-c_s845 := (a_s846) + (b_s846);
-call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s845);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 427} (true);
-assume ((c_s845) >= (0));
-assume ((a_s846) >= (0));
-assume ((c_s845) >= (a_s846));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 429} (true);
-assume ((c_s845) >= (0));
-__ret_0_ := c_s845;
-return;
-}
-
-procedure {:inline 1} sub_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s873: int, b_s873: int, errorMessage_s873: int) returns (__ret_0_: int);
-implementation sub_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s873: int, b_s873: int, errorMessage_s873: int) returns (__ret_0_: int)
-{
-var c_s872: int;
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s873);
-call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s873);
-call  {:cexpr "errorMessage"} boogie_si_record_sol2Bpl_int(errorMessage_s873);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 457} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 457} (true);
-assume ((b_s873) >= (0));
-assume ((a_s873) >= (0));
-assume ((b_s873) <= (a_s873));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 458} (true);
-assume ((c_s872) >= (0));
-assume ((a_s873) >= (0));
-assume ((b_s873) >= (0));
-assume (((a_s873) - (b_s873)) >= (0));
-c_s872 := (a_s873) - (b_s873);
-call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s872);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 460} (true);
-assume ((c_s872) >= (0));
-__ret_0_ := c_s872;
-return;
-}
-
-procedure {:inline 1} mul_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s907: int, b_s907: int) returns (__ret_0_: int);
-implementation mul_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s907: int, b_s907: int) returns (__ret_0_: int)
-{
-var c_s906: int;
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s907);
-call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s907);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 473} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 476} (true);
-assume ((a_s907) >= (0));
-if ((a_s907) == (0)) {
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 477} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 477} (true);
-__ret_0_ := 0;
-return;
-}
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 480} (true);
-assume ((c_s906) >= (0));
-assume ((a_s907) >= (0));
-assume ((b_s907) >= (0));
-assume (((a_s907) * (b_s907)) >= (0));
-c_s906 := (a_s907) * (b_s907);
-call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s906);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 481} (true);
-assume ((c_s906) >= (0));
-assume ((a_s907) >= (0));
-assume (((c_s906) div (a_s907)) >= (0));
-assume ((b_s907) >= (0));
-assume (((c_s906) div (a_s907)) == (b_s907));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 483} (true);
-assume ((c_s906) >= (0));
-__ret_0_ := c_s906;
-return;
-}
-
-procedure {:inline 1} div_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s934: int, b_s934: int, errorMessage_s934: int) returns (__ret_0_: int);
-implementation div_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s934: int, b_s934: int, errorMessage_s934: int) returns (__ret_0_: int)
-{
-var c_s933: int;
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s934);
-call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s934);
-call  {:cexpr "errorMessage"} boogie_si_record_sol2Bpl_int(errorMessage_s934);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 515} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 516} (true);
-assume ((b_s934) >= (0));
-assume ((b_s934) > (0));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 517} (true);
-assume ((c_s933) >= (0));
-assume ((a_s934) >= (0));
-assume ((b_s934) >= (0));
-assume (((a_s934) div (b_s934)) >= (0));
-c_s933 := (a_s934) div (b_s934);
-call  {:cexpr "c"} boogie_si_record_sol2Bpl_int(c_s933);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 520} (true);
-assume ((c_s933) >= (0));
-__ret_0_ := c_s933;
-return;
-}
-
-procedure {:inline 1} mod_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s957: int, b_s957: int, errorMessage_s957: int) returns (__ret_0_: int);
-implementation mod_VoteToken(this: Ref, msgsender_MSG: Ref, msgvalue_MSG: int, a_s957: int, b_s957: int, errorMessage_s957: int) returns (__ret_0_: int)
-{
-call  {:cexpr "_verisolFirstArg"} boogie_si_record_sol2Bpl_bool(false);
-call  {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
-call  {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
-call  {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-call  {:cexpr "a"} boogie_si_record_sol2Bpl_int(a_s957);
-call  {:cexpr "b"} boogie_si_record_sol2Bpl_int(b_s957);
-call  {:cexpr "errorMessage"} boogie_si_record_sol2Bpl_int(errorMessage_s957);
-call  {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 552} (true);
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 552} (true);
-assume ((b_s957) >= (0));
-assume ((b_s957) != (0));
-assert {:first} {:sourceFile "/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol"} {:sourceLine 553} (true);
-assume ((a_s957) >= (0));
-assume ((b_s957) >= (0));
-assume (((a_s957) mod (b_s957)) >= (0));
-__ret_0_ := (a_s957) mod (b_s957);
-return;
 }
 
 procedure {:inline 1} FallbackDispatch(from: Ref, to: Ref, amount: int);
@@ -1051,6 +1095,7 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (Context));
 assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
 assume ((DType[msgsender_MSG]) != (VeriSol));
 assume ((DType[msgsender_MSG]) != (VoteToken));
 Alloc[msgsender_MSG] := true;
@@ -1080,6 +1125,37 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (Context));
 assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
+assume ((DType[msgsender_MSG]) != (VeriSol));
+assume ((DType[msgsender_MSG]) != (VoteToken));
+Alloc[msgsender_MSG] := true;
+}
+}
+
+procedure BoogieEntry_SafeMath();
+implementation BoogieEntry_SafeMath()
+{
+var this: Ref;
+var msgsender_MSG: Ref;
+var msgvalue_MSG: int;
+var choice: int;
+var tmpNow: int;
+assume ((now) >= (0));
+assume ((DType[this]) == (SafeMath));
+call SafeMath_SafeMath(this, msgsender_MSG, msgvalue_MSG);
+while (true)
+{
+havoc msgsender_MSG;
+havoc msgvalue_MSG;
+havoc choice;
+havoc tmpNow;
+tmpNow := now;
+havoc now;
+assume ((now) > (tmpNow));
+assume ((msgsender_MSG) != (null));
+assume ((DType[msgsender_MSG]) != (Context));
+assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
 assume ((DType[msgsender_MSG]) != (VeriSol));
 assume ((DType[msgsender_MSG]) != (VoteToken));
 Alloc[msgsender_MSG] := true;
@@ -1114,37 +1190,37 @@ var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
 var __ret_0_totalSupply: int;
-var account_s476: Ref;
+var account_s471: Ref;
 var __ret_0_balanceOf: int;
-var recipient_s495: Ref;
-var amount_s495: int;
+var recipient_s490: Ref;
+var amount_s490: int;
 var __ret_0_transfer: bool;
-var owner_s511: Ref;
-var spender_s511: Ref;
+var owner_s506: Ref;
+var spender_s506: Ref;
 var __ret_0_allowance: int;
-var spender_s530: Ref;
-var amount_s530: int;
+var spender_s525: Ref;
+var amount_s525: int;
 var __ret_0_approve: bool;
-var sender_s566: Ref;
-var recipient_s566: Ref;
-var amount_s566: int;
+var sender_s561: Ref;
+var recipient_s561: Ref;
+var amount_s561: int;
 var __ret_0_transferFrom: bool;
-var initialSupply_s142: int;
-var _yes_s142: Ref;
-var _no_s142: Ref;
-var _endphase1_s142: int;
-var _endphase2_s142: int;
-var _endblockelection_s142: int;
+var initialSupply_s147: int;
+var _yes_s147: Ref;
+var _no_s147: Ref;
+var _endphase1_s147: int;
+var _endphase2_s147: int;
+var _endblockelection_s147: int;
 var __ret_0_decimals: int;
-var _hash_s199: int;
+var _hash_s204: int;
 var __ret_0_setCommit: bool;
-var _randomness_s258: int;
-var _mixcontract_s313: Ref;
+var _randomness_s263: int;
+var _mixcontract_s312: Ref;
 var __ret_0_setMixcontract: Ref;
 var tmpNow: int;
 assume ((now) >= (0));
 assume ((DType[this]) == (VoteToken));
-call VoteToken_VoteToken(this, msgsender_MSG, msgvalue_MSG, initialSupply_s142, _yes_s142, _no_s142, _endphase1_s142, _endphase2_s142, _endblockelection_s142);
+call VoteToken_VoteToken(this, msgsender_MSG, msgvalue_MSG, initialSupply_s147, _yes_s147, _no_s147, _endphase1_s147, _endphase2_s147, _endblockelection_s147);
 while (true)
   invariant (HoudiniB1_VoteToken) ==> ((yes_VoteToken[this]) == (null));
   invariant (HoudiniB2_VoteToken) ==> ((yes_VoteToken[this]) != (null));
@@ -1172,32 +1248,32 @@ havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
 havoc __ret_0_totalSupply;
-havoc account_s476;
+havoc account_s471;
 havoc __ret_0_balanceOf;
-havoc recipient_s495;
-havoc amount_s495;
+havoc recipient_s490;
+havoc amount_s490;
 havoc __ret_0_transfer;
-havoc owner_s511;
-havoc spender_s511;
+havoc owner_s506;
+havoc spender_s506;
 havoc __ret_0_allowance;
-havoc spender_s530;
-havoc amount_s530;
+havoc spender_s525;
+havoc amount_s525;
 havoc __ret_0_approve;
-havoc sender_s566;
-havoc recipient_s566;
-havoc amount_s566;
+havoc sender_s561;
+havoc recipient_s561;
+havoc amount_s561;
 havoc __ret_0_transferFrom;
-havoc initialSupply_s142;
-havoc _yes_s142;
-havoc _no_s142;
-havoc _endphase1_s142;
-havoc _endphase2_s142;
-havoc _endblockelection_s142;
+havoc initialSupply_s147;
+havoc _yes_s147;
+havoc _no_s147;
+havoc _endphase1_s147;
+havoc _endphase2_s147;
+havoc _endblockelection_s147;
 havoc __ret_0_decimals;
-havoc _hash_s199;
+havoc _hash_s204;
 havoc __ret_0_setCommit;
-havoc _randomness_s258;
-havoc _mixcontract_s313;
+havoc _randomness_s263;
+havoc _mixcontract_s312;
 havoc __ret_0_setMixcontract;
 havoc tmpNow;
 tmpNow := now;
@@ -1206,29 +1282,30 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (Context));
 assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
 assume ((DType[msgsender_MSG]) != (VeriSol));
 assume ((DType[msgsender_MSG]) != (VoteToken));
 Alloc[msgsender_MSG] := true;
 if ((choice) == (10)) {
 call __ret_0_totalSupply := totalSupply_VoteToken(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (9)) {
-call __ret_0_balanceOf := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, account_s476);
+call __ret_0_balanceOf := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, account_s471);
 } else if ((choice) == (8)) {
-call __ret_0_transfer := transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, recipient_s495, amount_s495);
+call __ret_0_transfer := transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, recipient_s490, amount_s490);
 } else if ((choice) == (7)) {
-call __ret_0_allowance := allowance_VoteToken(this, msgsender_MSG, msgvalue_MSG, owner_s511, spender_s511);
+call __ret_0_allowance := allowance_VoteToken(this, msgsender_MSG, msgvalue_MSG, owner_s506, spender_s506);
 } else if ((choice) == (6)) {
-call __ret_0_approve := approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, spender_s530, amount_s530);
+call __ret_0_approve := approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, spender_s525, amount_s525);
 } else if ((choice) == (5)) {
-call __ret_0_transferFrom := transferFrom_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s566, recipient_s566, amount_s566);
+call __ret_0_transferFrom := transferFrom_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s561, recipient_s561, amount_s561);
 } else if ((choice) == (4)) {
 call __ret_0_decimals := decimals_VoteToken(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (3)) {
-call __ret_0_setCommit := setCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _hash_s199);
+call __ret_0_setCommit := setCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _hash_s204);
 } else if ((choice) == (2)) {
-call getCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _randomness_s258);
+call getCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _randomness_s263);
 } else if ((choice) == (1)) {
-call __ret_0_setMixcontract := setMixcontract_VoteToken(this, msgsender_MSG, msgvalue_MSG, _mixcontract_s313);
+call __ret_0_setMixcontract := setMixcontract_VoteToken(this, msgsender_MSG, msgvalue_MSG, _mixcontract_s312);
 }
 }
 }
@@ -1250,6 +1327,7 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (Context));
 assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
 assume ((DType[msgsender_MSG]) != (VeriSol));
 assume ((DType[msgsender_MSG]) != (VoteToken));
 Alloc[msgsender_MSG] := true;
@@ -1288,6 +1366,7 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (Context));
 assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
 assume ((DType[msgsender_MSG]) != (VeriSol));
 assume ((DType[msgsender_MSG]) != (VoteToken));
 Alloc[msgsender_MSG] := true;
@@ -1309,6 +1388,45 @@ call CorralChoice_IERC20(this);
 }
 }
 
+procedure CorralChoice_SafeMath(this: Ref);
+implementation CorralChoice_SafeMath(this: Ref)
+{
+var msgsender_MSG: Ref;
+var msgvalue_MSG: int;
+var choice: int;
+var tmpNow: int;
+havoc msgsender_MSG;
+havoc msgvalue_MSG;
+havoc choice;
+havoc tmpNow;
+tmpNow := now;
+havoc now;
+assume ((now) > (tmpNow));
+assume ((msgsender_MSG) != (null));
+assume ((DType[msgsender_MSG]) != (Context));
+assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
+assume ((DType[msgsender_MSG]) != (VeriSol));
+assume ((DType[msgsender_MSG]) != (VoteToken));
+Alloc[msgsender_MSG] := true;
+}
+
+procedure CorralEntry_SafeMath();
+implementation CorralEntry_SafeMath()
+{
+var this: Ref;
+var msgsender_MSG: Ref;
+var msgvalue_MSG: int;
+call this := FreshRefGenerator();
+assume ((now) >= (0));
+assume ((DType[this]) == (SafeMath));
+call SafeMath_SafeMath(this, msgsender_MSG, msgvalue_MSG);
+while (true)
+{
+call CorralChoice_SafeMath(this);
+}
+}
+
 procedure CorralChoice_VoteToken(this: Ref);
 implementation CorralChoice_VoteToken(this: Ref)
 {
@@ -1316,64 +1434,64 @@ var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
 var choice: int;
 var __ret_0_totalSupply: int;
-var account_s476: Ref;
+var account_s471: Ref;
 var __ret_0_balanceOf: int;
-var recipient_s495: Ref;
-var amount_s495: int;
+var recipient_s490: Ref;
+var amount_s490: int;
 var __ret_0_transfer: bool;
-var owner_s511: Ref;
-var spender_s511: Ref;
+var owner_s506: Ref;
+var spender_s506: Ref;
 var __ret_0_allowance: int;
-var spender_s530: Ref;
-var amount_s530: int;
+var spender_s525: Ref;
+var amount_s525: int;
 var __ret_0_approve: bool;
-var sender_s566: Ref;
-var recipient_s566: Ref;
-var amount_s566: int;
+var sender_s561: Ref;
+var recipient_s561: Ref;
+var amount_s561: int;
 var __ret_0_transferFrom: bool;
-var initialSupply_s142: int;
-var _yes_s142: Ref;
-var _no_s142: Ref;
-var _endphase1_s142: int;
-var _endphase2_s142: int;
-var _endblockelection_s142: int;
+var initialSupply_s147: int;
+var _yes_s147: Ref;
+var _no_s147: Ref;
+var _endphase1_s147: int;
+var _endphase2_s147: int;
+var _endblockelection_s147: int;
 var __ret_0_decimals: int;
-var _hash_s199: int;
+var _hash_s204: int;
 var __ret_0_setCommit: bool;
-var _randomness_s258: int;
-var _mixcontract_s313: Ref;
+var _randomness_s263: int;
+var _mixcontract_s312: Ref;
 var __ret_0_setMixcontract: Ref;
 var tmpNow: int;
 havoc msgsender_MSG;
 havoc msgvalue_MSG;
 havoc choice;
 havoc __ret_0_totalSupply;
-havoc account_s476;
+havoc account_s471;
 havoc __ret_0_balanceOf;
-havoc recipient_s495;
-havoc amount_s495;
+havoc recipient_s490;
+havoc amount_s490;
 havoc __ret_0_transfer;
-havoc owner_s511;
-havoc spender_s511;
+havoc owner_s506;
+havoc spender_s506;
 havoc __ret_0_allowance;
-havoc spender_s530;
-havoc amount_s530;
+havoc spender_s525;
+havoc amount_s525;
 havoc __ret_0_approve;
-havoc sender_s566;
-havoc recipient_s566;
-havoc amount_s566;
+havoc sender_s561;
+havoc recipient_s561;
+havoc amount_s561;
 havoc __ret_0_transferFrom;
-havoc initialSupply_s142;
-havoc _yes_s142;
-havoc _no_s142;
-havoc _endphase1_s142;
-havoc _endphase2_s142;
-havoc _endblockelection_s142;
+havoc initialSupply_s147;
+havoc _yes_s147;
+havoc _no_s147;
+havoc _endphase1_s147;
+havoc _endphase2_s147;
+havoc _endblockelection_s147;
 havoc __ret_0_decimals;
-havoc _hash_s199;
+havoc _hash_s204;
 havoc __ret_0_setCommit;
-havoc _randomness_s258;
-havoc _mixcontract_s313;
+havoc _randomness_s263;
+havoc _mixcontract_s312;
 havoc __ret_0_setMixcontract;
 havoc tmpNow;
 tmpNow := now;
@@ -1382,29 +1500,30 @@ assume ((now) > (tmpNow));
 assume ((msgsender_MSG) != (null));
 assume ((DType[msgsender_MSG]) != (Context));
 assume ((DType[msgsender_MSG]) != (IERC20));
+assume ((DType[msgsender_MSG]) != (SafeMath));
 assume ((DType[msgsender_MSG]) != (VeriSol));
 assume ((DType[msgsender_MSG]) != (VoteToken));
 Alloc[msgsender_MSG] := true;
 if ((choice) == (10)) {
 call __ret_0_totalSupply := totalSupply_VoteToken(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (9)) {
-call __ret_0_balanceOf := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, account_s476);
+call __ret_0_balanceOf := balanceOf_VoteToken(this, msgsender_MSG, msgvalue_MSG, account_s471);
 } else if ((choice) == (8)) {
-call __ret_0_transfer := transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, recipient_s495, amount_s495);
+call __ret_0_transfer := transfer_VoteToken(this, msgsender_MSG, msgvalue_MSG, recipient_s490, amount_s490);
 } else if ((choice) == (7)) {
-call __ret_0_allowance := allowance_VoteToken(this, msgsender_MSG, msgvalue_MSG, owner_s511, spender_s511);
+call __ret_0_allowance := allowance_VoteToken(this, msgsender_MSG, msgvalue_MSG, owner_s506, spender_s506);
 } else if ((choice) == (6)) {
-call __ret_0_approve := approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, spender_s530, amount_s530);
+call __ret_0_approve := approve_VoteToken(this, msgsender_MSG, msgvalue_MSG, spender_s525, amount_s525);
 } else if ((choice) == (5)) {
-call __ret_0_transferFrom := transferFrom_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s566, recipient_s566, amount_s566);
+call __ret_0_transferFrom := transferFrom_VoteToken(this, msgsender_MSG, msgvalue_MSG, sender_s561, recipient_s561, amount_s561);
 } else if ((choice) == (4)) {
 call __ret_0_decimals := decimals_VoteToken(this, msgsender_MSG, msgvalue_MSG);
 } else if ((choice) == (3)) {
-call __ret_0_setCommit := setCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _hash_s199);
+call __ret_0_setCommit := setCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _hash_s204);
 } else if ((choice) == (2)) {
-call getCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _randomness_s258);
+call getCommit_VoteToken(this, msgsender_MSG, msgvalue_MSG, _randomness_s263);
 } else if ((choice) == (1)) {
-call __ret_0_setMixcontract := setMixcontract_VoteToken(this, msgsender_MSG, msgvalue_MSG, _mixcontract_s313);
+call __ret_0_setMixcontract := setMixcontract_VoteToken(this, msgsender_MSG, msgvalue_MSG, _mixcontract_s312);
 }
 }
 
@@ -1414,16 +1533,16 @@ implementation CorralEntry_VoteToken()
 var this: Ref;
 var msgsender_MSG: Ref;
 var msgvalue_MSG: int;
-var initialSupply_s142: int;
-var _yes_s142: Ref;
-var _no_s142: Ref;
-var _endphase1_s142: int;
-var _endphase2_s142: int;
-var _endblockelection_s142: int;
+var initialSupply_s147: int;
+var _yes_s147: Ref;
+var _no_s147: Ref;
+var _endphase1_s147: int;
+var _endphase2_s147: int;
+var _endblockelection_s147: int;
 call this := FreshRefGenerator();
 assume ((now) >= (0));
 assume ((DType[this]) == (VoteToken));
-call VoteToken_VoteToken(this, msgsender_MSG, msgvalue_MSG, initialSupply_s142, _yes_s142, _no_s142, _endphase1_s142, _endphase2_s142, _endblockelection_s142);
+call VoteToken_VoteToken(this, msgsender_MSG, msgvalue_MSG, initialSupply_s147, _yes_s147, _no_s147, _endphase1_s147, _endphase2_s147, _endblockelection_s147);
 while (true)
   invariant (_totalSupply_VoteToken[this]) == (_SumMapping_VeriSol(M_Ref_int[_balances_VoteToken[this]]));
 {

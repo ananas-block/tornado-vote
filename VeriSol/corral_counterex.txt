@@ -1,4 +1,5 @@
-/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol(16,1): : VoteToken::Constructor (this = address!1, msg.sender = address!3, msg.value = 36, initialSupply = 7979, _yes = address!4, _no = address!5, _endphase1 = 626, _endphase2 = 627, _endblockelection = 891)
-/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(221,1): : VoteToken::transfer (this = address!1, msg.sender = address!3, msg.value = 42, recipient = address!6, amount = 1)
-/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(257,1): : VoteToken::transferFrom (this = address!1, msg.sender = address!3, msg.value = 43, sender = address!6, recipient = address!7, amount = 1)
-/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(326,1): : ASSERTION FAILS!
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/Libraries/Context.sol(16,1): : VoteToken::Constructor (this = address!1, msg.sender = address!4, msg.value = 44, initialSupply = 2, _yes = address!4, _no = address!3, _endphase1 = 155, _endphase2 = 156, _endblockelection = 725)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(147,1): : VoteToken::setMixcontract (this = address!1, msg.sender = address!4, msg.value = 51, _mixcontract = address!5)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(257,1): : VoteToken::transferFrom (this = address!1, msg.sender = address!4, msg.value = 52, sender = address!4, recipient = address!8, amount = 1)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(257,1): : VoteToken::transferFrom (this = address!1, msg.sender = address!5, msg.value = 53, sender = address!8, recipient = address!4, amount = 1)
+/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol(340,1): : ASSERTION FAILS!

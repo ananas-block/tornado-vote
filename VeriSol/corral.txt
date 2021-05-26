@@ -5,27 +5,31 @@ Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int
 Program has a potential bug: False bug
 Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken}
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken}
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken}
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref}
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, yes_VoteToken}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, endphase2_VoteToken}
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, yes_VoteToken, no_VoteToken}
 Program has a potential bug: False bug
-Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, endphase1_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, endphase2_VoteToken, M_int_bool, _commits_VoteToken}
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, yes_VoteToken, no_VoteToken, endphase1_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, yes_VoteToken, no_VoteToken, endphase1_VoteToken, endphase2_VoteToken}
+Program has a potential bug: False bug
+Verifying program while tracking: {assertsPassed, _balances_VoteToken, M_Ref_int, _totalSupply_VoteToken, admin_VoteToken, mixcontract_VoteToken, times_mixcontract_changed_VoteToken, Alloc, _allowances_VoteToken, M_Ref_Ref, yes_VoteToken, no_VoteToken, endphase1_VoteToken, endphase2_VoteToken, M_int_bool, _commits_VoteToken}
 Program has no bugs
-Reached recursion bound of 10
+Reached recursion bound of 4
 
-Boogie verification time: 112.66 s
-Time spent reading-writing programs: 2.44 s
+Boogie verification time: 7.31 s
+Time spent reading-writing programs: 3.63 s
 
-Time spent checking a program (9): 111.77 s
-Time spent checking a path (24): 4.28 s
+Time spent checking a program (11): 5.92 s
+Time spent checking a path (30): 6.53 s
 
-Number of procedures inlined: 367
-Number of variables tracked: 14
-Total Time: 116.8056185 s
-Total User CPU time: 116.74 s
+Number of procedures inlined: 167
+Number of variables tracked: 16
+Total Time: 13.4891751 s
+Total User CPU time: 13.76 s

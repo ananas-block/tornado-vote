@@ -5,8 +5,7 @@ pragma solidity ^0.5.10;
 //import "@openzeppelin/contracts/math/SafeMath.sol";
 import "./Libraries/Context.sol";
 import "./Libraries/IERC20.sol";
-//import "./Libraries/SafeMath.sol";
-
+import "./Libraries/SafeMath.sol";
 import "./Libraries/VeriSolContracts.sol";
 
 //import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -37,6 +36,8 @@ import "./Libraries/VeriSolContracts.sol";
  */
 contract VoteToken is  Context, IERC20 {
 
+    using SafeMath for uint256;
+
     mapping (address => uint256) private _balances;
 
     mapping (address => mapping (address => uint256)) private _allowances;
@@ -46,7 +47,7 @@ contract VoteToken is  Context, IERC20 {
     /**
      * @dev See {IERC20-totalSupply}.
      */
-     //address yes votes are send to
+    //address yes votes are send to
     address public yes;
     //address no votes are send to
     address public no;
@@ -78,11 +79,11 @@ contract VoteToken is  Context, IERC20 {
       uint _endblockelection
     ) public /*ERC20("Vote", "V")*/  {
       deploy_block = block.number;
-      require(block.number < _endphase1);// added
+      require(deploy_block < _endphase1);// added
       require(_endphase1 < _endphase2);// added
       require(_endphase2 < _endblockelection);// added
-      require(_yes != _no);
-      require(admin != _yes && admin != _no);
+      require(_yes != _no);// added
+      require(_msgSender() != _yes && _msgSender() != _no);// added
         yes = _yes;
         no = _no;
         mixcontract = address(0);
@@ -115,9 +116,8 @@ contract VoteToken is  Context, IERC20 {
       require(block.number < endblockelection, "Vote Period ended");
       require(block.number >= endphase2, "Vote Period has not started yet");
       //bytes32 hashs = keccak256(bytes(_randomness));
+      //bytes20 hashs = bytes20(x);
       bytes32 hashs = _randomness;
-      //das ist so weil bytes sich nach initilisierung nicht mehr ändern lässt und bytes32 keinen slice abgibt
-      //bytes memory hashs = bytes(x);
 
       if(_commits[hashs] == true){
         _commits[hashs] = false;
@@ -141,8 +141,10 @@ contract VoteToken is  Context, IERC20 {
     assert(_commits[hashs] == false); // can be formally verified
   }
 
+  /**
+   * @dev sets the address for the contract providing anonymity.
+   */
 
-  // sets the address for the contract providing anonymity
   function setMixcontract(address _mixcontract) public returns (address) {
     require(mixcontract == address(0), "Mixcontract already set");
     require(_mixcontract != address(0));// added
@@ -152,13 +154,16 @@ contract VoteToken is  Context, IERC20 {
     mixcontract = _mixcontract;
     times_mixcontract_changed += 1;
     // mixcontract address can only be changed once
-    assert(times_mixcontract_changed <= 1);
+    //assert(times_mixcontract_changed <= 1);
     return mixcontract;
   }
 
+  /**
+   * @dev enforces rules before token tranfers.
+   */
  function _beforeTokenTransfer(address from, address to, uint256 amount, uint block_nr) internal {
    require(amount == 1,"Can only send one vote");
-
+   require(mixcontract != address(0));
    if(block_nr < endphase1){
      require(balanceOf(to) == 0, "Recepient already has a VoteToken");
      require(msg.sender == admin, "Only the administrator can distribute votes");
@@ -167,36 +172,23 @@ contract VoteToken is  Context, IERC20 {
      require(to != mixcontract, "Cannot submit tokens to the anonymity provider at this time");
     }
 
-    else if(block_nr < endphase2 && block_nr >= endphase1 && mixcontract != address(0) ){
+    else if(block_nr < endphase2 && block_nr >= endphase1 ){
       require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
       require(to == mixcontract, "Can only send vote to anonymity provider");
 
     }
 
-    else if(block_nr < endblockelection && block_nr >= endphase2 && mixcontract != address(0)){
+    else if(block_nr < endblockelection && block_nr >= endphase2){
       require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
       require(msg.sender == mixcontract, "Can only transfer votes from anonymity provider");
       require((to == yes) || (to == no), "Can only cast votes to yes or no addresses");
-      /*
-      if(to == yes) {
-       }
-
-       else if(to == no){
-       }
-
-       else {
-         revert("Can only cast votes to yes or no addresses");
-       }*/
       }
 
       else  {
         revert("Election Period Over");
       }
+
     }
-
-
-
-
 
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
@@ -255,7 +247,7 @@ contract VoteToken is  Context, IERC20 {
      */
     function transferFrom(address sender, address recipient, uint256 amount) public returns (bool) {
         _transfer(sender, recipient, amount);
-        _approve(sender, _msgSender(), sub(_allowances[sender][_msgSender()], amount, "ERC20: transfer amount exceeds allowance"));
+        _approve(sender, _msgSender(), _allowances[sender][_msgSender()].sub(amount, "ERC20: transfer amount exceeds allowance"));
         return true;
     }
 
@@ -318,8 +310,8 @@ contract VoteToken is  Context, IERC20 {
 
         _beforeTokenTransfer(msg.sender, recipient, amount, block_nr);
         //uint256 old = block.number;
-        _balances[sender] = sub(_balances[sender], amount, "ERC20: transfer amount exceeds balance");
-        _balances[recipient] = add(_balances[recipient],amount);
+        _balances[sender] = _balances[sender].sub(amount, "ERC20: transfer amount exceeds balance");
+        _balances[recipient] = _balances[recipient].add(amount);
 
         emit Transfer(sender, recipient, amount);
 
@@ -327,13 +319,19 @@ contract VoteToken is  Context, IERC20 {
 
         if (block_nr < endphase1){
           assert(msg.sender == admin);
+          assert(balanceOf(recipient) == 1);
+          assert(recipient != yes);
+          assert(recipient != no);
+          assert(recipient != mixcontract);
         }
         else if (block_nr < endphase2 && block_nr >= endphase1) {
-          assert(_balances[admin] <= 1);
+          //assert(_balances[admin] <= 1);
           assert(recipient == mixcontract);
         }
         else if(block_nr < endblockelection && block_nr >= endphase2) {
+          //assert(_balances[admin] <= 1);
           assert(msg.sender == mixcontract);
+          assert((recipient == yes) || (recipient == no));
         }
 
     }
@@ -355,8 +353,8 @@ contract VoteToken is  Context, IERC20 {
     function _mint(address account, uint256 amount) internal {
         require(account != address(0), "ERC20: mint to the zero address");
 
-        _totalSupply = add(_totalSupply, amount);
-        _balances[account] = add(_balances[account], amount);
+        _totalSupply = _totalSupply.add(amount);
+        _balances[account] =_balances[account].add(amount);
         emit Transfer(address(0), account, amount);
     }
 
@@ -412,145 +410,5 @@ contract VoteToken is  Context, IERC20 {
         _burn(account, amount);
         _approve(account, _msgSender(), _allowances[account][_msgSender()].sub(amount, "ERC20: burn amount exceeds allowance"));
     }*/
-
-    /**
-     * @dev Returns the addition of two unsigned integers, reverting on
-     * overflow.
-     *
-     * Counterpart to Solidity's `+` operator.
-     *
-     * Requirements:
-     * - Addition cannot overflow.
-     */
-    function add(uint256 a, uint256 b) internal pure returns (uint256) {
-        uint256 c = a + b;
-        require(c >= a, "SafeMath: addition overflow");
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the subtraction of two unsigned integers, reverting on
-     * overflow (when the result is negative).
-     *
-     * Counterpart to Solidity's `-` operator.
-     *
-     * Requirements:
-     * - Subtraction cannot overflow.
-
-    function sub(uint256 a, uint256 b) internal pure returns (uint256) {
-        return sub(a, b, "SafeMath: subtraction overflow");
-    }*/
-
-    /**
-     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on
-     * overflow (when the result is negative).
-     *
-     * Counterpart to Solidity's `-` operator.
-     *
-     * Requirements:
-     * - Subtraction cannot overflow.
-     *
-     * _Available since v2.4.0._
-     */
-    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        require(b <= a, errorMessage);
-        uint256 c = a - b;
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the multiplication of two unsigned integers, reverting on
-     * overflow.
-     *
-     * Counterpart to Solidity's `*` operator.
-     *
-     * Requirements:
-     * - Multiplication cannot overflow.
-     */
-    function mul(uint256 a, uint256 b) internal pure returns (uint256) {
-        // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
-        // benefit is lost if 'b' is also tested.
-        // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522
-        if (a == 0) {
-            return 0;
-        }
-
-        uint256 c = a * b;
-        require(c / a == b, "SafeMath: multiplication overflow");
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the integer division of two unsigned integers. Reverts on
-     * division by zero. The result is rounded towards zero.
-     *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
-     * `revert` opcode (which leaves remaining gas untouched) while Solidity
-     * uses an invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-
-    function div(uint256 a, uint256 b) internal pure returns (uint256) {
-        return div(a, b, "SafeMath: division by zero");
-    }*/
-
-    /**
-     * @dev Returns the integer division of two unsigned integers. Reverts with custom message on
-     * division by zero. The result is rounded towards zero.
-     *
-     * Counterpart to Solidity's `/` operator. Note: this function uses a
-     * `revert` opcode (which leaves remaining gas untouched) while Solidity
-     * uses an invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-     *
-     * _Available since v2.4.0._
-     */
-    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        // Solidity only automatically asserts when dividing by 0
-        require(b > 0, errorMessage);
-        uint256 c = a / b;
-        // assert(a == b * c + a % b); // There is no case in which this doesn't hold
-
-        return c;
-    }
-
-    /**
-     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
-     * Reverts when dividing by zero.
-     *
-     * Counterpart to Solidity's `%` operator. This function uses a `revert`
-     * opcode (which leaves remaining gas untouched) while Solidity uses an
-     * invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-
-    function mod(uint256 a, uint256 b) internal pure returns (uint256) {
-        return mod(a, b, "SafeMath: modulo by zero");
-    }*/
-
-    /**
-     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),
-     * Reverts with custom message when dividing by zero.
-     *
-     * Counterpart to Solidity's `%` operator. This function uses a `revert`
-     * opcode (which leaves remaining gas untouched) while Solidity uses an
-     * invalid opcode to revert (consuming all remaining gas).
-     *
-     * Requirements:
-     * - The divisor cannot be zero.
-     *
-     * _Available since v2.4.0._
-     */
-    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {
-        require(b != 0, errorMessage);
-        return a % b;
-    }
 
 }
