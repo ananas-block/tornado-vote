@@ -78,7 +78,6 @@ contract VoteToken is  Context, IERC20 {
       uint _endphase2,
       uint _endblockelection
     ) public /*ERC20("Vote", "V")*/  {
-      deploy_block = block.number;
       require(deploy_block < _endphase1);// added
       require(_endphase1 < _endphase2);// added
       require(_endphase2 < _endblockelection);// added
@@ -92,7 +91,6 @@ contract VoteToken is  Context, IERC20 {
         endblockelection = _endblockelection;
         admin = _msgSender();
         _mint(_msgSender(), initialSupply);
-        deploy_block = block.number;
     }
 
 
@@ -154,7 +152,7 @@ contract VoteToken is  Context, IERC20 {
     mixcontract = _mixcontract;
     times_mixcontract_changed += 1;
     // mixcontract address can only be changed once
-    //assert(times_mixcontract_changed <= 1);
+    assert(times_mixcontract_changed <= 1);
     return mixcontract;
   }
 
@@ -325,11 +323,11 @@ contract VoteToken is  Context, IERC20 {
           assert(recipient != mixcontract);
         }
         else if (block_nr < endphase2 && block_nr >= endphase1) {
-          //assert(_balances[admin] <= 1);
+          assert(_balances[admin] <= 1);
           assert(recipient == mixcontract);
         }
         else if(block_nr < endblockelection && block_nr >= endphase2) {
-          //assert(_balances[admin] <= 1);
+          assert(_balances[admin] <= 1);
           assert(msg.sender == mixcontract);
           assert((recipient == yes) || (recipient == no));
         }
