@@ -4,10 +4,10 @@ This repository contains a private vote protocol, developed for my Masterthesis.
 
 Tornado Cash is a noncustodial mixer which takes in tokens and a commitment, a hash. These commitments are added to a merkle tree. Using a zero knowledge proof a relayer can withdraw funds to a new address therefore unlinking the original address and the new address achieving certain anonymity.
 
-The voting protocol uses the anonymity of tornado cash to transfer extended ERC20 Vote Tokens to addresses specified at deployment which represent choices for example yes or no. 
+The voting protocol uses the anonymity of tornado cash to transfer extended ERC20 vote tokens to addresses specified at deployment which represent choices for example yes or no. 
 
 
-**The Voting protocol is composed of three phases:**
+**The voting protocol is composed of three phases:**
 
 **Registration Phase**: The administrator deploys the smart contracts and sets the parameters (initial Supply, address yes,address no,block endphase1,block endphase2,block endblockelection, address tornado_contract) and distributes the tokens to eligible voters. After distribution the administrator must retain one or zero vote tokens.
 
