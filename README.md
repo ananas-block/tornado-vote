@@ -4,7 +4,7 @@ This repository contains a private vote protocol, developed for my Masterthesis.
 
 Tornado Cash is a noncustodial mixer which takes in tokens and a commitment, a hash. These commitments are added to a merkle tree. Using a zero knowledge proof a relayer can withdraw funds to a new address therefore unlinking the original address and the new address achieving certain anonymity.
 
-The voting protocol uses the anonymity of tornado cash to transfer extended ERC20 vote tokens to addresses specified at deployment which represent choices for example yes or no. 
+The voting protocol uses the anonymity of tornado cash to transfer extended ERC20 vote tokens to addresses specified at deployment which represent choices for example yes or no.
 
 
 **The voting protocol is composed of three phases:**
@@ -30,7 +30,7 @@ The voting protocol uses the anonymity of tornado cash to transfer extended ERC2
 
 ## Security
 
-Both the original tornado cash protocol and openzeppeling ERC20 token implementation have been audited and are deployed on the Ethereum mainnet today. Of the tornado cash code the withdraw function has been renamed commit and additional input and a function call to 
+Both the original tornado cash protocol and openzeppeling ERC20 token implementation have been audited and are deployed on the Ethereum mainnet today. Of the tornado cash code the withdraw function has been renamed commit and additional input and a function call to
 Since, the code has been modified, in particular the ERC20 token, a new security analysis was conducted using the tools, **[Slither]()**, **[Mythril]()** and **[VeriSol](https://github.com/microsoft/verisol)**. With VeriSol a number of safety properties have been formally verified, for details check the **[VeriSol directory](https://github.com/ananas-block/tornado-vote/tree/master/VeriSol)**.
 
 **Nevertheless, this is still experimental software use at your own risk!**
@@ -56,8 +56,6 @@ Since, the code has been modified, in particular the ERC20 token, a new security
  Edit .env file for election configuration
 
 `npm run migrate:dev`
-
-  
 
 ./cli.js deposit ETH 0.1 --rpc HTTP://127.0.0.1:8545
 
