@@ -24,14 +24,14 @@ var EndRegistrationPhase = parseInt(process.env.EndRegistrationPhase)
 var EndCommitPhase = parseInt(process.env.EndCommitPhase)
 var EndVotingPhase = parseInt(process.env.EndVotingPhase)
 
-async function setMixcontractAddress(tokenAddress, mixAddress, senderAccount) {
+async function setAnonymityProviderAddress(tokenAddress, mixAddress, senderAccount) {
   erc20 = new web3.eth.Contract(VoteTokenJson.abi, tokenAddress);
 
-  var x = await erc20.methods.mixcontract().call();
+  var x = await erc20.methods.anonymity_provider().call();
   if(x == '0x0000000000000000000000000000000000000000'){
     //console.log(x)
-    mixcontract = await erc20.methods.setMixcontract(mixAddress).send({ from: senderAccount, gas: 2e6 });
-    x = await erc20.methods.mixcontract().call();
+    anonymity_provider = await erc20.methods.setAnonymityProvider(mixAddress).send({ from: senderAccount, gas: 2e6 });
+    x = await erc20.methods.anonymity_provider().call();
     console.log("set anonymity provider address to ", x);
   }
 
@@ -116,7 +116,7 @@ module.exports = async function(deployer, network, accounts) {
     //console.log(accounts)
     //await registerVoters(vote_token, accounts,INITIAL_SUPPLY);
     //senderAccount = (await web3.eth.getAccounts())[0]
-    //await setMixcontractAddress(vote_token,tornado.address, senderAccount)
+    //await setAnonymityProviderAddress(vote_token,tornado.address, senderAccount)
     //advanceToNextPhase(EndRegistrationPhase);
     //console.log("Entered Commit Phase at block ", await web3.eth.getBlockNumber())
 

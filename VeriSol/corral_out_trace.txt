@@ -41,7 +41,7 @@ s
 1 147 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|88|
 1 150 3 1 c
 1 150 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|88|
-1 150 4 25 mixcontract = T@Ref!val!2
+1 150 4 25 anonymity_provider = T@Ref!val!2
 1 151 3 1 c
 1 151 6 117 VoteToken_VoteToken_NoBaseCtor|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|89|
 1 155 3 1 c
@@ -164,7 +164,7 @@ s
 1 373 6 220 setMixcontract_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|152|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
 1 375 3 1 c
 1 375 6 220 setMixcontract_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|152|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
-1 375 4 25 mixcontract = T@Ref!val!5
+1 375 4 25 anonymity_provider = T@Ref!val!5
 1 376 3 1 c
 1 376 6 220 setMixcontract_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|153|CorralEntry_VoteToken|/home/ananas/Studium/Thesis/Code_Laptop/tornado-vote/VeriSol/VoteToken_VeriSol.sol|94|
 1 379 3 1 c
