@@ -14,12 +14,12 @@ The voting protcol uses the anonymity of tornado cash to transfer extended ERC20
 
 **Commitment Phase**: Transfer token to anonymity provider and retain note. Subsequently, the voter uses the note to submit the first 20 bytes of a sha3 hash H(32 bytes randomness || 1 byte Vote) via a relayer to the anonymity provider which saves the hash in the vote token. This hash is a commitment for the vote to be cast next round to ensure fairness.
 
-![image](docs/Vote-Commit-Phase.png)
+![image](docs/Voting-Commit-Phase.png)
 
 
 **Voting Phase**: The voter submits the inputs for the prior hash commitment in clear text over a relayer to the anonymity provider. The anonymity provider calls the vote token and with the given inputs which checks for the existence of a the first 20 bytes of a sha3 hash corresponding to the inputs. If a corresponding hash is found, it is deleted, and a vote is transferred to the choice given in the last byte of the input for the hash commitment.
 
-![image](docs/Vote-Vote-Phase.png)
+![image](docs/Voting-Vote-Phase.png)
 
 
 **Protocol Properties:**
