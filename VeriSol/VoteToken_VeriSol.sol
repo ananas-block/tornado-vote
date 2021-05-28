@@ -52,7 +52,7 @@ contract VoteToken is  Context, IERC20 {
     //address no votes are send to
     address public no;
     //address of smart contract mixing the votes for anonymity
-    address public mixcontract;
+    address public anonymity_provider;
     //in phase 1 the administrator distributes votetokens
     uint public endphase1;
     //in phase 2 the voters submit their vote commitment a hash
@@ -78,7 +78,6 @@ contract VoteToken is  Context, IERC20 {
       uint _endphase2,
       uint _endblockelection
     ) public /*ERC20("Vote", "V")*/  {
-      deploy_block = block.number;
       require(deploy_block < _endphase1);// added
       require(_endphase1 < _endphase2);// added
       require(_endphase2 < _endblockelection);// added
@@ -86,13 +85,12 @@ contract VoteToken is  Context, IERC20 {
       require(_msgSender() != _yes && _msgSender() != _no);// added
         yes = _yes;
         no = _no;
-        mixcontract = address(0);
+        anonymity_provider = address(0);
         endphase1 = _endphase1;
         endphase2 = _endphase2;
         endblockelection = _endblockelection;
         admin = _msgSender();
         _mint(_msgSender(), initialSupply);
-        deploy_block = block.number;
     }
 
 
@@ -101,7 +99,7 @@ contract VoteToken is  Context, IERC20 {
     }
 
     function setCommit(bytes32 _hash) external returns(bool){
-      require(_msgSender() == mixcontract,"Can only be filled by the anonymity Provider");
+      require(_msgSender() == anonymity_provider,"Can only be filled by the anonymity Provider");
       require(_commits[_hash] == false, "Commit already exists");
       require(block.number < endphase2, "Commit Period ended");
       require(block.number >= endphase1, "Commit Period has not started yet");
@@ -112,7 +110,7 @@ contract VoteToken is  Context, IERC20 {
     //casts the actual vote by submitting the _randomness
 
     function getCommit(bytes32 _randomness) public {
-      require(_msgSender() == mixcontract);
+      require(_msgSender() == anonymity_provider);
       require(block.number < endblockelection, "Vote Period ended");
       require(block.number >= endphase2, "Vote Period has not started yet");
       //bytes32 hashs = keccak256(bytes(_randomness));
@@ -145,17 +143,17 @@ contract VoteToken is  Context, IERC20 {
    * @dev sets the address for the contract providing anonymity.
    */
 
-  function setMixcontract(address _mixcontract) public returns (address) {
-    require(mixcontract == address(0), "Mixcontract already set");
-    require(_mixcontract != address(0));// added
-    require(_mixcontract != msg.sender); //added
+  function setAnonymityProvider(address _anonymity_provider) public returns (address) {
+    require(anonymity_provider == address(0), "anonymity_provider already set");
+    require(_anonymity_provider != address(0));// added
+    require(_anonymity_provider != msg.sender); //added
     require(msg.sender == admin);
 
-    mixcontract = _mixcontract;
+    anonymity_provider = _anonymity_provider;
     times_mixcontract_changed += 1;
-    // mixcontract address can only be changed once
-    //assert(times_mixcontract_changed <= 1);
-    return mixcontract;
+    // anonymity_provider address can only be changed once
+    assert(times_mixcontract_changed <= 1);
+    return anonymity_provider;
   }
 
   /**
@@ -163,24 +161,24 @@ contract VoteToken is  Context, IERC20 {
    */
  function _beforeTokenTransfer(address from, address to, uint256 amount, uint block_nr) internal {
    require(amount == 1,"Can only send one vote");
-   require(mixcontract != address(0));
+   require(anonymity_provider != address(0));
    if(block_nr < endphase1){
      require(balanceOf(to) == 0, "Recepient already has a VoteToken");
      require(msg.sender == admin, "Only the administrator can distribute votes");
      require(to != yes, "Cannot cast yes vote at this time");
      require(to != no, "Cannot cast no vote at this time");
-     require(to != mixcontract, "Cannot submit tokens to the anonymity provider at this time");
+     require(to != anonymity_provider, "Cannot submit tokens to the anonymity provider at this time");
     }
 
     else if(block_nr < endphase2 && block_nr >= endphase1 ){
       require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
-      require(to == mixcontract, "Can only send vote to anonymity provider");
+      require(to == anonymity_provider, "Can only send vote to anonymity provider");
 
     }
 
     else if(block_nr < endblockelection && block_nr >= endphase2){
       require(balanceOf(admin) <= 1, "Admin still owns more than one vote token election failed");
-      require(msg.sender == mixcontract, "Can only transfer votes from anonymity provider");
+      require(msg.sender == anonymity_provider, "Can only transfer votes from anonymity provider");
       require((to == yes) || (to == no), "Can only cast votes to yes or no addresses");
       }
 
@@ -322,15 +320,15 @@ contract VoteToken is  Context, IERC20 {
           assert(balanceOf(recipient) == 1);
           assert(recipient != yes);
           assert(recipient != no);
-          assert(recipient != mixcontract);
+          assert(recipient != anonymity_provider);
         }
         else if (block_nr < endphase2 && block_nr >= endphase1) {
-          //assert(_balances[admin] <= 1);
-          assert(recipient == mixcontract);
+          assert(_balances[admin] <= 1);
+          assert(recipient == anonymity_provider);
         }
         else if(block_nr < endblockelection && block_nr >= endphase2) {
-          //assert(_balances[admin] <= 1);
-          assert(msg.sender == mixcontract);
+          assert(_balances[admin] <= 1);
+          assert(msg.sender == anonymity_provider);
           assert((recipient == yes) || (recipient == no));
         }
 

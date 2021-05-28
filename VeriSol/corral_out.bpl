@@ -375,7 +375,7 @@ implementation {:ForceInline} VoteToken_VoteToken_NoBaseCtor(this: Ref, msgsende
   corral_source_split_17:
     __var_2 := null;
     mixcontract_VoteToken[this] := __var_2;
-    call {:si_unique_call 40} {:cexpr "mixcontract"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
+    call {:si_unique_call 40} {:cexpr "anonymity_provider"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
     goto corral_source_split_18;
 
   corral_source_split_18:
@@ -685,7 +685,7 @@ implementation {:ForceInline} setMixcontract_VoteToken(this: Ref, msgsender_MSG:
     call {:si_unique_call 86} {:cexpr "this"} boogie_si_record_sol2Bpl_ref(this);
     call {:si_unique_call 87} {:cexpr "msg.sender"} boogie_si_record_sol2Bpl_ref(msgsender_MSG);
     call {:si_unique_call 88} {:cexpr "msg.value"} boogie_si_record_sol2Bpl_int(msgvalue_MSG);
-    call {:si_unique_call 89} {:cexpr "_mixcontract"} boogie_si_record_sol2Bpl_ref(_mixcontract_s312);
+    call {:si_unique_call 89} {:cexpr "_anonymity_provider"} boogie_si_record_sol2Bpl_ref(_mixcontract_s312);
     call {:si_unique_call 90} {:cexpr "_verisolLastArg"} boogie_si_record_sol2Bpl_bool(true);
     goto corral_source_split_53;
 
@@ -712,7 +712,7 @@ implementation {:ForceInline} setMixcontract_VoteToken(this: Ref, msgsender_MSG:
 
   corral_source_split_58:
     mixcontract_VoteToken[this] := _mixcontract_s312;
-    call {:si_unique_call 91} {:cexpr "mixcontract"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
+    call {:si_unique_call 91} {:cexpr "anonymity_provider"} boogie_si_record_sol2Bpl_ref(mixcontract_VoteToken[this]);
     goto corral_source_split_59;
 
   corral_source_split_59:

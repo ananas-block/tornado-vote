@@ -41,13 +41,13 @@ function generateDeposit() {
   deposit.commitment = pedersenHash(preimage)
   return deposit
 }
-async function setMixcontractAddress(tokenAddress, mixAddress, senderAccount) {
+async function setAnonymityProviderAddress(tokenAddress, mixAddress, senderAccount) {
   erc20 = new web3.eth.Contract(VoteTokenJson.abi, tokenAddress);
 
-  var x = await erc20.methods.mixcontract().call();
+  var x = await erc20.methods.anonymity_provider().call();
   if(x == '0x0000000000000000000000000000000000000000'){
-    mixcontract = await erc20.methods.setMixcontract(mixAddress).send({ from: senderAccount, gas: 2e6 });
-    x = await erc20.methods.mixcontract().call();
+    anonymity_provider = await erc20.methods.setAnonymityProvider(mixAddress).send({ from: senderAccount, gas: 2e6 });
+    x = await erc20.methods.anonymity_provider().call();
     console.log("set anonymity provider address to ", x);
   }
 
@@ -100,7 +100,7 @@ contract('VoteToken', accounts => {
     )
     votetoken = await VoteToken.deployed()
     tornado = await Tornado.deployed()
-    await setMixcontractAddress(votetoken.address, tornado.address, accounts[0])
+    await setAnonymityProviderAddress(votetoken.address, tornado.address, accounts[0])
 
     //badRecipient = await BadRecipient.new()
     snapshotId = await takeSnapshot()
