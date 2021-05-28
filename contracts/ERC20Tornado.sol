@@ -13,7 +13,7 @@ pragma solidity 0.5.17;
 
 import "./Tornado.sol";
 
-interface VoteToken {
+interface  votetoken {
   function getCommit(bytes calldata _randomness) external returns(bool);
   function setCommit(bytes20 _hash) external returns(bool);
 }
@@ -42,7 +42,7 @@ contract ERC20Tornado is Tornado {
   function _processCommit(bytes20 _hash, address payable _relayer, uint256 _fee, uint256 _refund) internal {
     require(msg.value == _refund, "Incorrect refund amount received by the contract");
 
-    (bool success, ) = VoteToken(token).setCommit(_hash);
+    (bool success, ) =  votetoken(token).setCommit(_hash);
     require(success, "Commit Failed");
     if (fee > 0) {
       _relayer.transfer(fee);
@@ -59,7 +59,7 @@ contract ERC20Tornado is Tornado {
   function _processVote(address payable _recipient, bytes memory _randomness, address payable _relayer, uint256 _fee, uint256 _refund) internal {
     require(msg.value == _refund, "Incorrect refund amount received by the contract");
     //(bool success, bytes memory data) = token.call(abi.encodeWithSelector(0xa9059cbb /* transfer */, _to, _amount));
-    (bool success, ) =  VoteToken(token).getCommit(_randomness);
+    (bool success, ) =   votetoken(token).getCommit(_randomness);
     require(success, "Vote cast Failed");
     if (fee > 0) {
       _relayer.transfer(fee);
