@@ -30,7 +30,7 @@ The voting protocol uses the anonymity of tornado cash to transfer extended ERC2
 
 ## Security
 
-Both the original tornado cash protocol and openzeppeling ERC20 token implementation have been audited and are deployed on the Ethereum mainnet today. Of the tornado cash code the withdraw function has been renamed commit and additional input and a function call to
+Both the original tornado cash protocol and open zeppelin ERC20 token implementation have been audited and are deployed on the Ethereum mainnet today. Of the tornado cash code the withdraw function has been renamed commit and additional input and a function call to
 Since, the code has been modified, in particular the ERC20 token, a new security analysis was conducted using the tools, **[Slither]()**, **[Mythril]()** and **[VeriSol](https://github.com/microsoft/verisol)**. With VeriSol a number of safety properties have been formally verified, for details check the **[VeriSol directory](https://github.com/ananas-block/tornado-vote/tree/master/VeriSol)**.
 
 **Nevertheless, this is still experimental software use at your own risk!**
