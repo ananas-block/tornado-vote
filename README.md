@@ -40,7 +40,9 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 ### Test
 `nvm use v11.15.0`
 
- `npm run build`
+`npm run install`
+
+`npm run build`
 
 `ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337`
 
