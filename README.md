@@ -59,9 +59,7 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 
 `npm run migrate:dev`
 
-./cli.js deposit ETH 0.1 --rpc HTTP://127.0.0.1:8545
-
-./cli.js withdraw <note> --rpc HTTP://127.0.0.1:8545 --relayer http://127.0.0.1:8000
+./cli.js test_ganache
 
 ### Deploy on testnet
 todo
