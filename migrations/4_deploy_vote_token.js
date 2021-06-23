@@ -12,7 +12,7 @@ const hasherContract = artifacts.require('Hasher')
 const ERC20Mock = artifacts.require('ERC20Mock')
 const ERC20 = artifacts.require('VoteToken');
 let Web3 = require('web3');
-var web3 = new Web3('HTTP://127.0.0.1:8545');
+
 const VoteTokenJson = require('./../build/contracts/VoteToken.json')
 
 
@@ -24,51 +24,26 @@ var EndRegistrationPhase = parseInt(process.env.EndRegistrationPhase)
 var EndCommitPhase = parseInt(process.env.EndCommitPhase)
 var EndVotingPhase = parseInt(process.env.EndVotingPhase)
 
-async function setAnonymityProviderAddress(tokenAddress, mixAddress, senderAccount) {
-  erc20 = new web3.eth.Contract(VoteTokenJson.abi, tokenAddress);
-
-  var x = await erc20.methods.anonymity_provider().call();
-  if(x == '0x0000000000000000000000000000000000000000'){
-    //console.log(x)
-    anonymity_provider = await erc20.methods.setAnonymityProvider(mixAddress).send({ from: senderAccount, gas: 2e6 });
-    x = await erc20.methods.anonymity_provider().call();
-    console.log("set anonymity provider address to ", x);
-  }
-
-}
-async function registerVoters(tokenAddress, accounts, nrVoters) {
-   erc20 = await new web3.eth.Contract(VoteTokenJson.abi, tokenAddress);
-  for (acc =1 ; acc < nrVoters; acc++){
-    await erc20.methods.transfer(accounts[acc],1);
-    console.log("tranferred a voting token to ", accounts[acc]);
-  }
-}
-
-async function advanceToNextPhase(nextPhaseBlock){
-  blocknr = await web3.eth.getBlockNumber();
-  senderAccount = (await web3.eth.getAccounts())[0]
-
-  while(nextPhaseBlock!= blocknr){
-
-    web3.eth.sendTransaction({
-        from: senderAccount,
-        to: '0x0000000000000000000000000000000000000000',
-        value: '1'
-    })
-    blocknr = await web3.eth.getBlockNumber();
-    console.log(blocknr)
-  }
-}
-
 
 module.exports = async function(deployer, network, accounts) {
   console.log("Total Number of Votes: ", INITIAL_SUPPLY)
   console.log("Yes Address: ", YES_ADDRESS)
   console.log("No Address: ", NO_ADDRESS)
   //console.log("Phase 0: ", EndRegistrationPhase)
+  var web3;
+  if (network == "development"){
+    web3 = new Web3('HTTP://127.0.0.1:8545');
 
+  } else if(network == "ropsten"){
+    web3 = new Web3(process.env.INFURA_ROPSTEN);
+    var blocknr = process.env.BLOCKHEIGHT;
+  } else if(network == "kovan"){
+    web3 = new Web3(process.env.INFURA_KOVAN);
+
+  }
   var blocknr =await web3.eth.getBlockNumber();
-  EndRegistrationPhase += blocknr;
+  console.log("Blocknr = ", blocknr)
+  EndRegistrationPhase += Number(blocknr);
   console.log("Registrationphase will end at block ", EndRegistrationPhase);
   EndCommitPhase += EndRegistrationPhase;
   console.log("Commitphase will end at block", EndCommitPhase);
@@ -112,13 +87,6 @@ module.exports = async function(deployer, network, accounts) {
       web3.utils.toWei(FEE)
     )
     console.log('ERC20Tornado\'s address ', tornado.address)
-
-    //console.log(accounts)
-    //await registerVoters(vote_token, accounts,INITIAL_SUPPLY);
-    //senderAccount = (await web3.eth.getAccounts())[0]
-    //await setAnonymityProviderAddress(vote_token,tornado.address, senderAccount)
-    //advanceToNextPhase(EndRegistrationPhase);
-    //console.log("Entered Commit Phase at block ", await web3.eth.getBlockNumber())
 
 
   })

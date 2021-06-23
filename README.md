@@ -65,3 +65,29 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 
 ### Deploy on testnet
 todo
+
+npx truffle migrate --network kovan --reset
+
+configure .env file with path to file with election participants
+
+register participants in file and retain one token
+./cli.js register_testnet
+
+./cli.js deposit vote 1 -r https://kovan.infura.io/v3/c0be5b0b3bcc4914a7dc12866b5ad7e1
+
+./cli.js commit tornado-vote-1-42-0x7673c919185ab0061789693f20d354e9bf987d71c01ad463a4c1df3b050b5d10b763f8524ca5290be6fc98058a2507f77e84f0f01d547f2692eaddce399c -Vote yes -r https://kovan.infura.io/v3/c0be5b0b3bcc4914a7dc12866b5ad7e1
+
+## Performance
+
+Admin:
+Deployment: 169586(migrations) + 2438214(hasher) +1073293(verifier) + 1401907 (VoteToken)+ 3268450 (Tornado)
+Registration:
+  - 21,000 address funding
+  - Voter registration: 63,016
+
+Commit:
+Approve: 46,113
+Deposit: 1,006,314
+Commit to Vote: 344,032
+
+Cast:
