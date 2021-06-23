@@ -28,10 +28,10 @@ Installation of **[VeriSol](https://github.com/microsoft/verisol)**
 
 #### Voting Phase:
 
-  10. tokens can only be transferred from the anonymity provider contract to yes or no addresses ( hard coded in the vote token)
-  11. a token can only be transferred once by providing the inputs for a hash submitted in the prior round ( it can only be transferred from the anonymity provider contract which can only transfer by getCommit which transfers one token, transfers by another sender than the contract will fail)
-  12. every hash can only submitted once
-
+  10. tokens can only be transferred from the anonymity provider contract to yes or no addresses (hardcoded in the votetoken)
+  11. vote tokens can only be transferred by providing the inputs for a hash submitted in the prior round
+  12. vote tokens can only be transferred from the anonymity provider contract to the tally addresses yes and no (hardcoded in the votetoken)
+  13. every hash can only submitted once
 
 
 ## Verification
