@@ -10,7 +10,6 @@ const { takeSnapshot, revertSnapshot } = require('../lib/ganacheHelper')
 const VoteToken = artifacts.require('./VoteToken.sol')
 const Tornado = artifacts.require('./ERC20Tornado.sol')
 const erc20ContractJson = require('./../build/contracts/VoteToken.json')
-const VoteTokenAddress = erc20ContractJson.networks[1337].address
 const { ETH_AMOUNT, TOKEN_AMOUNT, MERKLE_TREE_HEIGHT,  FEE, YES_ADDRESS, NO_ADDRESS} = process.env
 const VoteTokenJson = require('./../build/contracts/VoteToken.json')
 
@@ -91,6 +90,8 @@ contract('VoteToken', accounts => {
   let groth16
   let circuit
   let proving_key
+  //const VoteTokenAddress = erc20ContractJson.networks[1337].address
+
 
   before(async () => {
     tree = new MerkleTree(

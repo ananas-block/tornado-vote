@@ -15,6 +15,7 @@
     "browserify": "npm run build:browserify",
     "test": "npx truffle test",
     "migrate": "npm run migrate:kovan",
+    "migrate:ropsten": "npx truffle migrate --network ropsten --reset",
     "migrate:dev": "npx truffle migrate --network development --reset",
     "migrate:kovan": "npx truffle migrate --network kovan --reset",
     "migrate:rinkeby": "npx truffle migrate --network rinkeby --reset",
@@ -29,7 +30,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "^2.4.0",
     "@truffle/contract": "^4.0.39",
-    "@truffle/hdwallet-provider": "^1.0.24",
+    "@truffle/hdwallet-provider": "^1.0.41-1",
     "axios": "^0.19.0",
     "bn-chai": "^1.0.1",
     "browserify": "^16.5.0",
