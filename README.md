@@ -42,7 +42,8 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 
 `npm run install`
 
-`npm run build`
+`npm run build:self`
+(this step will take a while)
 
 `ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337`
 
@@ -51,41 +52,43 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 ### Deploy locally
 `nvm use v11.15.0`
 
-`npm run build`
+`npm run build:self`
 
 `ganache-cli --mnemonic "sock work police cube fine clean early much picture scan foot sure" –networkId 1337`
 
- Edit .env file for election configuration
 
 `npm run migrate:dev`
 
 ./cli.js test_ganache
 
 ### Deploy on testnet
-todo
 
-npx truffle migrate --network kovan --reset
+Edit .env file for election configuration
+
+`npx truffle migrate --network kovan --reset`
 
 configure .env file with path to file with election participants
 
 register participants in file and retain one token
-./cli.js register_testnet
+`./cli.js register_testnet`
 
-./cli.js deposit vote 1 -r <rpc-url>
+`./cli.js deposit vote 1 -r <rpc-url>`
 
-./cli.js commit tornado-vote-1-42-0x7673c919185ab0061789693f20d354e9bf987d71c01ad463a4c1df3b050b5d10b763f8524ca5290be6fc98058a2507f77e84f0f01d547f2692eaddce399c -Vote yes -r <rpc-url>
+`./cli.js commit <your-note> -Vote yes -r <rpc-url>`
 
 ## Performance
 
+
 Admin:
-Deployment: 169586(migrations) + 2438214(hasher) +1073293(verifier) + 1401907 (VoteToken)+ 3268450 (Tornado)
+Deployment: 169586(migrations) + 2438214(hasher) +1073293(verifier) + 1401907 (VoteToken)+ 3268450 (Tornado) =  8,351,450
 Registration:
   - 21,000 address funding
   - Voter registration: 63,016
 
 Commit:
-Approve: 46,113
-Deposit: 1,006,314
-Commit to Vote: 344,032
+  - Approve: 46,113
+  - Deposit: 1,006,314
+  - Commit to Vote: 344,032
 
-Cast:
+Vote:
+ - Cast: 58,151
