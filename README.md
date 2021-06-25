@@ -59,9 +59,7 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 
 `npm run migrate:dev`
 
-./cli.js deposit ETH 0.1 --rpc HTTP://127.0.0.1:8545
-
-./cli.js withdraw <note> --rpc HTTP://127.0.0.1:8545 --relayer http://127.0.0.1:8000
+./cli.js test_ganache
 
 ### Deploy on testnet
 todo
@@ -73,9 +71,9 @@ configure .env file with path to file with election participants
 register participants in file and retain one token
 ./cli.js register_testnet
 
-./cli.js deposit vote 1 -r https://kovan.infura.io/v3/c0be5b0b3bcc4914a7dc12866b5ad7e1
+./cli.js deposit vote 1 -r <rpc-url>
 
-./cli.js commit tornado-vote-1-42-0x7673c919185ab0061789693f20d354e9bf987d71c01ad463a4c1df3b050b5d10b763f8524ca5290be6fc98058a2507f77e84f0f01d547f2692eaddce399c -Vote yes -r https://kovan.infura.io/v3/c0be5b0b3bcc4914a7dc12866b5ad7e1
+./cli.js commit tornado-vote-1-42-0x7673c919185ab0061789693f20d354e9bf987d71c01ad463a4c1df3b050b5d10b763f8524ca5290be6fc98058a2507f77e84f0f01d547f2692eaddce399c -Vote yes -r <rpc-url>
 
 ## Performance
 
