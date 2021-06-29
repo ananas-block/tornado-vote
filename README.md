@@ -59,7 +59,7 @@ Since, the code has been modified, in particular the ERC20 token, a new security
 
 `npm run migrate:dev`
 
-./cli.js test_ganache
+`./cli.js test_ganache`
 
 ### Deploy on testnet
 
@@ -69,7 +69,7 @@ Edit .env file for election configuration
 
 configure .env file with path to file with election participants
 
-register participants in file and retain one token
+register participants in participants.txt file and retain one token
 `./cli.js register_testnet`
 
 `./cli.js deposit vote 1 -r <rpc-url>`
@@ -82,7 +82,7 @@ register participants in file and retain one token
 Admin:
 Deployment: 169586(migrations) + 2438214(hasher) +1073293(verifier) + 1401907 (VoteToken)+ 3268450 (Tornado) =  8,351,450
 Registration:
-  - 21,000 address funding
+  - 21,000 (if address funding)
   - Voter registration: 63,016
 
 Commit:
