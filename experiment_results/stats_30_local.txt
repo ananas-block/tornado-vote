@@ -1,0 +1,107 @@
+In phase 0 gas consumption 1616496
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232486
+In phase 3 gas consumption 10193106
+In phase 4 gas consumption 1674576
+In phase 0 gas consumption 1616484
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232474
+In phase 3 gas consumption 10193106
+In phase 4 gas consumption 1674540
+In phase 0 gas consumption 1616484
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232450
+In phase 3 gas consumption 10193370
+In phase 4 gas consumption 1674540
+In phase 0 gas consumption 1616472
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232498
+In phase 3 gas consumption 10193346
+In phase 4 gas consumption 1674588
+In phase 0 gas consumption 1616508
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232486
+In phase 3 gas consumption 10193586
+In phase 4 gas consumption 1674564
+In phase 0 gas consumption 1616496
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232450
+In phase 3 gas consumption 10193394
+In phase 4 gas consumption 1674588
+In phase 0 gas consumption 1616496
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232498
+In phase 3 gas consumption 10193538
+In phase 4 gas consumption 1674540
+In phase 0 gas consumption 1616508
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232450
+In phase 3 gas consumption 10193334
+In phase 4 gas consumption 1674588
+In phase 0 gas consumption 1616508
+In phase 1 gas consumption 1383390
+In phase 2 gas consumption 29232450
+In phase 3 gas consumption 10193334
+In phase 4 gas consumption 1674576
+In phase 0 gas consumption 1616496
+In phase 1 gas consumption 1383030
+In phase 2 gas consumption 29232462
+In phase 3 gas consumption 10193466
+In phase 4 gas consumption 1674564
+Register gas cost min 49232 max 54044 average 53883.16, error 861.6986563758841, Blocks 1,1,1,1,1,1,1,1,1,1
+approve gas cost min 46101 max 46113 average 46111.8, error 3.600000000000001,Blocks 1,1,1,1,1,1,1,1,1,1
+deposit gas cost min 964759 max 1019803 average 974415.68, error 9684.196132751555,Blocks 2,2,2,2,2,2,2,2,2,2
+commit gas cost min 339725 max 339797 average 339778.6, error 15.189470036838005,Blocks 1,1,1,1,1,1,1,1,1,1
+vote gas cost min 49991 max 71969 average 55818.88, error 4390.4478752856185,Blocks 1,1,1,1,1,1,1,1,1,1
+ZKP min 4064.869 max 4607.467 average 4230.8349566666675, error 90.44940690987491
+Nr of Blocks with tx in election 1 : 6, 1698,1699,1700,1701,1712,1713
+Average block usage 7350009
+block usage commit 10193106
+
+
+Nr of Blocks with tx in election 2 : 6, 1725,1726,1727,1728,1738,1739
+Average block usage 7349999
+block usage commit 10193106
+
+
+Nr of Blocks with tx in election 3 : 6, 1751,1752,1753,1754,1764,1765
+Average block usage 7350039
+block usage commit 10193370
+
+
+Nr of Blocks with tx in election 4 : 6, 1777,1778,1779,1780,1790,1791
+Average block usage 7350049
+block usage commit 10193346
+
+
+Nr of Blocks with tx in election 5 : 6, 1803,1804,1805,1806,1816,1817
+Average block usage 7350089
+block usage commit 10193586
+
+
+Nr of Blocks with tx in election 6 : 6, 1829,1830,1831,1832,1842,1843
+Average block usage 7350053
+block usage commit 10193394
+
+
+Nr of Blocks with tx in election 7 : 6, 1855,1856,1857,1858,1868,1869
+Average block usage 7350077
+block usage commit 10193538
+
+
+Nr of Blocks with tx in election 8 : 6, 1881,1882,1883,1884,1894,1895
+Average block usage 7350045
+block usage commit 10193334
+
+
+Nr of Blocks with tx in election 9 : 6, 1907,1908,1909,1910,1920,1921
+Average block usage 7350043
+block usage commit 10193334
+
+
+Nr of Blocks with tx in election 10 : 6, 1933,1934,1935,1936,1946,1947
+Average block usage 7350003
+block usage commit 10193466
+
+
+Total Average block usage 7350040.6

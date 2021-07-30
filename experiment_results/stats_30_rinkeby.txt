@@ -1,0 +1,14 @@
+In phase 0 gas consumption 15795169
+In phase 1 gas consumption 0
+In phase 2 gas consumption 38127044
+In phase 3 gas consumption 21378560
+In phase 4 gas consumption 6684023
+Register gas cost min 24233 max 54044 average 53049.9, error 5351.164423749284, Blocks 3
+approve gas cost min 46113 max 46113 average 46113, error 0,Blocks 0
+deposit gas cost min 964771 max 1019803 average 974749.2068965518, error 9680.201342232469,Blocks 2
+commit gas cost min 339749 max 339797 average 339781.275862069, error 14.129686410176998,Blocks 1
+vote gas cost min 50069 max 71969 average 55853.206896551725, error 4461.204765216883,Blocks 1
+ZKP min 4177.783 max 4826.222 average 4358.125310344828, error 174.85537866025433
+Nr of Blocks with tx in election 1 : 7, 9011842,9011843,9011844,9011845,9011848,9011864,9011865
+Average block usage 11712113.714285715
+block usage deposit 22116616,16010428

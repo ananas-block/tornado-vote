@@ -40,6 +40,9 @@ module.exports = async function(deployer, network, accounts) {
   } else if(network == "kovan"){
     web3 = new Web3(process.env.INFURA_KOVAN);
 
+  } else if(network == "rinkeby"){
+    web3 = new Web3(process.env.INFURA_KOVAN);
+
   }
   var blocknr =await web3.eth.getBlockNumber();
   console.log("Blocknr = ", blocknr)

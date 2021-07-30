@@ -1,4 +1,4 @@
-pragma solidity ^0.5.10;
+pragma solidity ^0.5.17;
 
 //import "@openzeppelin/contracts/GSN/Context.sol";
 //import "@openzeppelin/contracts/token/ERC20/IERC20.sol";

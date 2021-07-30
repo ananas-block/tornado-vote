@@ -1,0 +1,880 @@
+Registering Voter voters on Testnet
+NetId is  1337
+Sender address  0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+tornadoAddress 0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+Vote token address is  undefined
+Error: This contract object doesn't have address set yet, please set an address first.
+    at Object._processExecuteArguments (/home/ananas/Studium/Thesis/Code/tornadoCash/tornado-vote/node_modules/web3-eth-contract/src/index.js:751:15)
+    at Object._executeMethod (/home/ananas/Studium/Thesis/Code/tornadoCash/tornado-vote/node_modules/web3-eth-contract/src/index.js:772:54)
+    at setAnonymityProviderAddress (/home/ananas/Studium/Thesis/Code/tornadoCash/tornado-vote/cli.js:791:59)
+    at init (/home/ananas/Studium/Thesis/Code/tornadoCash/tornado-vote/cli.js:696:13)
+    at processTicksAndRejections (internal/process/task_queues.js:86:5)
+Token address:  0xD8B6347ad5892eB2bd0e8ED0c845017648102180
+Sender address  0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+tornadoAddress 0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+Vote token address is  0xD8B6347ad5892eB2bd0e8ED0c845017648102180
+anonymity provider address is  0x0000000000000000000000000000000000000000
+Setting anonymity provider
+set anonymity provider address to  0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+BLock 1879
+Ende  1979
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+Sender Acoount 0x06a2A31F10Ca8E2A9884304F3A2Cad6c5a30E478
+ETH funding of new account txhash 0x41aebe460a4b3b9154674c834f96fcfbb4dcce9b9e36cd5766f50f9489715caf
+ETH funding of new account txhash 0x48026580d751ba00c861795389d42c979892bf6fd5c576b9b8a1c97cc1c48fe9
+ETH funding of new account txhash 0x5c6d3230145e1a47a903bb529aa98e610ffcff1efd895597235f7f5184876b1f
+ETH funding of new account txhash 0x47fc0069b7d1e40e27e99009dffb76b18b04522b4b4cec6d003cf5537481dc17
+ETH funding of new account txhash 0x10d7f6b098d60c9382bff68b32daf77e5d37bb8502260a925ed8c1c84d28866b
+ETH funding of new account txhash 0x0b70b9cb980c33a13a2119e23cb454b511580eb64f7f5d16df34d489bc230219
+ETH funding of new account txhash 0x82ccd35071a8373fc4d7873f82e3ed027c60ec496560fa223269261605ea924f
+ETH funding of new account txhash 0xe61350b21c1388586b10b3c08dc2f402d66e103a2d727add0711118afe6e1eb1
+ETH funding of new account txhash 0xd007b9a218d80170f8f56261c8733f18085fe674d0cfa3e3a5706af036f19a4d
+ETH funding of new account txhash 0x8c099bc5ebc36a064af72c4414c8af9e1ad3b021ce0e7ee07fc7c5732cda506a
+ETH funding of new account txhash 0xca0f78ac37e9f2adb3290f54ea093a50dbdb9a65d8b3dd25d4c504c506968856
+ETH funding of new account txhash 0x0ceee106247138ef11d6d7f8c2c8102036e84ae4c783cf343b96655a7fa8fa18
+ETH funding of new account txhash 0xc89f8dbd0f2340fdf885ccc959e70db470f8ec8e73b9c0665db1b09a8e2dcc82
+ETH funding of new account txhash 0x78fa360e081ab20b6edf7a2d08705907086daf9cb1a7fc8b4fcb066a977644fb
+ETH funding of new account txhash 0xe2188a6923d4cb94d9a3f772bc2d1a5f879c934ac8e4641d27d06bc2459084d6
+ETH funding of new account txhash 0xe4e9460117396d1b84e7f668b2054a3c8000fce92102046db2a85f38b968e8db
+ETH funding of new account txhash 0x754de596578aff9d4bf1fbca7fd62e3741f461ee42db8ae0f44d304e5dcee5cb
+ETH funding of new account txhash 0x1e86fdc9f924f10b9b3df8620079e8668bc8539cd964a65657563fc79b0fc2a0
+ETH funding of new account txhash 0xb4df32acd16a60e91fe3533cbf25a3e0a1704e7b61094940f2f3c0bdedb67dca
+ETH funding of new account txhash 0x132732576a573bc0531258f502b27a1c4d8cf9db64439915c3e4e0b063806e2e
+ETH funding of new account txhash 0x4e2a47acb92686b0467688ba7a91e03ac009c435b8e076b698f4b6b671466868
+ETH funding of new account txhash 0xff6bdd01974f572192be3bb293cc0c9bad6cd0838ba0631829c64e196ab4087c
+ETH funding of new account txhash 0xec42482237f639e43a76219f0353b7fa442844440f303f4901669b5576b43ee1
+ETH funding of new account txhash 0x2fdafff3a26ac44eb768b6ccf7fcf142a1f54cbda5497056f6c01924da241149
+ETH funding of new account txhash 0x341741a7e714b9ddb3d0fbcc94229befc58b74bab8c7009d7679633d3802219d
+ETH funding of new account txhash 0xdb2bbe65d29941a4f1c25ee627562b08c23e96a4cfed86a02ad2cc220fb77c84
+ETH funding of new account txhash 0xe40e588e4060ed2b35cea8e18b34e2e2feecd56d1fe455509921b7c3ef81e7f1
+ETH funding of new account txhash 0x3a55f366036b759f9c9084928922e8e0236b2631d9123a508e95433f0acd0943
+ETH funding of new account txhash 0x7d99355e5bf9713df7e8fad39ce640df4c8fb968af61cae1c6a893603d2fc74f
+ETH funding of new account txhash 0xf2dad6d4c7eb577d67b92e7b9970f3dd03ae23457bf18c70f37e47976a390a0b
+register 15 txhash 0x3d7c21a94daa20763b852f2b59bfe7dca78b8035dd3de15c8e31a6c8a86803db
+register 14 txhash 0x1a893c362657f3f79cba555dbc26c202f4bf5c8eb1d63c59ac4ec92869741b86
+register 2 txhash 0x97c89a554ec8fd996ab49e98ba29ce253b5b268f93108fafc762d7128f06ec61
+register 16 txhash 0xbbf2f1b6ec7620216440d254e5be028618976e54063a2e16fb3efd0120ad0291
+register 17 txhash 0x439e09d038ab29b45a29c8154a56cd4a7627dae97e1b98e485dbd2078b43f4de
+register 3 txhash 0x2e46653d33b861de75d504dcfd43952f44d7640b8657f819b48e8830fb1c1a71
+register 19 txhash 0x4218beca08951f26a417f925adfe9c067f31753daa492e59e813912a7cae7f74
+register 1 txhash 0x717adaf6de255d2aa348e98955d9bbffa498f044906377f4e58741015b9a3abd
+register 18 txhash 0xa3a691c37945f4b8244a6b0eae2b87f3861d78eb54f5c59b3b351522398c5c89
+register 4 txhash 0xb54c180bf462e3a351828616a6935acb3a0e510542b8c51f2cf0929e6ab0a30b
+register 21 txhash 0x364367df0d6e3dbdfed031fc22f2fefd26bba9159498d4361d5178027b00ac0f
+register 22 txhash 0xfad60e4286075decbb1e6065543090782a9022edae4dd22cb18ab1e3de7f9630
+register 23 txhash 0xbdf30bf9910be42d3d6fa9e64b7303fdff3c1d90060b1fba8856fcde1d7fb92e
+register 5 txhash 0xebe1d0d41c861ba43f1fe231e8695dfe4bed603ba765002fd32faa2410b0acc9
+register 20 txhash 0xe520c1dfe332af62863d4d51e4190867f662b95c3601731536eb222ae74b48f1
+register 6 txhash 0x546dbcafa6ddbe09ffc942fea6a5e97cd59a204d1f9c229fcacc2a07b53c2ee7
+register 7 txhash 0x7db3c5a4b120fa5e613427c72bd15b06831d069b8364a543315870663f72bb5d
+register 24 txhash 0xf5e464234567119f61b845bea7f99e5150ea227803d41e37e6b18d9ff248926f
+register 8 txhash 0x4d9cc849fe10da2d1cae7debb69dbd52d27581be4df41606212bd0308a349d74
+register 25 txhash 0x49d1e2d5f60c325c2f275e5b783fe63b76111792e583b2c6dc45c1e4004bff69
+register 10 txhash 0x2e6728f06b9815bf5c0bea7dd419cba226ee9d8ef25ca9470fb85aa642b7fa13
+register 26 txhash 0xd3d3799dda405e9e1fbb0095e8684346c9d5fe17e5d2db784ad5cf8a67a4f8bc
+register 9 txhash 0x2da4f7ea2529037c652b005dd125e8db90dd3f4c556a64a49a95d43ba64cc378
+register 11 txhash 0x713f8b2c13a2a12c34e70434cffdd7f971e389e6f84170463f4bfbbb3781de61
+register 0 txhash 0xf8971343974c24eadb83fcc56612516d274dee8ad40d6f184ea716ca6fb4410b
+register 28 txhash 0x60175bf2a494e9f626e7052250d8afcda0e85aed6edb00b1f86d87b502a207d0
+register 12 txhash 0x60504ac2a45c6ad8fabd9f86119d0b7519b8423cb84a0b9d48f139dc2a6b13de
+register 29 txhash 0x32f2f6d2ca91c54d3a0b468f85b85d47622ae8fac78117bef32b3756de6c0d28
+register 13 txhash 0x90a392a317487a7ef4ad92de2039b25ed04b1bdc9ba6ed59972ff36b69548737
+register 27 txhash 0xfb82a81767327bee2e02c23774a9b5c57f417239bee8d1d8a4b2c38e39c60b8c
+Current Block:  1879
+------------ Starting Commit Round ----------------
+Current Blocknr,  1881
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+ Token Balance is 1
+0xd45DE1F5cBdb9c881c23424287ADBc3c3837425B
+approve 12 txhash 0xc4b24c87bc8c0ff946cc89feeafdd3b1e02c202f09eb61e8cc75f6a954cf9a25
+approve 14 txhash 0x8be9e12858c058ed969ed1adc49c72d5b701ef7611f391f0b458bfbd420ba83a
+approve 15 txhash 0xe7de9a1dbe85dba0978404ab9c87dd374ed1d181102c1f3e8f9e98183a2c9cb5
+approve 17 txhash 0xcf82d3f418974d5fb1ea1120f65a9d1e26381816c7cc70e8b52a62a641e83732
+approve 18 txhash 0x3142be88b3faf277b93e0c5127a2cd511dd6a740abb365de85a249366e57eaca
+approve 16 txhash 0x3e64f2dd7aa06c148e02b9af33140e65ab7d07fde29144191168eaf925a93840
+approve 19 txhash 0xefbf2eea4680a804ac5eda825ed5e83ce2a11a3a8bd273bcafe944c9a442b0b7
+approve 20 txhash 0x08cfb0909cf71cd2ed2b105799f25718971c2c376c5b642eb7420ecd361ffeb2
+approve 22 txhash 0xd1fd352d43419443ff6e608d99d7f686f6a03f83f65be18c73a83dfa35adb1f2
+approve 23 txhash 0x317765efa76f5ae01da20280bcc9a08701ec9e953da4962b6b28a008f119b8f9
+approve 27 txhash 0x9ac0abd25eb7c5f493a62ceb6153dcdf8f70f0d00b13f20f666e7a5e0ea44339
+approve 26 txhash 0x11a07ba01881b3aed99f96dae93ce4dd45b695bdc3ee70c8a07e1ebe13972adb
+approve 29 txhash 0x26e9d27c43c32b58b88abfb8c1734c1642df696179d1b2e2464bba22c091eac2
+approve 28 txhash 0xc71d0612213701d9951c41b3960dfd95c340f54a133cd00edf6b75cca61f60cd
+approve 24 txhash 0xdd719bf6923eb8eff0906da49b08c7234d514d2fe6f0a234c1552b26fa3cc9fc
+approve 0 txhash 0x6ee29c696c5aef9e434a22fd2f54d7e6460c73bf9241dce056278bb33cfcfb96
+approve 3 txhash 0x63ad96f05bc48868112ee8fd46841ab64d799ea7a586b8d711b43ed11624fde9
+approve 2 txhash 0xc479e335e9781a8a149b8ca9a47820b7564a73b9e6cd38b7ef51bb8b5d93bd60
+approve 5 txhash 0xbb83071d0588d126950f9c158e17e98d71cd7af867b23a25ebac208c89404acf
+approve 4 txhash 0xedc46e92826d86a68fb449c69d7120283a832a491ed9a3ec7dcf86786a357ed0
+approve 6 txhash 0xc828a27913c71f3b5ccb4d64aecb83aee3d5552663d46a04815407e34ce734d4
+approve 7 txhash 0xa9965fcbdcf80b826e7618782e487cbc22f04c3425a60c7a537e2383f74a7805
+approve 8 txhash 0xe2bf247cad03545505aae5c52e2edd07536d76d813f0d8ae6727c637bfdacb45
+approve 9 txhash 0x4d1e521038fb6ecb7212c8e5899af55abe68e48a6d8e85e8e772821af97d3ef7
+approve 10 txhash 0x551acd2f5ba784db57ab65dec2acee4554e6a0ef26621a2443073e65cad2f842
+approve 13 txhash 0x17d9d5d9d782b3d46fe77a78bb304e01888107495040cb1ae366edb77a038ced
+approve 11 txhash 0x3162933538e598e018316a8081f8add2a639e37afa0572b623e50ee2da437eee
+approve 25 txhash 0xf76f0d8106a3faecb7f1d94d0cb4e6562dd273164391a7c8647e816ac0be46b1
+approve 1 txhash 0xe20eb8b66a820f6dd2ec2f94cf2b52d13cc1fcfaed3f89140fa2eb417113ef67
+approve 21 txhash 0xc4f13ca65406ce26f2a122ee9c7cc03711893d8e46a6c77e0604b522ac7b3b94
+deposit 8 txhash 0x30716aa6d07795fa855d170765ba57040d4191995484748dadd7b50c83e3d7f2
+deposit 9 txhash 0xdfc1de84c9aa3b5e61e9ac2c8a10ff21851f37f1e642e482688bb9aad43e655b
+deposit 16 txhash 0x71f4da2479ac5996fe9b9aa0242596017e4fd44d094f71d6083c58f88ec390a1
+deposit 19 txhash 0xf06634d94e50694c9800481ae6b4649b9ad0f346d5874af86365a72a9939be83
+deposit 20 txhash 0x6510ac92ee7854fe7612ca859ace97cdb35df93d62bf31d71d4ce6a1c87eb7a2
+deposit 0 txhash 0x9e8acf6f851491a6c872a4ed0e037a8dd2d8440f2fb96c732c9f804577a65a23
+deposit 3 txhash 0xca35d1e5ef31c76c27e566f8e3339dbc7cc8bd12b968603a4ee92f402dcad249
+deposit 5 txhash 0xbcee29615a617bc1077485835718b38df5e13a1cceb098f6f9b639a1f097815a
+deposit 4 txhash 0xb106a3efccc3a129f90cee5e77771952b852f16aa24539e20a29769927b72b0f
+deposit 6 txhash 0xa3bea6fd07eeadab28a755279d30a24dce56ad2e63da4f35481edf6656bf7a6c
+deposit 10 txhash 0x9feceab85bc3e9e794f757d1b076e9c2b75dd3971923e071d1b65d15563d9441
+deposit 13 txhash 0xc595cc3a45807255f9991fe779bf02123ee1c0380a164833f96426e69bdb9847
+deposit 12 txhash 0x58bde4094cccf918f5e121f3685eda4944447ec8fbb202de2c364a9be091b820
+deposit 14 txhash 0xe8b09a71ef9102e0974cdda640ed92fdcb5bee40870c837c319cd8ea024af243
+deposit 15 txhash 0x159fbce43f7df02922180b278a55b4363457fcff53cfe66e259b9f26de9b362e
+deposit 17 txhash 0x81473f63a1170be7f768fdecefb0fb87cac48c19d69bb74819497aca73d28e7b
+deposit 18 txhash 0x376b569a0b8ef08c5ff49823c24dfcf78c95615f07cc8573be6002bc2708cbf1
+deposit 2 txhash 0x0d09510a83da9332f221db7f09b29552acd549f109094cfe614e96d684def5c7
+deposit 7 txhash 0x50a69659fe7f6332ea676fcc8560f7fe25b2a48a351d3248641290c1c28b0b86
+deposit 11 txhash 0xcf83d72d5568e48e4dbd75c176bc7c8f55359753b211daa868d55b7c7e36fa6e
+deposit 1 txhash 0x0fd9220cdcda261c28d94a88b01b83040e5adfabf11e92fe7c2fe21d668d8668
+deposit 21 txhash 0xa7a6155bef21365b44728ff99aeee8c2808b427cc62a5f8f1bd129bea3bdc467
+deposit 22 txhash 0xe4435550cf33f3885c22300ff0935beed3d87840eff50c179d04becd4b48068b
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Sender account Token Balance is 0
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Tornado Token Balance is 15
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+deposit 23 txhash 0xa7216a7109060b551c7f3c8bcbe3d34ae9cc40ee3d4473249863b051f4ac4e44
+deposit 24 txhash 0x10f66ac69150a096320b2a59ede4f4828d7198efb3821e7f82c67ff53f274620
+deposit 25 txhash 0x7f1cf6673c761d695f4748f31e29de049d2435ad0653c3a7af419afa704ead76
+deposit 26 txhash 0xd60fe2a351c7a382f55c946ee13a549dcc0a56a756603cb38316726885219af3
+deposit 27 txhash 0x76d01ee9d7ec71a47b02ecb55df5548538de5581bae60e3360f54bb177039ab8
+deposit 28 txhash 0x0e027bdc2772addff764c137b02084d89d26768aab2d9800bbd35c4e4ada2df4
+deposit 29 txhash 0xa5858ac5ebcf6add545df1f38278fd94473c895d2c5ad972d014227f77086a3f
+Tornado Token Balance is 30
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Tornado Token Balance is 30
+Tornado Token Balance is 30
+Tornado Token Balance is 30
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+Tornado Token Balance is 30
+Sender account Token Balance is 0
+------------ Precomputing Proofs ----------------
+Retries remaining  10
+Your vote_commitment_secret is :  0x1138b9f60d70be85bbd06e54f7b9da74a7bfc22a1e504033703c59d21e4eb401
+Getting current state from tornado contract
+0xfc77226b283becc04cb9c6a9d86e0fb30228c6cf
+----------------------------------
+Generating SNARK proof
+Proof time: 4247.193ms
+Proof generated Number:  0
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x8b822c032857e69869e8a406808c4e09bd34e49a888f8f6e1636aad526b4dc01
+Getting current state from tornado contract
+0x1cdfee1b892fa9e68177ab085d67bafdc93c72be
+----------------------------------
+Generating SNARK proof
+Proof time: 4233.437ms
+Proof generated Number:  1
+
+Retries remaining  10
+Your vote_commitment_secret is :  0xd07e3f791d37d4ef317e4acd95a6f985b529c6b36acb95cdd3ae26a9cb2c3d01
+Getting current state from tornado contract
+0x264d63a21454b1d927354918c511b0baba12b700
+----------------------------------
+Generating SNARK proof
+Proof time: 4493.986ms
+Proof generated Number:  2
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x6e4549cb5ac3ac324183cd53c154b09123aa0b9ad1320a93d01655874fc89501
+Getting current state from tornado contract
+0x7a486b6ea1965eee0091bbcd61faf0fcc8d49b7a
+----------------------------------
+Generating SNARK proof
+Proof time: 4210.189ms
+Proof generated Number:  3
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x2dcf56ceb96d17601b35ccfa2f12d37a4303f4d0e6b0408513fdc3a6d4d2f201
+Getting current state from tornado contract
+0x731d679b5ea1e069bef9fc6278f1460d69bee332
+----------------------------------
+Generating SNARK proof
+Proof time: 4537.573ms
+Proof generated Number:  4
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x90ce3b158414059562aab474f146566927f0838ffa25cf7b16b619363f755301
+Getting current state from tornado contract
+0x80c94d3892ad9c0894ca4f436e3162f2a9c21eee
+----------------------------------
+Generating SNARK proof
+Proof time: 4304.081ms
+Proof generated Number:  5
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x609a6cd2e6eb104d590fd74707c149660e36cf71f9b8c29c93cdb7f2fc44e201
+Getting current state from tornado contract
+0x83473b684f7fbf20cab56d9e0c78d73ee0470e80
+----------------------------------
+Generating SNARK proof
+Proof time: 4275.076ms
+Proof generated Number:  6
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x74fe69653c376e67eef56b1359abad107e6b01685f5ef225be8f99fb07670a01
+Getting current state from tornado contract
+0x20e0d4fa719e54777c74c84ade439c188712ed7e
+----------------------------------
+Generating SNARK proof
+Proof time: 4204.934ms
+Proof generated Number:  7
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x828bdf4b4daaae8e75700e902766b631631ae6e530cc8de12fa9233157994c01
+Getting current state from tornado contract
+0x27f8b3c3c78996fb0759e9f0a555ebfbaf59e64d
+----------------------------------
+Generating SNARK proof
+Proof time: 4222.479ms
+Proof generated Number:  8
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x1472eae3318ccb4e2a715bdd8a922fe1e69f4ada1b3b529ee253b5843bb3a201
+Getting current state from tornado contract
+0x36d1793f22adada4e8db4a5883a356073bf17332
+----------------------------------
+Generating SNARK proof
+Proof time: 4202.469ms
+Proof generated Number:  9
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x9faf6232c8293530f19c487558100c83430e3fc8d2220198fc9ab51b2b4f1601
+Getting current state from tornado contract
+0x1fe53137a85e93c0b572d997565f5a151282f807
+----------------------------------
+Generating SNARK proof
+Proof time: 4193.250ms
+Proof generated Number:  10
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x62eb4bc447b0fdb55391db9d1875b801e410001c73fb07d86944690695ef2a00
+Getting current state from tornado contract
+0x89959679d7ca740165300dbc1a0717c48cc0bc21
+----------------------------------
+Generating SNARK proof
+Proof time: 4195.349ms
+Proof generated Number:  11
+
+Retries remaining  10
+Your vote_commitment_secret is :  0xb6d94917e5542c612bdd5746063bb7c9571474779259d6566a7d14f67e53d700
+Getting current state from tornado contract
+0x69acf1cc02df0734a8bcdc8f394167ae670a9491
+----------------------------------
+Generating SNARK proof
+Proof time: 4215.516ms
+Proof generated Number:  12
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x89462d8c77b5853cfa7dafeb3708cc7b810a1aa7f8f62c41204277ee698f9a00
+Getting current state from tornado contract
+0x15c7ea0dcb2950ad14bde468269f220f6fc041ed
+----------------------------------
+Generating SNARK proof
+Proof time: 4225.781ms
+Proof generated Number:  13
+
+Retries remaining  10
+Your vote_commitment_secret is :  0xe8d7babe8be04a97ac3a265ecb6f6c179f575328f827c3731695455de796c300
+Getting current state from tornado contract
+0x503725d92267a8a35c36990856406a168d244750
+----------------------------------
+Generating SNARK proof
+Proof time: 4335.011ms
+Proof generated Number:  14
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x1de190a556be3515ed4eeb37a663b63d7bbc95a529ce37ac38c97c62baef9800
+Getting current state from tornado contract
+0x6b69c79dc8511cec29dd9baba4e14d686f06b07b
+----------------------------------
+Generating SNARK proof
+Proof time: 4296.777ms
+Proof generated Number:  15
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x3b92f38f4405419426935834709f246cf753c3f2e61c4ab4963a0dab50ec1700
+Getting current state from tornado contract
+0xe926c6a47381c65ce36ad9a994cfa487592af8dc
+----------------------------------
+Generating SNARK proof
+Proof time: 4317.715ms
+Proof generated Number:  16
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x1d6c28d004cfa4f53501ee40c2a04346d506ac73f926dfe7388cdcb918425e00
+Getting current state from tornado contract
+0x3d896439e1fbe781f31c915b77b9f80ffe3a8ad1
+----------------------------------
+Generating SNARK proof
+Proof time: 4478.174ms
+Proof generated Number:  17
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x1810bba7f7f17b323e1b4d84fddf0243accc039cf329b9ab7ab83a8fd7cfba00
+Getting current state from tornado contract
+0x6de4d7ded2a01caa590e154daa12eeebe5a6f319
+----------------------------------
+Generating SNARK proof
+Proof time: 4321.402ms
+Proof generated Number:  18
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x34623663fdb462ce2f5bb33acf5ce49d71cb178d921bb43b06bc636f7b2c5600
+Getting current state from tornado contract
+0xe5870dbfbca395c82dcfbf0ef7b35fd617ee07a8
+----------------------------------
+Generating SNARK proof
+Proof time: 4232.229ms
+Proof generated Number:  19
+
+Retries remaining  10
+Your vote_commitment_secret is :  0xa027d70b42288fdb2ae1c21357f12f9baf59405d9e895f1456fdf06e918be000
+Getting current state from tornado contract
+0xaf888d1c0c985aa813b02c48d8a0764141afbc69
+----------------------------------
+Generating SNARK proof
+Proof time: 4228.579ms
+Proof generated Number:  20
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x753bac488bbb08d7e83812f12e18f6ec0ceff662ed3b3430663269fc2ad31500
+Getting current state from tornado contract
+0xbd6b7edbf1c0caee8b0a80bb87c1336cad2e524d
+----------------------------------
+Generating SNARK proof
+Proof time: 4177.435ms
+Proof generated Number:  21
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x505c380e617b6a3bda4417a1ddf111ac6f3efc383ed7db0345cfb74e12519e00
+Getting current state from tornado contract
+0xea3bad65980decd68924ffec7106b436761f9b7a
+----------------------------------
+Generating SNARK proof
+Proof time: 4194.922ms
+Proof generated Number:  22
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x536f91b2203386b628bc71ccf200821b7a92d34309ad53b9665ec15498dae400
+Getting current state from tornado contract
+0x0de0820c2733d55f77ed9c0527af9e09b6e9447c
+----------------------------------
+Generating SNARK proof
+Proof time: 4156.807ms
+Proof generated Number:  23
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x90099c63695363395822c0a33dd6a0823e2fc5418bb708686c790adb610be400
+Getting current state from tornado contract
+0xdcbc532b10052bda2b0b124a9cb0877e44c20fa2
+----------------------------------
+Generating SNARK proof
+Proof time: 4160.880ms
+Proof generated Number:  24
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x2235088cc4c1ddffee4154c02e02bd4535576d4cd638f55622d29c93d4706200
+Getting current state from tornado contract
+0x0c2f7779a1ad8a2858faff0a4049b1cfe352e576
+----------------------------------
+Generating SNARK proof
+Proof time: 4278.014ms
+Proof generated Number:  25
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x97e78dcc3321dcfdfc0f94264916dfb118d292a0b47e603478192e1ec49eb800
+Getting current state from tornado contract
+0x3ab107b5eb0579776c079449589af9ba0ff82c7f
+----------------------------------
+Generating SNARK proof
+Proof time: 4213.388ms
+Proof generated Number:  26
+
+Retries remaining  10
+Your vote_commitment_secret is :  0xba67ca0a6c4d2dd37362a753446af4cce18cde0175de97caf27e335cfefb6c00
+Getting current state from tornado contract
+0xc51fd12a37b30c6d4ad6e4ce55b500ca6ceda42c
+----------------------------------
+Generating SNARK proof
+Proof time: 4303.736ms
+Proof generated Number:  27
+
+Retries remaining  10
+Your vote_commitment_secret is :  0x85ae161928dbff84121d4f3a6dc4c9f8887046390fbe270673fa116fbad58300
+Getting current state from tornado contract
+0x269c8cc027fd067c7a589cdae2b31036a9b47fba
+----------------------------------
+Generating SNARK proof
+Proof time: 4173.316ms
+Proof generated Number:  28
+
+Retries remaining  10
+Your vote_commitment_secret is :  0xf506dbe4b573de499e7b02545b1fa2e27f13322489ccf0ad30154d6ee987b000
+Getting current state from tornado contract
+0xa46dc3d12950d48ef4f4b712f66bb30ec28b6554
+----------------------------------
+Generating SNARK proof
+Proof time: 4182.425ms
+Proof generated Number:  29
+
+------------ Starting Commits ----------------
+Your vote_commitment_secret is :  0x65fce733f112c5097b00910db2ec3e76834273998c3c0b0f70817855e0efca01
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x1536e8b59a0b7f36f58fec0e98245f2dbf13a0f8582a61fa588f2306b4e75317',
+  '0xfc77226b283becc04cb9c6a9d86e0fb30228c6cf',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xC79F7fE80B5676fe38D8187b79d55F7A61e702b2
+Your vote_commitment_secret is :  0x393dba438e4ad31995ed5fea5e824dbddc79f02c60c72f4a8024092090d11701
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x14654144b14728bc69c69c3345291661c3c253458b4ebe997a0d18dc7670ff35',
+  '0x1cdfee1b892fa9e68177ab085d67bafdc93c72be',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xFEc0b4613Db9F2BEFeD7b0c0f4a4686539Bd79a4
+Your vote_commitment_secret is :  0x94ae0963debe1ac65eee103f8829ae4c9c4e7e2a9aaa576771bafc6a81e2e101
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x1393d9f031a7b701bc0a8efe964b1dbd9e5086fad0cf6305999471deb5f14df6',
+  '0x264d63a21454b1d927354918c511b0baba12b700',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xF44D6EA4B293AEa22ee03B04c2c70198B96a6B4A
+Your vote_commitment_secret is :  0xa4da69c4dd87e8c07c62816fdac9132dd662b7ed1d7ce562b146b7fae3e9a901
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x115ea20658a286d903a86d07f0d9fff96b4c426c73521b2c48d5afceb4c1d72b',
+  '0x7a486b6ea1965eee0091bbcd61faf0fcc8d49b7a',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x46266E77735e93De5d97bC0B7e40DA8d7768B968
+Your vote_commitment_secret is :  0x95b0b55afd5fffe5f78c58c0e3b6ee57cdff16900d1f06bf200f8bc419bb1a01
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x2e1aa4adcd14f6237b919e12feffb33c1547af8a2a298d018e5b37099a8a7144',
+  '0x731d679b5ea1e069bef9fc6278f1460d69bee332',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xE0538deE92cDe2Fa73b5CF8646389be2D28F1491
+Your vote_commitment_secret is :  0x01f90cf1cadb935f9190caccb8ef8196c24d810c4f9881b792d0aa1cd263d201
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x211cd99a07bcdf6f11ffa521680c4104cf02b5857c5d2a177587423b833be7c6',
+  '0x80c94d3892ad9c0894ca4f436e3162f2a9c21eee',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xD3A6a9FCD3BcD3755267380Bd7849692ebaA1Bb4
+Your vote_commitment_secret is :  0xe14b39d7991d81068cdc413eea034450e004dba38c77ed959840477a0e5a0c01
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x1b74f3dec8feb179b283c80a202671f936f9ac4ca8512edb90b571698f483036',
+  '0x83473b684f7fbf20cab56d9e0c78d73ee0470e80',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xcf0763E3199e9d542d6da80272718cd765242c57
+Your vote_commitment_secret is :  0xc7be707675353ca722914d99d945d3a89c42b992157c27e66d2cbba28491b801
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x0e01f1bf6f557144d59db06e84d2be25b16d43c6a32ea73026ed9939d71ae1d3',
+  '0x20e0d4fa719e54777c74c84ade439c188712ed7e',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x82D5231C0aa090a0494Ea3e849Cc05F920BA00B6
+Your vote_commitment_secret is :  0xc2265910aa1e09377e75308d28a62c3334d8346daa45a80d7af367c42fb8cf01
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x254e82c4f4442b3eed137cfa89a6d9c85c291c641cd663ce6c42d770f3517bec',
+  '0x27f8b3c3c78996fb0759e9f0a555ebfbaf59e64d',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x59664029Ae0E2f8c2f96e2508624eEbA33CF1396
+Your vote_commitment_secret is :  0x019ec4b157a5302126cefe0f40a96467be08caf2816242e050155f4246520b01
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x0aa84493da8569e46973c09fce7e8fe095dbd941d94c0ccb06876f36293b457e',
+  '0x36d1793f22adada4e8db4a5883a356073bf17332',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x5888BF625652F2908c6Af045e6CD263291D860d3
+Your vote_commitment_secret is :  0x4c7bd3e3695ccef8eacf20212e182ca140dd1378de038e43f11ae8ae35f7fe01
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x1ca5ceb0c8a80450d8eac213e49ec225536e93dbeb88a495e9096dae543e5d21',
+  '0x1fe53137a85e93c0b572d997565f5a151282f807',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x2765814B9EAB0e2557F8fCC84CB4Dce8fe187493
+Your vote_commitment_secret is :  0x2bb625257db708f530c7ae0ef9019c59c045612da817d6e46d66a5ad3f5e1200
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x2bde2f729e25124c546b3ddc486f37fdede1d7621cf2c47bf798c084cf0ce596',
+  '0x89959679d7ca740165300dbc1a0717c48cc0bc21',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xD137CeFb1EB5EbAD6cDD9FFAE162c869Bb36fb20
+Your vote_commitment_secret is :  0xbc7258bae62d78ddb740bc40ffccc72abacc3f2f6ab0c3bae3c536586b5a7c00
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x158dd7f6fa80978dcc50f40a77460d0688208518ecb067930b420c32322ecd44',
+  '0x69acf1cc02df0734a8bcdc8f394167ae670a9491',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xf18DF59Fa36d78C40F64ed2725361F0ec9590f8a
+Your vote_commitment_secret is :  0x8351dbcbfd5480b4a7d50aa99e3255a8f78b41dacb7ea7422e8dbfc40e442f00
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x3057f924cd001585b0d958c7fba74d32d19fe53b228225be461fdafe1ea9d454',
+  '0x15c7ea0dcb2950ad14bde468269f220f6fc041ed',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x70F7268d7a9f4E6c4F869A75DBe890EaA754E030
+Your vote_commitment_secret is :  0xa05635176f0f170ef3553da5de222e6105e985b72cca6ff73b251fed6d99b900
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x01547829bf920729235a7acedbdfccbe2e722923923597361ea977f43f5802c0',
+  '0x503725d92267a8a35c36990856406a168d244750',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x945f4ee45008A4Ae2D9B9f304d088C9c70977ebB
+Your vote_commitment_secret is :  0xce5a04ff4e87325f4abbb66c0e25464cdd907dcf75dc4e1d340c997e11413500
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x00de40f7ee6b9fcd5d0778b757511cf416a6d25cc489157bb7d6f87239aeb2dc',
+  '0x6b69c79dc8511cec29dd9baba4e14d686f06b07b',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xDBe778710AE9f70cC6971330671d271a7D43Cf2E
+Your vote_commitment_secret is :  0x0acddda72b506239deab30ca30033bab9226f0983911a60d5c03846efbac4000
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x015ab951e2fd76e0ac0e8ada3a28b2b6dd46226138f42b9e4bdf7f64ba40c739',
+  '0xe926c6a47381c65ce36ad9a994cfa487592af8dc',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x99289F32aA6a1646aa7e6089741d5e06B5DC9baF
+Your vote_commitment_secret is :  0x5d39cc54ed74ceeecf2778bf4f6f0f708e459ef909f3bbc28755e994091ef700
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x0bda57d71867fa3eecb7a9b2f2ee7d270cc084b9c65794d8cf67a0db6774683a',
+  '0x3d896439e1fbe781f31c915b77b9f80ffe3a8ad1',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xf96B2f254e97aAa5BF72157bB1b336b74776A920
+Your vote_commitment_secret is :  0x6ba07ebed35ba31f59e60dbe03492a3d81763681d329461c01f3e54cade2f800
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x30224b8ae4e4630919ae7da6f3b395acdaec437d69c43921eb577eaa0651c1d9',
+  '0x6de4d7ded2a01caa590e154daa12eeebe5a6f319',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x5acF4c48087b1773b3dB998ACDd58D08bD6F98D5
+Your vote_commitment_secret is :  0x30c1a8394b307a8295873b336f47175ac3eb97aadaa7617d04a70d00007c8f00
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x2ef41bf23fb0da5f59f2bdda93c51ceffece13838c514d0f2912fd62736d78ee',
+  '0xe5870dbfbca395c82dcfbf0ef7b35fd617ee07a8',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xc156B8781D822e32840879456D2F211FD3C28Ca9
+Your vote_commitment_secret is :  0x5c7e185cb18b2cb8f6dc1e6a17d0901416f9bd36866a7ebed1931b37fdbff100
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x0158917c065b5017d97be1d84f298a8e29f5600312c9e7d2c50e9f2fcf68cea8',
+  '0xaf888d1c0c985aa813b02c48d8a0764141afbc69',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x18587Ab5e6Bc406CAcE7839A3B6Ca7B2ddA3ee94
+Your vote_commitment_secret is :  0x36ca6429c9d82867042860969ea608dc594355721090be1ed407dc0d3d309500
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x2151e679cd8f4415ac01135a30334d245a1f141a83aecc3e1014ca00a463b3f6',
+  '0xbd6b7edbf1c0caee8b0a80bb87c1336cad2e524d',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x8e033338095d5655e2f534EaBf8a49DA9F11CD84
+Your vote_commitment_secret is :  0xcdfefba2e55e7796af00f75e3137b63e3f33fcf139770fb2c926ba0339113100
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x02d53e4f71e382170b5f9eb62cf0dbdd0a331db6b1b342091b09b55b11103bef',
+  '0xea3bad65980decd68924ffec7106b436761f9b7a',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xBf31b620445dD879432eAeed170a876D84348507
+Your vote_commitment_secret is :  0x95804cfd0234be826e207a5abb269be0205033c7a22ac090000d12ae3544a300
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x0a2c5ee2fef8850e13e3838a0c8a7bfa17191520f60f832b48677cf5f91480c0',
+  '0x0de0820c2733d55f77ed9c0527af9e09b6e9447c',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xa0D6CCd8ae37a4Da23D3c0E1A95650511B353913
+Your vote_commitment_secret is :  0xb2d85fc92097562e1d2d176649927816ed1a069498f0efca227c14be1ffd7300
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x07c44e020cfb9544ec920eefa3a5556fa654154196bcaf59af83718c89eaa738',
+  '0xdcbc532b10052bda2b0b124a9cb0877e44c20fa2',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xC26888959Fd31A744fF6640951F6C63f65A4bA90
+Your vote_commitment_secret is :  0x2170fa4ffe13b652f7c1fd7d2df8de4a9597c46d9685e79949e5dcfbe3246300
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x129a457642dfd7ff510afccddfd1cb56bbec04e318ab8fdf12cab188f080b74d',
+  '0x0c2f7779a1ad8a2858faff0a4049b1cfe352e576',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x8A8374D369571092656EBd4c0326fEf0914Ab745
+Your vote_commitment_secret is :  0x0b0b8e4adbd684491ea88dbcb5dac4a4001b1d51b1d8e8ca12ed02d87d448200
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x21ad0f5bd5bda0330a2365e5271d86c94c5f6b9dc3ce2e48827c2a23523b2e03',
+  '0x3ab107b5eb0579776c079449589af9ba0ff82c7f',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x8A388A92e6322a200d86f4B418064B88a240c3e2
+Your vote_commitment_secret is :  0xcdb6b9415b267304ebf2045c27c68fbec9a2119053e69cb38bee77489153c000
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x26dc7f39ad11addcb70dbbeb78c0ddb29baa9d9fdc62e0820823445263e728e1',
+  '0xc51fd12a37b30c6d4ad6e4ce55b500ca6ceda42c',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0xbDB9702D3411610Cf6973fC754b7c25Fe46a3DBB
+Your vote_commitment_secret is :  0xb0c818d21e25ebd6816edfdf23d3a7547e8a5300aa3c9563fa4500e0784dea00
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x2a47ac166792544ad31af960ff8e5a877a6141ca9f6317c2eca3f35e9908894c',
+  '0x269c8cc027fd067c7a589cdae2b31036a9b47fba',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x1040283A38D9A018620Df055CA33A815408A21dd
+Your vote_commitment_secret is :  0xaeedbb285b2482d616ee7bf32f308f5ab23859f7220ab5d985bb2017b9e81e00
+[ '0x27af1005bb7bab1978d1c0f58d9f92b51e328316dc9779b0a801b994b93370de',
+  '0x1dafbb7c3160156847a661cc3a098906371526cdf6c9444e3006080012daad85',
+  '0xa46dc3d12950d48ef4f4b712f66bb30ec28b6554',
+  '0x0000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000',
+  '0x0000000000000000000000000000000000000000000000000000000000000000' ]
+Submitting commit transaction from  0x45E4f13791928CE245Fda1978263707C8A992A7A
+commit 4 txhash 0x67cc5c2c880ba55b2cb3fd393cd7340f74731e72d04d367ca4b9466162913e5e
+commit 19 txhash 0x9a9267ff0e79e169632eb4c9a534087048f907e885933b841eea777aa5b000ce
+commit 20 txhash 0x98e29b1b478abc874bf3b7344b2955626525d17459e22c037c96b84aaf8b23ee
+commit 0 txhash 0xff0812d0cf6526a823693d1ccc3e0732a8e38e875001f2b7cfbe0058ed52e545
+commit 21 txhash 0x6c136ee823703655844a57ffc698441532035bb8d300ccefa46b11a7154f0615
+commit 3 txhash 0xe7ca7f9c6268cc8d6bbba15447845b7359ca634591356dbfec9e877de081e063
+commit 22 txhash 0x21a0b820cd06705a8f2860f51bcb517a552943c95038ed7eefb89def794a743d
+commit 1 txhash 0x13b3c2c2c52a0ab8edbc917b4d06833fc809c64bb235e3cc9f84462fa0f0fc0f
+commit 2 txhash 0xf52774fc5f987a35984291ebad0d99258ac03428c439f7ef612a37661a0e9bd8
+commit 23 txhash 0xf19f63ef7598ebfaffa99b8c9fd5969c88deaf71af2e715b726a4a62c5631c1a
+commit 24 txhash 0x9adf6ac2a91a3a99a569c187f73f76639f4366ac9f215307447562db5bd1292d
+commit 25 txhash 0xe5102fab4a3a87d03ea8fd38399fff9e59b1eb6015943bc4ea8cd1122bc20e41
+commit 8 txhash 0x5584c00fae5bdc61382be213987fc3b51a7e94c5a994e6f90bb080999b1d4220
+commit 26 txhash 0x099cb2f8fef9215f272d825d3cfbce80fa45574dccdfe9f80dcc4ad572aa7310
+commit 27 txhash 0xb0cd8ac1b57a208cff69626a67157726c06881820b21780c98a78b4d27fd1a9c
+commit 9 txhash 0xd01b74f548ee4adbe23b36d2c674f23632e6058cc90a8b4ca50874f316a83847
+commit 29 txhash 0xa86c68ec7e4582fe6891ea0e53c1b50254b8ca3ec85f23250038391da43446be
+commit 6 txhash 0x941b0dcff4d8572168f03eef329dcc7f12fe199a0a5848508e13ceff50db95f4
+commit 28 txhash 0x0cd64e31dcd46fcc49728b38a4c22190317f7e71d5346703df2daac237e30db4
+commit 11 txhash 0x40245dbd974830ea4e63abf8c48381fee911cfaa44d2deef0db23d6a026e4d5d
+commit 10 txhash 0x7deb5c35be960bea574dc864be0b9e3bb77a88251cf6df7fd7d139ccb97cb2b5
+commit 7 txhash 0x3b41622cb840a1fb461a0ec65ae52465c73597a9c1696f643c904e7d17433c4b
+commit 12 txhash 0x31acdb3c8593a6b172511b398245e16e6162f94f8cf7bdf7a8cbcc35d3c81be2
+commit 13 txhash 0x688e9fce3620e17cd8680bb8a7cc70135cd2a3938792c2ea564312f874e01518
+commit 5 txhash 0xe8b78ed3219b8c7a8c95ab225e27c4fc31f6b740f1797bcb81ac7cf5828847a2
+commit 14 txhash 0x432c93d84d4bce9023bb8be1fa5b39e62839acd961803d729d685e9b7ebcbdb9
+commit 17 txhash 0xbd82d420e336c883e04f8da4088bd47b49ce5ae6b3d7e73a5df5c1986896ba4f
+commit 15 txhash 0xa037fd386628ecd6e2ec57dde102a4ab53b3b790be02756ffc12c675f3c5a447
+commit 16 txhash 0xffd6df2e7b8c30b51e095e209ad0fc708f838590f02eb04bdef09d4ed051fa2f
+commit 18 txhash 0x3138f5af595a29d42082bbd16aec5d4988b063b1d8274a4bf25a7009c0780f02
+Current Block:  1894
+------------ Starting Cast Round ----------------
+Current Blocknr,  1894
+vote 14 txhash 0x34efabc1d4f3829b4cb44c64a36d14be86b0862e3375abb49a6a4ad6dadcaeb5
+vote 15 txhash 0x3c3b0ab4028fd35843d0ff249b9ad9b4ccec167a0b7941dcb43fdfa64e41f35e
+vote 18 txhash 0x39848f720c2721eb67b845bc0e2d90437763a17746bc8e10cb3c0667f7d226f7
+vote 16 txhash 0xa4a46e51f2d616196701be1b9df1e0c30d8f81f338715d2151867f01df55ad2d
+vote 17 txhash 0xe3c1f6dc0223268e07d47eaa606f977fa2a2eeedbda972a628953c51440d5847
+vote 19 txhash 0x1e277dbe400825931315db60c2737d71384bb806c15c24782b66d3c3f24a4e51
+vote 22 txhash 0xef45318be01b3b491d01b4ec31ce8d127857482f453bb14eef2ebebe866c8363
+vote 20 txhash 0xbd0af6732c8e662fa989936ab36ad05813c50d46e90bf3011ac3b85a74ebeb53
+vote 21 txhash 0xc580639089374e87bc4cf2c12da0496e5bec939041670968fb35cf032f08e5fe
+vote 23 txhash 0x8e204aa26d8c0a2fc8c21980b2afc5b818c2d08ade518483040ffb0b0e2fd3ac
+vote 25 txhash 0xad2dcdc97e591ee18a54c1e9107b727dcd32fff398eb225e6b921c6bbcd3fe7b
+vote 24 txhash 0x7fb71a643d5f6e0b68226df8845c5a994aa30e044e6be08568cf58fbf11564ff
+vote 3 txhash 0xc9f7dcb58156ebf15dd90518af834cb465f322860a8d71f65e612bdfd7bcd853
+vote 5 txhash 0x7505b80608e8cb06d445cb4ea614a2045ff58f8636c1e0420894c494c369ae2a
+vote 29 txhash 0x369a0d53150444d93db4778ce23596e64a9175ad40d0c26b02dae474ee622c69
+vote 28 txhash 0x6a654984d4ca9580a848ab51f8e02d01f45f8839a6fc9087181a658991f5b350
+vote 1 txhash 0x7cf030bfc3315ba19f9bd69b303688de3e3d83705231a2ecb500976beb63f014
+vote 0 txhash 0x118f227a901a3e09a2e35d91af477d04dd522f41158be26acf0ec02a681a0a16
+vote 6 txhash 0xd84f5ae32b23a1afae1253651d47a899e7e7a7511bd99c1df2180979c1b230a2
+vote 2 txhash 0x57b5dc03b7e3d05a03b01c507067706c0df1b28ca97d9ecfd5114e6f3cfda88e
+vote 8 txhash 0x1a5a1fc207710291bce427f6e12bfee0b32e51ec1564988dfcc7f6d4be3abd69
+vote 4 txhash 0x0c1a37c243adfdeda57b80379850f67774a4987942ee0160b6e70da512063c6c
+vote 7 txhash 0x362cf33a59e591a3434b594c3af4fad975b40b9a9d32b528ae1d431938f4d05e
+vote 10 txhash 0x1c29aec7938937cea0192a902a60c75ebd787395fd57c6f67e0ce6a01ea9c390
+vote 9 txhash 0x6ed3788f31a19087f649ce55e58305e528e5c1e3031783e01ce9f15e91d1a4ae
+vote 11 txhash 0x15a3896db1a9f85d7d43ee0eeb46863d118c108bca591ff778995ab91ce53309
+vote 13 txhash 0x4f521e241efa8c9a2704a50e1e914e21d5d9808d97e687522bf54df473e9aac8
+vote 12 txhash 0x21680a0f7abaa94d9b5e671339a52273feec9ffcbddfefb379232edf8f40bc81
+vote 26 txhash 0x70db09aed90bfed2a06f31b3725684e11a80459764aff0c35e8a919060e0c573
+vote 27 txhash 0x8f66c9009a3f891512e8b7111da4c1c307e3aa2b6e5a356b310253fd50e1aa3e
+
+------------ All votes are cast ----------------
+The number of Yes votes are: 
+ Token Balance is 11
+The number of No votes are: 
+ Token Balance is 19
+Registration started 1880, registration finished 1881
+Deposits started 1881, deposits finished 1884
+Commit Precompute started 1884, finished 1893
+Commits started 1894, finished 1894
+Voting started 1894, finished 1895
+Total time 6
